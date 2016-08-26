@@ -1,0 +1,404 @@
+<script>
+
+	$(document).ready(function() {
+
+		var home = $('a.home').text();
+		var currLang = '';
+		if (home === 'Home') {
+			currLang = 'en';
+			$('a.language').html('canvia a web en català');
+		} else if (home === 'Inici') {
+			currLang = 'ca';
+			$('a.language').html('switch to english version');
+		}
+
+		var response;
+
+		function createResponse () {
+			$('.table-form').clone(true, true).appendTo($('#response'));
+			$('#response .table').css('border', '1px solid black');
+			$('#response input[name=id]').remove();
+			$('#response table').css('border', '1px solid black');
+			$('#response th').css('border', '1px solid black');
+			$('#response td').css('border', '1px solid black');
+			$('#response td').css('padding', '5px');
+			$('#response table').css('border-radius', '6px');
+			$('#response .table').css('border-collapse', 'collapse');
+			var attWed1 = $('input[name=attWed1]:checked').val();
+			$('#response .attWed1').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed1+'</p></td>');
+			var attWed2 = $('input[name=attWed2]:checked').val();
+			$('#response .attWed2').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed2+'</p></td>');
+			var attReh1 = $('input[name=attReh1]:checked').val();
+			$('#response .attReh1').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh1+'</p></td>');
+			var attReh2 = $('input[name=attReh2]:checked').val();
+			$('#response .attReh2').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh2+'</p></td>');
+
+			var childWed = $('input[name=childWed]').val();
+			$('#response .childWed').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+childWed+'</p></td>');
+			var childReh = $('input[name=childReh]').val();
+			$('#response .childReh').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+childReh+'</p></td>');
+
+			var message = $('.message').val();
+			$('#response .messagenew').replaceWith('<td colspan="2" style="height: 40px; border: 1px solid black;"><p style="text-align: left">'+message+'</p></td>');			
+		};
+		
+
+		function fillIn (selectedGuest) {
+			$('input[name=id]').val(selectedGuest._id);
+			$('input[name=attWed1]:radio').val([selectedGuest.attWed1]);
+			$('input[name=attReh1]:radio').val([selectedGuest.attReh1]);
+			$('input[name=attWed2]:radio').val([selectedGuest.attWed2]);
+			$('input[name=attReh2]:radio').val([selectedGuest.attReh2]);
+			$('input[name=childWed]').val(selectedGuest.childWed);
+			$('input[name=childReh]').val(selectedGuest.childReh);
+			$('.message').text(selectedGuest.message);
+		};
+
+		function passGuests () {
+			var guestsPass = {
+				id: $('input[name=id]').val(),
+				attWed1: $('input[name=attWed1]:checked').val(),
+				attReh1: $('input[name=attReh1]:checked').val(),
+				attWed2: $('input[name=attWed2]:checked').val(),
+				attReh2: $('input[name=attReh2]:checked').val(),
+				childWed: $('input[name=childWed]').val(),
+				childReh: $('input[name=childReh]').val(),
+				message: $('.message').val()
+			}
+			console.log($('.message').val());
+			return guestsPass;
+		};
+
+		function thankyouNote (firstName1, firstName2) {
+			if (firstName2 != null) {
+				if ($('input[name=attWed1]:checked').val() === 'Yes' && $('input[name=attWed2]:checked').val() === 'Yes') {
+					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Yay! We\'re so excited to see you both in Santa Fe!"}}}</p><br/><br/>');
+				} else if ($('input[name=attWed1]:checked').val() === 'Yes' && $('input[name=attWed2]:checked').val() === 'No') {
+					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "We\'re so excited to see"}}} ' + firstName1 + ' {{{__ "in Santa Fe, but we\'ll miss"}}} ' + firstName2 + '!</p><br/><br/>');
+				} else if ($('input[name=attWed1]:checked').val() === 'No' && $('input[name=attWed2]:checked').val() === 'Yes') {
+					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "We\'re so excited to see"}}} ' + firstName2 + ' {{{__ "in Santa Fe, but we\'ll miss"}}} ' + firstName1 + '!</p><br/><br/>');
+				} else if ($('input[name=attWed1]:checked').val() === 'No' && $('input[name=attWed2]:checked').val() === 'No') {
+					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Aw, we\'re so sorry you won\'t be able to join us!"}}}</p><br/><br/>');
+				}
+			} else {
+				if ($('input[name=attWed1]:checked').val() === 'Yes') {
+					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Yay! We\'re so excited to see you in Santa Fe!"}}}</p><br/><br/>');
+				} else if ($('input[name=attWed1]:checked').val() === 'No') {
+					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Aw, we\'re so sorry you won\'t be able to join us!"}}}</p><br/><br/>');
+				}
+			}
+		};
+
+		$('#guest-btn').click( function (e) {
+			e.preventDefault();
+			if ($('.guestsForm')) {
+    			$('.guestsForm').children().remove();
+    		}
+    		
+    		var parameters = { name: $('input[name="guestname"]').val() };
+			$(this).blur();
+
+			if (parameters.name === '') {
+				swal('{{{__ "Whoops! Looks like you didn\'t write any name in the search box!"}}}');
+			} else {
+				$.get( '/searchguests', parameters, function(data) {
+	      			if ($.isEmptyObject(data)) {
+	      				$('.table-list').empty();
+						$('.table-list').append('<caption class="text-align-center" style="color: #000;">{{{__ 'Your search found no matches. Try again'}}}!</caption>');	      				
+	      			} else {
+		      			ul = '';
+		      			tr = ''
+		      			$('.table-list').empty();
+		      			for (var i = 0; i < data.length; i++) {
+		      				tr += '<tr><td align="center" valign="middle" width="33%" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(221, 221, 221); padding: 0;"><a class="toForm" id="toForm" href="#" style="padding:5px 5px; display:block; color: #000; font-weight: 700;" data-index="' + i + '">' + data[i].names + '</a></td></tr>\n';
+		      			}
+		      			$('.table-list').append('<caption class="text-align-center" style="color: #000;">{{{__ 'Select your party from the list below:'}}}</caption>');
+					    $('.table-list').append(tr);
+					    $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+		     			$('.table-list a').click( function (e) {
+				    		e.preventDefault();
+				    		$(this).blur();
+				    		$(this).css('pointer-events', 'none');
+				    		var selected = $(this).text();
+				    		var selectedIndex = 1*($(this).attr('data-index'));
+				    		console.log('selectedIndex: ' + selectedIndex);
+				    		var selectedGuest = data[parseInt(selectedIndex)].guests;
+				    		console.log('selectedGuest.firstName1: ' + selectedGuest.firstName1);
+				    		$('.table-list tr').each( function (index) {
+				    			var rowText = $(this).text();
+				    			console.log('rowText ' + index + ': ' + rowText);
+				    			console.log('selected: ' + selected);
+				    			if (rowText !== selected) {
+				    				console.log('rowText !== selected');
+				    				$(this).fadeOut();
+				    			}
+				    			console.log('selectedIndex.lastName2: ' + selectedGuest.lastName2);
+				    			if (selectedGuest.lastName2 != null && selectedGuest.lastName2 !== '') {
+				    				if (currLang === 'ca') {
+				    					var formCouple = '/formCoupleCa'
+				    				} else {
+				    					var formCouple = '/formCouple'
+				    				}
+				    				// var formCouple = '/formCouple'
+				    				$.get(formCouple, function (formCouple) {
+				    					var firstName1 = selectedGuest.firstName1;
+				    					var firstName2 = selectedGuest.firstName2;
+					    				$('.guestsForm').html(formCouple);
+					    				$('.fullName1').html(selectedGuest.firstName1 + ' ' + selectedGuest.lastName1);
+					    				$('.fullName2').html(selectedGuest.firstName2 + ' ' + selectedGuest.lastName2);
+					    				var allNames = $('.fullName1').html() + ' & ' + $('.fullName2').html()
+						    			$('html, body').animate({ scrollTop: $(document).height() }, 1000);
+						    			fillIn(selectedGuest);
+						    			console.log('selectedGuest.children: ' + selectedGuest.children);
+				    					if ((1*selectedGuest.children) === 0) $('.children').remove();
+						    			var attWed1checked = 'Neither';
+						    			var attWed2checked = 'Neither';
+						    			if ($('input[name=attWed1][value="Yes"').is(':checked')) {
+						    				attWed1checked = 'Yes';
+						    			}
+						    			if ($('input[name=attWed1][value="No"').is(':checked')) {
+						    				attWed1checked = 'No';
+						    			}
+						    			if ($('input[name=attWed2][value="Yes"').is(':checked')) {
+						    				attWed2checked = 'Yes';
+						    			}
+						    			if ($('input[name=attWed2][value="No"').is(':checked')) {
+						    				attWed2checked = 'No';
+						    			}
+						    			$('input[name=attWed1][value="No"]').click( function () {
+						    				attWed1checked = 'No';
+						    			});
+						    			$('input[name=attWed1][value="Yes"]').click( function () {
+						    				attWed1checked = 'Yes';
+						    			});
+						    			$('input[name=attWed2][value="No"]').click( function () {
+						    				attWed2checked = 'No';
+						    			});
+						    			$('input[name=attWed2][value="Yes"]').click( function () {
+						    				attWed2checked = 'Yes';
+						    			});
+
+						    			$('#btn-send').click(function (e) {
+						    				e.preventDefault();
+						    				if (attWed1checked == 'Neither' || attWed2checked == 'Neither' ) {
+						    					swal('{{{__ "Whoops! Looks like you forgot to tell us if you\'ll be coming to the wedding!"}}}');
+					    					} else {
+					    						$(this).blur();
+						    					$(this).prop('disabled', true);
+						    					$('.tooltip-wrapper').tooltip();
+							    				var guestsPass = passGuests();
+							    				$.get( '/updateguestsbythem', guestsPass, function(data) {
+							    					thankyouNote(firstName1, firstName2);
+							    					$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+							    				});
+							    				createResponse();
+							    				response = $('<div>').append($('#response .table-form').clone(true, true)).html();
+					    						$.post( '/sendemail', { allNames: allNames, response: response }, function(data) {
+					    						});
+							    			}
+						    			});
+						    		});
+				    			} else {
+				    				if (currLang == 'ca') {
+				    					var formSingle = '/formSingleCa'
+				    				} else {
+				    					var formSingle = '/formSingle'
+				    				}
+				    				$.get(formSingle, function (formSingle) {
+					    				$('.guestsForm').html(formSingle);
+					    				$('.fullName1').html(selectedGuest.firstName1 + ' ' + selectedGuest.lastName1);
+					    				var firstName1 = selectedGuest.firstName1;
+					    				var bringGuestClicked = 'Neither';
+					    				console.log('bringGuestClicked: ' + bringGuestClicked);
+					    				var attWed1checked = 'Neither';
+					    				console.log('attWed1checked: ' + attWed1checked);
+						    			$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+						    			fillIn(selectedGuest);
+						    			console.log('selectedGuest.children: ' + selectedGuest.children);
+				    					if ((1*selectedGuest.children) === 0) $('.children').remove();
+						    			if ($('input[name=attWed1][value="Yes"').is(':checked')) {
+						    				console.log('Yes is checked at beginning');
+						    				attWed1checked = 'Yes';
+						    				console.log('attWed1checked: ' + attWed1checked);
+						    			} else if ($('input[name=attWed1][value="No"').is(':checked')) {
+						    				console.log('No is checked at beginning');
+						    				attWed1checked = 'No';
+						    				console.log('attWed1checked: ' + attWed1checked);
+						    				bringGuestClicked = 'No';
+						    				$('.guestBring').hide();
+						    				// $('button[name=bringGuestNo]').trigger();
+						    			} else {
+						    				console.log('Neither radio button is checked at the beginning');
+						    			}
+
+						    			$('input[name=attWed1][value="No"]').click( function () {
+						    				$('.guestBring').fadeOut();
+						    				console.log('attWed1 No has been checked')
+						    				attWed1checked = 'No';
+						    				console.log('attWed1checked: ' + attWed1checked);
+						    				bringGuestClicked = 'No';
+						    				console.log('bringGuestClicked: ' + bringGuestClicked);
+						    			});
+
+						    			$('input[name=attWed1][value="Yes"]').click( function () {
+					    					$('.guestBring').fadeIn();
+					    					attWed1checked = 'Yes';
+					    					console.log('attWed1checked: ' + attWed1checked);
+					    					if (bringGuestClicked === 'No') {
+					    						bringGuestClicked = 'Neither';
+					    					}
+					    				});
+										
+										$('button[name=bringGuestYes]').click( function (e) {
+											e.preventDefault();
+											bringGuestClicked = 'Yes';
+											console.log('bringGuestClicked: ' + bringGuestClicked);
+						    				// $('.fullName2').remove();
+						    				if (currLang == 'ca') {
+						    					var formGuest = '/formGuestCa'
+						    				} else {
+						    					var formGuest = '/formGuest'
+						    				}
+							    			$.get(formGuest, function (formGuest) {
+							    				$('.guestBring').fadeOut('slow', function () {
+							    					$(this).replaceWith(formGuest);
+							    					$('.guestBring').fadeIn();
+							    					$('input[name=attWed2][value="Yes"').prop("checked", true);
+							    				});
+							    			});
+					    				});
+
+					    				$('button[name=bringGuestNo]').click( function (e) {
+						    				e.preventDefault();
+						    				bringGuestClicked = 'No';
+						    				console.log('bringGuestClicked: ' + bringGuestClicked);
+						    				$('.guestBring').fadeOut();
+					    				});
+
+					    				$('#btn-send').click(function (e) {
+					    					e.preventDefault();
+					    					console.log('Beginning of btn-send call');
+					    					console.log('bringGuestClicked: ' + bringGuestClicked);
+					    					console.log('attWed1checked: ' + attWed1checked);
+
+					    					if (attWed1checked == 'Neither') {
+					    						swal('{{{__ "Whoops! Looks like you forgot to tell us if you\'ll be coming to the wedding!"}}}');
+					    					} else if (bringGuestClicked === 'Neither') {
+					    						swal('{{{__ "Whoops! Will you be bringing a guest?"}}}');
+					    					} else if (bringGuestClicked === 'No') {
+					    						var guestsPass = passGuests();
+						    					$.get( '/updateguestsbythem', guestsPass, function(data) {
+						    						$('#btn-send').blur();
+					    							$('#btn-send').prop('disabled', true);
+						    						$('.tooltip-wrapper').tooltip();
+						    						thankyouNote(firstName1);
+						    						var allNames = firstName1 + ' ' + selectedGuest.lastName1;
+						    						$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+						    						$.post( '/sendemail', { allNames: allNames, response: response }, function(data) {
+						    						});
+						    					});
+					    					} else if (bringGuestClicked === 'Yes') {
+					    						var guestsPass = passGuests();
+								    			var fullName2a = $('input[name=fullName2]').val();
+					    						if (fullName2a === '' || fullName2a == null) {
+					    							swal('{{{__ "Whoops! What\'s your guest\'s name?"}}}');
+					    						} else {
+					    							fullName2 = fullName2a.split(/\s+/);
+								    				guestsPass.firstName2 = fullName2[0];
+								    				guestsPass.lastName2 = fullName2.slice(1).join(' ');
+								    				guestsPass.couple = 'Couple';
+								    				console.log('firstName2: ' + guestsPass.firstName2);
+								    				console.log('lastName2: ' + guestsPass.lastName2);
+								    				var firstName2 = guestsPass.firstName2;
+								    				$.get('/updateguestsbythem', guestsPass, function(data) {
+								    					if (data) {
+								    						$('#btn-send').blur();
+					    									$('#btn-send').prop('disabled', true);
+						    								$('.tooltip-wrapper').tooltip();
+								    						$('.fullName2').replaceWith('<td class="fullName2td" style="vertical-align: middle;">' + fullName2a + '</td>');
+								    						if (firstName2 && firstName2 !== '') {
+								    							console.log('Calling with 2 parameters, ' + firstName1 + ' and ' + firstName2 + '.');
+								    							thankyouNote(firstName1, firstName2);
+								    						} else {
+								    							console.log('calling with 1 parameter');
+								    							thankyouNote(firstName1);
+								    						}
+								    						$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+								    						var allNames = firstName1 + ' ' + selectedGuest.lastName1 + ' & ' + fullName2a;
+								    						$.post( '/sendemail', { allNames: allNames, response: response }, function(data) {
+								    						});
+								    					}
+								    				});
+					    						}
+					    					}
+					    				});
+						    			
+
+						    			// console.log('bringGuest html: ' + $(this).html());
+						    			// 	if ($('input[name=attWed1]:checked').val() === 'No') {
+						    			// 		console.log('input attWed1 checked\'s value: ' + $('input[name=attWed1]:checked').val());
+						    			// 		$(this).html('No');
+						    					
+						    			// 	}
+
+						    			
+					    				// $('#btn-send').click(function (e) {
+						    			// 	e.preventDefault();
+						    			// 	var guestsPass = passGuests();
+						    			// 	$.get('/updateguestsbythem', guestsPass, function(data) {
+						    			// 		if (data) {
+						    			// 			thankyouNote(firstName1);
+						    			// 			$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+						    			// 		};
+						    			// 	});
+						    			// });
+						    		});
+				    			}
+				    		});
+				    	});
+					}
+	     		});
+			}
+    	});
+	});
+		
+</script>
+
+<main>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="parallax-window portrait-crop-225" data-parallax="scroll" data-bleed="6" data-position="middle" data-speed="0.2" data-image-src="/img/sarahoriolSF.jpg" style="position: relative">
+				<h1 class="page-title" style="position: absolute; width: 98%; text-align: center; vertical-align: middle; margin: auto; top: 50%;  transform: translate(0, -50%); left: 0; right: 0; overflow: visible;">{{{__ 'RSVP'}}}</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-8">
+				<div style="vertical-align: middle; padding: 40px 0px 40px 0px">
+					<div>
+						<p class="text-align-center">{{{__ 'Enter your first or last name:'}}}</p>
+					</div>
+					<form role="form" style="width: 200px; margin: auto;">
+						<div class="input-group">
+      						<input type="text" class="form-control" name="guestname" placeholder="{{{__ 'Search for...'}}}" style="border-color: #000;" autofocus>
+      						<span class="input-group-btn">
+        						<button class="btn btn-default" id="guest-btn" type="submit" style="border-color: #000; color: #fff; background-color: #000;">{{{__ 'Go!'}}}</button>
+      						</span>
+    					</div>
+    				</form>
+    				<br/><br/>
+    				<table class="table table-list table-hover" width="100%" border="0" cellpadding="0" cellspacing="20">
+    				</table>
+    				<div class="guestsForm"></div>
+				</div>
+			</div>
+			<div class="col-md-2">
+			</div>
+		</div>
+	</div>
+	<div id="response" hidden>
+	</div>
+
+
+</main>

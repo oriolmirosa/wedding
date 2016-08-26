@@ -1,0 +1,89 @@
+<main>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="parallax-window portrait-crop-225" data-parallax="scroll" data-bleed="6" data-position="top" data-speed="0.2" data-image-src="/img/pointy-rocks.jpg" style="position: relative">
+				<h1 class="page-title" style="position: absolute; width: 98%; text-align: center; vertical-align: middle; margin: auto; top: 50%;  transform: translate(0, -50%); left: 0; right: 0; overflow: visible;">{{{__ 'Registry'}}}</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-8">
+				<div style="vertical-align: middle; padding: 40px 0px 40px 0px">
+					<h2 class="text-align-center" style="margin-top: 0px">Thank you for thinking of us!</h2>
+					<div>
+						<p class="text-align-center">Decorum traditionally encourages household gifts for newly married couples, yet as the households of Firehock and Wilkie have come together, so too have our enormous ceramic collections!</p>
+						<p class="text-align-center">With space at a premium, we thought to suggest a couple of alternatives:<br/><br/>A family and friends fund for our honeymoon, and gifts from the following registry.</p>
+					</div>
+				</div>
+				<button class="btn btn-primary center-block" data-toggle="modal" data-target="#myModal" style="background-color: #1c1c1c; border-color: #1c1c1c; border-radius: 0px; font-family: Josefin Sans; margin-bottom: 100px; outline: none;">{{{__ 'View registry items'}}}</button>
+			</div>
+			<div class="col-md-2">
+			</div>
+		</div>
+	</div>
+
+	<div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false" role="dialog" style="z-index: 9998;">
+	  	<div class="modal-dialog">
+	    	<div class="modal-content">
+	      		<div class="modal-header">
+	        		<h3 class="modal-title" style="text-align: center;"><strong>{{{__ 'Registry Items'}}}</strong></h3>
+	        		<p class="pull-left totalcart" style="font-size: 30px; font-weight: 700;"><br/>Total: <span>$0</span></p>
+	      			<button type="button" class="btn btn-default pull-right" data-dismiss="modal" style="margin-top: 20px;">{{{__ 'Done Selecting Gifts'}}}</button>
+	      		</div>
+	      		<div class="modal-body">
+					<div class="list-group">
+
+						{{#each items}}
+						<div class="list-group-item container-fluid">
+							<div class="row">
+								<div class="col-sm-2 col-xs-4" style="padding-left: 0px; padding-right: 0px;">
+									<div style="position: relative; height: 80px; width: 80px; margin-left: 10px; 	margin-right: 0px;">
+	  									<img class="img-thumbnail img-responsive center-block" src="/img/{{filename}}" alt="">
+	  									<div class="hiddenblur" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.7); height: 99%; vertical-align: middle; border-radius: 6px;"></div>
+	  									<p class="hiddenblur" style="position: absolute; top: 50%; transform: translate(0, -50%); left: 0; right: 0; bottom: 0; text-align: center; font-size: 24px; z-index: 9999; color: #fff; margin-top: 3px;">$<span>10</span></p>
+	  								</div>
+	  							</div>
+	  							<div class="col-sm-7 col-xs-8">
+	    								<h3 style="margin-top: 0px; margin-bottom: 0px;">{{item.localized}}</h3>
+	    								<p style="margin-bottom: 0px;">{{description.localized}}</p>
+	    						</div>
+	    						<div class="col-sm-3 col-xs-12">
+	    							<div class="row">
+	    								<div class="col-xs-4 col-sm-12" style="min-height: 25px; display: flex; align-items: center; justify-content: center;">
+	    									<p style="font-size: 22px; font-weight: 800; text-decoration: bold; text-align: center; margin-bottom: 0px; line-height: 1em;"><strong>${{price}}</strong></p>
+										</div>
+										<div class="col-xs-4 col-sm-12" style="min-height: 25px; padding-left: 0px; padding-right: 0px;">
+											<div style="padding: 3px; display: flex; align-items: center; justify-content: center;">
+	    										<p style="color: #1c1c1c; margin-bottom: 0; font-size: 14px; text-align: center;"><strong>{{remaining}}</strong>&nbsp;{{#with ../this}}{{{__ 'remaining'}}}{{/with}}</p>
+											</div>
+										</div>
+										<div class="col-xs-4 col-sm-12 dropdown" style="display: flex; justify-content: center; min-height: 25px;">
+		    								<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="btn-remain" data-remain="{{_id}}" aria-haspopup="true" aria-expanded="true" style="width: 75px; padding-top: 0px; padding-bottom: 0px; border-color: #fff; background-color: #1c1c1c; border-radius: 0px; color: #fff; font-size: 12px;">{{#with ../this}}{{{__ 'Give'}}}{{/with}}&nbsp;<span>...</span><span class="caret" style="color: #fff;"></span></button>
+	    									<ul class="dropdown-menu itemsremaining" style=" min-width: 70px; width: 70px; left: auto;">
+	    										{{#times remaining}}
+    									    	<li style="text-align: center;"><a href="#">{{this}}</a></li>
+										    	{{/times}}
+										  </ul>
+										</div>
+									</div>
+	    						</div>
+	    					</div>
+						</div>
+						{{/each}}
+					</div>
+				</div>
+	     	   	<div class="modal-footer">
+	        		<button type="button" class="btn btn-default" data-dismiss="modal">{{{__ 'Close'}}}</button>
+	      		</div>
+	    	</div>
+	    </div>
+	</div>
+	<!-- <div container-fluid>
+	<div class="totalgiftsbanner text-center">
+		<p class="hidden-xs">Total Amount</p>
+		<button class="btn btn-primary" data-toggle="cart" data-target="#myCart">Done Selecting Gifts</button>
+	</div>
+	</div> -->
+</main>
