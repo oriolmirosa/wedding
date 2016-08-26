@@ -1,0 +1,276 @@
+<main style="background-color: #fff;">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<div class="panel panel-default" style="border-color: #1c1c1c; margin-top: 50px;">
+					<div class="panel-heading" style="line-height: 1em;">
+						<h3 class="panel-title" style="text-align: center;">Form to enter new guests</h3>
+					</div>
+					<form role="form" method="post" action="/newGuest" enctype="multipart/form-data">
+						<div class="panel-body form-horizontal">
+							<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="couple">Couple?:</label>
+			    				<div class="col-md-8">
+				    				<select class="form-control" name="couple">
+				    					<option>Select an option</option>
+	    								<option>Couple</option>
+	    								<option>Single</option>
+	    							</select>
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="firstName1">Guest 1: First Name:</label>
+			    				<div class="col-md-8">
+			    					<input type="text" name="firstName1" class="form-control">
+			    				</div>
+			    			</div>
+							<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="lastName1">Guest 1: Last Name:</label>
+			    				<div class="col-md-8">
+			    					<input type="text" name="lastName1" class="form-control">
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="email1">Guest 1: email:</label>
+			    				<div class="col-md-8">
+			    					<input type="text" name="email1" class="form-control">
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="attWed1">Guest 1: Attend Wedding</label>
+			    				<div class="col-md-8">
+			    					<select class="form-control" name="attWed1">
+			    						<option>Select an option</option>
+    									<option>Yes</option>
+    									<option>No</option>
+    								</select>
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="attReh1">Guest 1: Attend Rehearsal</label>
+			    				<div class="col-md-8">
+			    					<select class="form-control" name="attReh1">
+			    						<option>Select an option</option>
+    									<option>Yes</option>
+    									<option>No</option>
+    								</select>
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="firstName2">Guest 2: First Name:</label>
+			    				<div class="col-md-8">
+			    					<input type="text" name="firstName2" class="form-control">
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="lastName2">Guest 2: Last Name:</label>
+			    				<div class="col-md-8">
+			    					<input type="text" name="lastName2" class="form-control">
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="email2">Guest 2: email:</label>
+			    				<div class="col-md-8">
+			    					<input type="text" name="email2" class="form-control">
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="attWed2">Guest 2: Attend Wedding</label>
+			    				<div class="col-md-8">
+			    					<select class="form-control" name="attWed2">
+			    						<option>Select an option</option>
+    									<option>Yes</option>
+    									<option>No</option>
+    								</select>
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="attReh2">Guest 2: Attend Rehearsal</label>
+			    				<div class="col-md-8">
+			    					<select class="form-control" name="attReh2">
+			    						<option>Select an option</option>
+    									<option>Yes</option>
+    									<option>No</option>
+    								</select>
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="children">Number of children they have:</label>
+			    				<div class="col-md-8">
+			    					<input type="number" name="children" class="form-control">
+			    				</div>
+			    			</div>
+							<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="childWed">Number of children in wedding:</label>
+			    				<div class="col-md-8">
+			    					<input type="number" name="childWed" class="form-control">
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="childReh">Number of children in rehearsal:</label>
+			    				<div class="col-md-8">
+			    					<input type="number" name="childReh" class="form-control">
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="message">Message:</label>
+			    				<div class="col-md-8">
+			    					<textarea name="message" class="form-control"></textarea>
+			    				</div>
+			    			</div>
+			    			<button type="submit" class="btn btn-default pull-right" id="btn-newguest" style="text-align: center; 70px; padding-top: 6px; padding-bottom: 2px; border-color: #fff; background-color: #1c1c1c; border-radius: 0px; color: #fff; font-size: 12px; margin-right: 15px;">Create</button>
+						</div>
+					</form>
+				</div>
+
+				{{#each guests}}
+				<div class="panel panel-default" style="border-color: #1c1c1c; margin-top: 50px;">
+					<div class="panel-heading" style="line-height: 1em;">
+						<h3 class="panel-title" style="text-align: center;">Edit guest number {{@index}}</h3>
+					</div>
+					<form role="form" method="post" action="/updateGuests" enctype="multipart/form-data">
+						<div class="panel-body form-horizontal">
+							<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="id">Id:</label>
+			    				<div class="col-md-8">
+			    					<input type="text" name="id" class="form-control" value="{{_id}}" readonly>
+			    				</div>
+			    			</div>
+							<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="couple">Couple?:</label>
+			    				<div class="col-md-8">
+				    				<!-- <select class="form-control" name="couple" value="{{couple}}"> -->
+				    				<select class="form-control" name="couple">
+										{{#select couple}}
+										<option value="Select an option">Select an option</option>
+										<option value="Couple">Couple</option>
+										<option value="Single">Single</option>
+										{{/select}}
+									</select>
+	    							<!-- </select> -->
+			    					<!-- <div class="radio" for="couple" value="{{couple}}">
+			    						<label class="radio-inline"><input type="radio" name="couple" value="{{couple}}">Couple</label>
+			    						<label class="radio-inline"><input type="radio" name="couple" value="{{couple}}">Single</label>
+									</div> -->
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="firstName1">Guest 1: First Name:</label>
+			    				<div class="col-md-8">
+			    					<input type="text" name="firstName1" class="form-control" value="{{firstName1}}">
+			    				</div>
+			    			</div>
+							<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="lastName1">Guest 1: Last Name:</label>
+			    				<div class="col-md-8">
+			    					<input type="text" name="lastName1" class="form-control" value="{{lastName1}}">
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="email1">Guest 1: email:</label>
+			    				<div class="col-md-8">
+			    					<input type="text" name="email1" class="form-control" value="{{email1}}">
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="attWed1">Guest 1: Attend Wedding</label>
+			    				<div class="col-md-8">
+			    					<select class="form-control" name="attWed1">
+										{{#select attWed1}}
+										<option value="Select an option">Select an option</option>
+										<option value="Yes">Yes</option>
+										<option value="No">No</option>
+										{{/select}}
+									</select>
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="attReh1">Guest 1: Attend Rehearsal</label>
+			    				<div class="col-md-8">
+			    					<select class="form-control" name="attReh1">
+										{{#select attReh1}}
+										<option value="Select an option">Select an option</option>
+										<option value="Yes">Yes</option>
+										<option value="No">No</option>
+										{{/select}}
+									</select>
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="firstName2">Guest 2: First Name:</label>
+			    				<div class="col-md-8">
+			    					<input type="text" name="firstName2" class="form-control" value="{{firstName2}}">
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="lastName2">Guest 2: Last Name:</label>
+			    				<div class="col-md-8">
+			    					<input type="text" name="lastName2" class="form-control" value="{{lastName2}}">
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="email2">Guest 2: email:</label>
+			    				<div class="col-md-8">
+			    					<input type="text" name="email2" class="form-control" value="{{email2}}">
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="attWed2">Guest 2: Attend Wedding</label>
+			    				<div class="col-md-8">
+			    					<select class="form-control" name="attWed2">
+										{{#select attWed2}}
+										<option value="Select an option">Select an option</option>
+										<option value="Yes">Yes</option>
+										<option value="No">No</option>
+										{{/select}}
+									</select>
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="attReh2">Guest 2: Attend Rehearsal</label>
+			    				<div class="col-md-8">
+			    					<select class="form-control" name="attReh2">
+										{{#select attReh2}}
+										<option value="Select an option">Select an option</option>
+										<option value="Yes">Yes</option>
+										<option value="No">No</option>
+										{{/select}}
+									</select>
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="children">Number of children they have:</label>
+			    				<div class="col-md-8">
+			    					<input type="number" name="children" class="form-control" value="{{children}}">
+			    				</div>
+			    			</div>
+							<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="childWed">Number of children in wedding:</label>
+			    				<div class="col-md-8">
+			    					<input type="number" name="childWed" class="form-control" value="{{childWed}}">
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="childReh">Number of children attending:</label>
+			    				<div class="col-md-8">
+			    					<input type="number" name="childReh" class="form-control" value="{{childReh}}">
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-12">
+			    				<label class="col-md-4" for="message">Message:</label>
+			    				<div class="col-md-8">
+			    					<textarea name="message" class="form-control">{{message}}</textarea>
+			    				</div>
+			    			</div>
+			    			<button type="submit" class="btn btn-default pull-right" id="btn-update" style="text-align: center; 70px; padding-top: 6px; padding-bottom: 2px; border-color: #fff; background-color: #1c1c1c; border-radius: 0px; color: #fff; font-size: 12px; margin-right: 15px;">Update</button>
+			    			<button type="submit" class="btn btn-default pull-right" id="btn-delete" formaction="/deleteGuests" style="text-align: center; 70px; padding-top: 6px; padding-bottom: 2px; border-color: #fff; background-color: #1c1c1c; border-radius: 0px; color: #fff; font-size: 12px; margin-right: 15px;">Delete</button>
+						</div>
+					</form>
+				</div>
+				{{/each}}
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+</main>
