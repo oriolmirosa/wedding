@@ -1,0 +1,36 @@
+{
+  "name": "wedding",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.1",
+    "basic-auth": "^1.0.4",
+    "body-parser": "^1.15.2",
+    "bootstrap-3-typeahead": "^4.0.1",
+    "bower": "^1.7.9",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.14.0",
+    "i18n": "^0.8.3",
+    "less": "^2.7.1",
+    "method-override": "^2.3.6",
+    "mongodb": "^2.2.5",
+    "mongoose": "^4.5.8",
+    "mongoose-i18n": "^0.3.0",
+    "mongoose-i18n-localize": "^0.2.0",
+    "multer": "^1.2.0",
+    "nodemailer": "^2.5.0",
+    "nodemon": "^1.10.0",
+    "normalize": "^0.3.1",
+    "normalize.css": "^4.2.0",
+    "yui": "^3.18.1"
+  }
+}

@@ -1,0 +1,84 @@
+<div class="panel panel-default" style="border-color: #1c1c1c; margin-top: 50px;">
+	<!-- <div class="panel-heading" style="line-height: 1em;">
+		<h3 class="panel-title" style="text-align: center;">Edit guest number {{@index}}</h3>
+	</div> -->
+	<form role="form">
+		<div class="panel-body form-horizontal" style="padding-bottom: 45px;">
+			<!-- <div class="form-group col-md-12">
+				<label class="col-md-4" for="id">Id:</label>
+				<div class="col-md-8">
+					<input type="text" name="id" class="form-control" value="" readonly>
+				</div>
+			</div>
+			<div class="form-group col-md-12">
+				<label class="col-md-4" for="couple">Couple?:</label>
+				<div class="col-md-8">
+    				<select class="form-control" name="couple">
+						{{#select couple}}
+						<option value="Select an option">Select an option</option>
+						<option value="Couple">Couple</option>
+						<option value="Single">Single</option>
+						{{/select}}
+					</select>
+				</div>
+			</div> -->
+			<!-- <div class="form-group col-md-12"> -->
+				<table class="table table-form" style="width: 100%; table-layout: fixed;">
+					<tr valign="middle">
+						<td><input name="id" hidden></td>
+						<td style="text-align: center; font-weight: 700;">Assistirà al casament</td>
+						<td style="text-align: center; font-weight: 700;">Assistirà al sopar d'assaig</td>
+					</tr>
+					<tr>
+						<td class="fullName1" style="vertical-align: middle;"></td>
+						<td style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+							<label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attWed1" value="Yes">Sí</label>
+							<label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attWed1" value="No">No</label>
+						</td>
+						<td style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+							<label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attReh1" value="Yes">Sí</label>
+							<label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attReh1" value="No">No</label>
+						</td>
+					</tr>
+					<tr class="guestBring">
+						<td class="fullName2" style="vertical-align: middle;">Portaràs un convidat?&nbsp;&nbsp;<button type="submit" class="btn btn-default" name="bringGuestYes" style="padding-bottom: 2px;" value="Yes">Sí</button><button type="submit" class="btn btn-default" name="bringGuestNo" style="padding-bottom: 2px;" value="No">No</button></td>
+						<td> </td>
+						<td> </td>
+					</tr>
+					<tr  class="children">
+						<td style="vertical-align: middle;">Número de nens menors de 12 anys</td>
+						<td style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+						<input id="demo3" type="text" value="" name="childWed" min="0" max="3">
+        					<script>
+            					$("input[name='childWed']").TouchSpin({
+            						min: 0,
+            						max: 3
+            					});
+        					</script>
+							<!-- <input type="number" name="childWed" min="0" style="text-align: center; width: 50px;"> -->
+						</td>
+						<td style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+							<input id="demo3" type="text" value="" name="childReh" min="0" max="3">
+        					<script>
+            					$("input[name='childReh']").TouchSpin({
+            						min: 0,
+            						max: 3
+            					});
+        					</script>
+							<!-- <input type="number" name="childReh" min="0" style="text-align: center; width: 50px;"> -->
+						</td>
+					</tr>
+					<tr>
+						<td style="vertical-align: middle;">Missatge</td>
+						<td colspan="2"><textarea name="message" class="form-control message"></textarea></td>
+					</tr>
+				</table>
+				<div class="super-wrapper">
+					<div class="tooltip-wrapper" data-title="Clica el botó 'Enviar' de més amunt i el teu nom a la llista per modificar el formulari que acabes d'enviar">
+						<button type="submit" class="btn btn-default pull-right" id="btn-send" style="text-align: center; 70px; padding-top: 6px; padding-bottom: 2px; border-color: #fff; background-color: #1c1c1c; border-radius: 0px; color: #fff; font-size: 12px; margin-right: 15px;">Enviar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

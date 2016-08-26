@@ -1,0 +1,11 @@
+<tr class="guestBring">
+	<td class="fullName2" style="vertical-align: middle;"><input type="text" name="fullName2" placeholder="Convidat" style="width: 90px;"></td>
+	<td style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+		<label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attWed2" value="Yes">Sí</label>
+		<label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attWed2" value="No">No</label>
+	</td>
+	<td style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+		<label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attReh2" value="Yes">Sí</label>
+		<label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attReh2" value="No">No</label>
+	</td>
+</tr>
