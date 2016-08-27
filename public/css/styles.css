@@ -206,6 +206,7 @@ ul.dropdown-menu {
 
 	.navbar-collapse a {
 		font-size: 22px;
+    z-index: 10000;
 	}
 
 	.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus,
