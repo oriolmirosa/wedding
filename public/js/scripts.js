@@ -23,8 +23,8 @@ $(function() {
 		var numberSelected = $(this).text();
 
 		var id = $(this).parent().parent().prev().data('remain');
-
-		var price = $(this).parent().parent().parent().prev().prev().children().first().text();
+		//
+		var price = $(this).parent().parent().parent().prev().prev().children().first().children().first().text();
 		price = price.slice(1);
 
 		var totalPrice = (1*price) * (1*numberSelected);
