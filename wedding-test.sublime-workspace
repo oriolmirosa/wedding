@@ -1,0 +1,655 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"paddi",
+				"padding-top"
+			],
+			[
+				"querySe",
+				"querySelectorAll(selectors)	Element"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"colspan",
+				"colspan=\"2"
+			],
+			[
+				"bringGu",
+				"bringGuestClicked"
+			],
+			[
+				"fir",
+				"firstName2"
+			],
+			[
+				"first",
+				"firstName2"
+			],
+			[
+				"firs",
+				"firstName2"
+			],
+			[
+				"updateG",
+				"updateGuestsByThem	(rsvp.js)"
+			],
+			[
+				"attWed",
+				"attWed1	(guests.handlebars)"
+			],
+			[
+				"childw",
+				"childWed"
+			],
+			[
+				"aut",
+				"autofocus	Attr"
+			],
+			[
+				"prev",
+				"preventDefault"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"text-align",
+				"text-align-center"
+			],
+			[
+				"names",
+				"namesSend"
+			],
+			[
+				"last",
+				"lastName2"
+			],
+			[
+				"guest",
+				"guestname	(rsvp.handlebars)"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"back",
+				"background-color	(create.handlebars)"
+			],
+			[
+				"form",
+				"formaction	Attr"
+			],
+			[
+				"em",
+				"email2"
+			],
+			[
+				"attend",
+				"attendingRehearsal2"
+			],
+			[
+				"atted",
+				"attendingRehearsal2"
+			],
+			[
+				"att",
+				"attendingWedding2"
+			],
+			[
+				"eai",
+				"email2"
+			],
+			[
+				"attendingRehea",
+				"attendingRehearsal1"
+			],
+			[
+				"firstname1",
+				"firstName1"
+			],
+			[
+				"console",
+				"console.log	(registry.js)"
+			],
+			[
+				"cons",
+				"console.log	(registry.js)"
+			],
+			[
+				"consol",
+				"console.log	(registry.js)"
+			],
+			[
+				"con",
+				"console.log('with"
+			],
+			[
+				"ItemTransaction",
+				"ItemTransactionSession"
+			],
+			[
+				"number",
+				"numberSelected"
+			],
+			[
+				"item",
+				"itemtrans"
+			],
+			[
+				"ItemTrans",
+				"ItemTransactionSession"
+			],
+			[
+				"Item",
+				"ItemTransactionSessionSchema"
+			],
+			[
+				"ItemT",
+				"ItemTransactionSession"
+			],
+			[
+				"itemId",
+				"itemId"
+			],
+			[
+				"firstChild",
+				"firstChild()	TreeWalker"
+			],
+			[
+				"items",
+				"itemsremaining	(registry.handlebars)"
+			],
+			[
+				"conso",
+				"console.log('Login	(login.handlebars)"
+			],
+			[
+				"hidden",
+				"hidden-xs	(index.handlebars)"
+			],
+			[
+				"container",
+				"container-fluid"
+			],
+			[
+				"ur",
+				"urlRegExp"
+			],
+			[
+				"port",
+				"portrait-crop"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"font-st",
+				"font-style"
+			],
+			[
+				"rel",
+				"relative"
+			],
+			[
+				"table-",
+				"table-cell"
+			],
+			[
+				"likes",
+				"likesTotal"
+			],
+			[
+				"views",
+				"viewsTotal"
+			],
+			[
+				"toLower",
+				"toLowerCase()	String"
+			],
+			[
+				"hre",
+				"href	Attr"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"song",
+				"songName"
+			],
+			[
+				"u",
+				"ul	Tag"
+			],
+			[
+				"he",
+				"href	Attr"
+			],
+			[
+				"l",
+				"len"
+			],
+			[
+				"s",
+				"sqrt	function"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "views/rsvp.handlebars",
+			"settings":
+			{
+				"buffer_size": 18760,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/SendTextPlus/Python - Source File.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Chrome.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/Chrome.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"last_filter": "ins",
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"packag",
+				"Package Control: Install Package"
+			],
+			[
+				"citebi",
+				"Preferences: Terminal Key Bindings – Default"
+			]
+		],
+		"width": 579.0
+	},
+	"console":
+	{
+		"height": 122.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/mirosa/Documents/Programming/Node/wedding-test",
+		"/Users/mirosa/Documents/Programming/Node/wedding-test/bower_components",
+		"/Users/mirosa/Documents/Programming/Node/wedding-test/views/layouts"
+	],
+	"file_history":
+	[
+		"/Users/mirosa/Documents/Programming/Node/wedding-test/views/index.handlebars",
+		"/Users/mirosa/Documents/Programming/Node/wedding/server/routes.js",
+		"/Users/mirosa/Documents/Programming/Node/wedding/server/i18n.js",
+		"/Users/mirosa/Documents/Programming/Node/wedding/public/responseEmail.html",
+		"/Users/mirosa/Documents/Programming/Node/wedding/public/formGuest.html",
+		"/Users/mirosa/Documents/Programming/Node/wedding/public/formSingle.html",
+		"/Users/mirosa/Documents/Programming/Node/wedding/public/form1",
+		"/Users/mirosa/Documents/Programming/Node/wedding/public/form1.html",
+		"/Users/mirosa/Documents/Programming/Node/wedding/public/js/dynamicTable.js",
+		"/Users/mirosa/Library/Application Support/Sublime Text 3/Packages/User/SortTabs.sublime-settings",
+		"/Users/mirosa/Library/Application Support/Sublime Text 3/Packages/SortTabs/SortTabs.sublime-settings",
+		"/Users/mirosa/Documents/Programming/Node/wedding/public/js/typeahead.jquery.js",
+		"/Users/mirosa/Documents/Programming/Node/wedding/public/js/guests.js",
+		"/Users/mirosa/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/mirosa/Documents/Programming/Node/wedding/views/partials/registryitems.handlebars",
+		"/Users/mirosa/Documents/Programming/Node/wedding/public/js/scripts.js",
+		"/Users/mirosa/Documents/Programming/Node/wedding/views/layouts/login.handlebars",
+		"/Users/mirosa/Documents/Programming/Node/wedding/public/login.html",
+		"/Users/mirosa/Documents/Programming/HTML/wedding/index.html",
+		"/Users/mirosa/Library/Application Support/Sublime Text 3/Packages/Web Inspector/Default (OSX).sublime-keymap",
+		"/Users/mirosa/Library/Application Support/Sublime Text 3/Packages/Web Inspector/swi.sublime-settings",
+		"/Users/mirosa/Documents/Programming/Node/wedding/views/layouts/main.handlebars",
+		"/Users/mirosa/Documents/Programming/Node/wedding/views/index.handlebars",
+		"/Users/mirosa/Library/Application Support/Sublime Text 3/Packages/SublimeCodeIntel/Default (OSX).sublime-keymap",
+		"/Users/mirosa/Documents/Programming/Node/imgur/imgur.sublime-project",
+		"/Users/mirosa/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/mirosa/Library/Application Support/Sublime Text 3/Packages/User/SublimeREPL.sublime-settings",
+		"/Users/mirosa/Library/Application Support/Sublime Text 3/Packages/SublimeREPL/SublimeREPL.sublime-settings",
+		"/Users/mirosa/Documents/Programming/Node/imgur/package.json",
+		"/Users/mirosa/Documents/Programming/JavaScript/playlist.js",
+		"/Users/mirosa/Documents/Programming/JavaScript/playlist.html",
+		"/Users/mirosa/Library/Application Support/Sublime Text 3/Packages/Terminality/Default (OSX).sublime-keymap",
+		"/Users/mirosa/Library/Application Support/Sublime Text 3/Packages/Terminal/Default (OSX).sublime-keymap",
+		"/Users/mirosa/Library/Application Support/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/Users/mirosa/Library/Application Support/Sublime Text 3/Packages/User/Python.sublime-settings",
+		"/Users/mirosa/Library/Application Support/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/Users/mirosa/Downloads/prova.tex",
+		"/Users/mirosa/mirosa.org/layouts/section/blog.rss.xml",
+		"/Users/mirosa/Documents/Research/Current Projects/Science SEM WVS/article.md",
+		"/Users/mirosa/Library/Application Support/Sublime Text 3/Packages/User/CiteBibtex.sublime-settings",
+		"/Users/mirosa/mirosa.org/content/blog/everything-you-always-wanted-to-know-about-reference-managers.md",
+		"/Users/mirosa/Documents/Research/R/SEMClimateChange/Final/figure3.svg"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			"<open files>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"27017",
+			"h1",
+			"label",
+			"radio",
+			"Cookie",
+			"table",
+			"in",
+			"li",
+			"text-align: ri",
+			"whoops",
+			"Guest name",
+			"wrapper",
+			"navbar-co",
+			"nav li",
+			"span",
+			"menu",
+			"home",
+			"li",
+			"<a",
+			"title",
+			"data",
+			"btn-send",
+			"guest-btn",
+			"go",
+			"post",
+			"alert",
+			"fade",
+			"show",
+			"slide",
+			"show",
+			".",
+			".bringGuest",
+			"remove",
+			"guestPass",
+			"guestpass",
+			"remove",
+			"messagen",
+			"children",
+			"couple",
+			"table",
+			"prova",
+			"form1",
+			"span",
+			"btn",
+			"button",
+			"input",
+			"body",
+			"dietary",
+			"itemtrans",
+			"itemid",
+			"id",
+			"{",
+			"form",
+			"itemsGiven",
+			"chosenremain",
+			"cjosenremain",
+			"parser",
+			"color",
+			";\">",
+			"sarahoriolLA",
+			".</",
+			"top",
+			"ready.px",
+			"ready.px.parallax.data-api",
+			"new",
+			"parallax",
+			"overflow",
+			"override",
+			"comments",
+			"sidebar",
+			"newest",
+			"get",
+			"newest",
+			"newesr"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"message"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "views/rsvp.handlebars",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18760,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3066,
+								3066
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 9,
+								"count": 535,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"auto_complete": false,
+							"sorttabs_lastactivated": 1472259515.89,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4044.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 20.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 150.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "wedding-test.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/Programming/Node/imgur/imgur.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 71.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 378.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 169.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
