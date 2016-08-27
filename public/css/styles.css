@@ -308,6 +308,11 @@ p {
 	font-family: Josefin Sans;
 }
 
+p.pull-left.totalcart {
+  font-size: 18px;
+  font-weight: 700;
+}
+
 .menu {
 	font-family: Josefin Sans;
 	font-size: 12px;
