@@ -99,6 +99,7 @@ div .navbar-collapse .collapse .pull-right {
     display: table-cell !important;
     padding: 10px 10px 10px 0px;
     /*margin-right: 10px;*/
+    color: #c4c4c4;
   }
 
   .navbar-nav>li {
