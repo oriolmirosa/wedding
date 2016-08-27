@@ -67,7 +67,7 @@ $(function() {
 
 		$('[data-remain=' + id + ']').parent().prev().children().first().children().first().find("strong").html(left.toString());
 
-		$('[data-remain=' + id + ']').find('span:first').text(numberSelected);
+		$('[data-remain=' + id + ']').find('span:first').html('&nbsp;' + numberSelected + '&nbsp;');
 
 		$('.totalcart').find('span').text('$' + totalCart);
 		
