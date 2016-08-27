@@ -255,7 +255,7 @@ div .navbar-collapse .collapse .pull-right {
   }
 
   input {
-    font-size: 16px;
+    font-size: 16px !important;
   }
 }
 
