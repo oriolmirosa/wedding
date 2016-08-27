@@ -21,7 +21,14 @@
 		<link rel="stylesheet" type="text/css" href="https://static1.squarespace.com/static/sitecss/561887b2e4b07e497b4037d3/14/515c7bd0e4b054dae3fcf003/561887b2e4b07e497b4037d9/2710-05142015/1464296431035/site.css?&amp;filterFeatures=false">
 	    <script>
 		    $(document).ready(function() {
-		    	
+		    		
+				var menuspans = document.querySelectorAll(".navbar-nav li a span");
+
+				menuspans.forEach( function (el) {
+					el.parentNode.style.width = el.offsetWidth + 30 + 'px';
+					el.style.visibility = 'visible';
+				});
+
    				var url = window.location.pathname;
 
    				var home = $('a.home').text();
@@ -61,45 +68,9 @@
 					
 					$.get('/language', parameter, function (language) {
 						console.log(language);
-						// window.location.replace("http://stackoverflow.com");
 						location.reload(true);
-
-							// if (language === 'en') {
-							// 	console.log('language returned was en')
-							// 	$('.language>a').html('Catala')
-							// } else if (language === 'ca') {
-							// 	console.log('language returned was ca')
-							// 	$('.language>a').html('English')
-							// }
-						// window.history.go(-2);
 					});
-					// document.querySelectorAll('a.menu').style.width = ;
-
 				});
-
-			
-				var menuspans = document.querySelectorAll(".navbar-nav li a span");
-
-				console.log(menuspans.length);
-
-				console.log(menuspans[0].innerHTML);
-
-				menuspans.forEach( function (el) {
-					console.log(el.innerHTML);
-					el.parentNode.style.width = el.offsetWidth + 30 + 'px';
-				});
-			
-
-				// var menuspans = $('.navbar-nav>li>a>span');
-
-				// console.log($('.navbar.nav>li>a>span').each().text());
-				// $.each(menuspans, console.log($(this).text()));
-				// console.log(menuspans);
-
-				// menuspans.each( function () {
-				// 	console.log($(this).text());
-				// 	$(this).parent().css('width', menuspans.offsetWidth + "px");
-				// });
 
     		});
 		
@@ -131,7 +102,7 @@
 				    </div>
 
 				    <!-- Collect the nav links, forms, and other content for toggling -->
-				    <div class="navbar-collapse collapse pull-right">
+				    <div class="navbar-collapse collapse pull-right" style="visibility: hidden;">
 				      <ul class="nav navbar-nav navbar-right">
 						<li>
 							<a class="menu" href="/ourstory"><span>{{{__ 'Our Story'}}}</span></a>
