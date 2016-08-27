@@ -123,7 +123,7 @@ div .navbar-collapse .collapse .pull-right {
 
 @media screen and (min-width: 771px) {
 
-  a.menu {
+  a.menu, a.menu.home {
     max-width: 155px;
     text-align: center;
     height: 40px;
