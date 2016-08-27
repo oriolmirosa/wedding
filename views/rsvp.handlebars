@@ -17,25 +17,25 @@
 		function createResponse () {
 			$('.table-form').clone(true, true).appendTo($('#response'));
 			$('#response .table').css('border', '1px solid black');
-			$('#response input[name=id]').remove();
+			$('#response input[name="id"]').remove();
 			$('#response table').css('border', '1px solid black');
 			$('#response th').css('border', '1px solid black');
 			$('#response td').css('border', '1px solid black');
 			$('#response td').css('padding', '5px');
 			$('#response table').css('border-radius', '6px');
 			$('#response .table').css('border-collapse', 'collapse');
-			var attWed1 = $('input[name=attWed1]:checked').val();
+			var attWed1 = $('input[name="attWed1"]:checked').val();
 			$('#response .attWed1').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed1+'</p></td>');
-			var attWed2 = $('input[name=attWed2]:checked').val();
+			var attWed2 = $('input[name="attWed2"]:checked').val();
 			$('#response .attWed2').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed2+'</p></td>');
-			var attReh1 = $('input[name=attReh1]:checked').val();
+			var attReh1 = $('input[name="attReh1"]:checked').val();
 			$('#response .attReh1').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh1+'</p></td>');
-			var attReh2 = $('input[name=attReh2]:checked').val();
+			var attReh2 = $('input[name="attReh2"]:checked').val();
 			$('#response .attReh2').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh2+'</p></td>');
 
-			var childWed = $('input[name=childWed]').val();
+			var childWed = $('input[name="childWed"]').val();
 			$('#response .childWed').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+childWed+'</p></td>');
-			var childReh = $('input[name=childReh]').val();
+			var childReh = $('input[name="childReh"]').val();
 			$('#response .childReh').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+childReh+'</p></td>');
 
 			var message = $('.message').val();
@@ -44,25 +44,25 @@
 		
 
 		function fillIn (selectedGuest) {
-			$('input[name=id]').val(selectedGuest._id);
-			$('input[name=attWed1]:radio').val([selectedGuest.attWed1]);
-			$('input[name=attReh1]:radio').val([selectedGuest.attReh1]);
-			$('input[name=attWed2]:radio').val([selectedGuest.attWed2]);
-			$('input[name=attReh2]:radio').val([selectedGuest.attReh2]);
-			$('input[name=childWed]').val(selectedGuest.childWed);
-			$('input[name=childReh]').val(selectedGuest.childReh);
+			$('input[name="id"]').val(selectedGuest._id);
+			$('input[name="attWed1"]:radio').val([selectedGuest.attWed1]);
+			$('input[name="attReh1"]:radio').val([selectedGuest.attReh1]);
+			$('input[name="attWed2"]:radio').val([selectedGuest.attWed2]);
+			$('input[name="attReh2"]:radio').val([selectedGuest.attReh2]);
+			$('input[name="childWed"]').val(selectedGuest.childWed);
+			$('input[name="childReh"]').val(selectedGuest.childReh);
 			$('.message').text(selectedGuest.message);
 		};
 
 		function passGuests () {
 			var guestsPass = {
 				id: $('input[name=id]').val(),
-				attWed1: $('input[name=attWed1]:checked').val(),
-				attReh1: $('input[name=attReh1]:checked').val(),
-				attWed2: $('input[name=attWed2]:checked').val(),
-				attReh2: $('input[name=attReh2]:checked').val(),
-				childWed: $('input[name=childWed]').val(),
-				childReh: $('input[name=childReh]').val(),
+				attWed1: $('input[name="attWed1"]:checked').val(),
+				attReh1: $('input[name="attReh1"]:checked').val(),
+				attWed2: $('input[name="attWed2"]:checked').val(),
+				attReh2: $('input[name="attReh2"]:checked').val(),
+				childWed: $('input[name="childWed"]').val(),
+				childReh: $('input[name="childReh"]').val(),
 				message: $('.message').val()
 			}
 			console.log($('.message').val());
@@ -71,19 +71,19 @@
 
 		function thankyouNote (firstName1, firstName2) {
 			if (firstName2 != null) {
-				if ($('input[name=attWed1]:checked').val() === 'Yes' && $('input[name=attWed2]:checked').val() === 'Yes') {
+				if ($('input[name="attWed1"]:checked').val() === 'Yes' && $('input[name="attWed2"]:checked').val() === 'Yes') {
 					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Yay! We\'re so excited to see you both in Santa Fe!"}}}</p><br/><br/>');
-				} else if ($('input[name=attWed1]:checked').val() === 'Yes' && $('input[name=attWed2]:checked').val() === 'No') {
+				} else if ($('input[name="attWed1"]:checked').val() === 'Yes' && $('input[name="attWed2"]:checked').val() === 'No') {
 					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "We\'re so excited to see"}}} ' + firstName1 + ' {{{__ "in Santa Fe, but we\'ll miss"}}} ' + firstName2 + '!</p><br/><br/>');
-				} else if ($('input[name=attWed1]:checked').val() === 'No' && $('input[name=attWed2]:checked').val() === 'Yes') {
+				} else if ($('input[name="attWed1"]:checked').val() === 'No' && $('input[name="attWed2"]:checked').val() === 'Yes') {
 					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "We\'re so excited to see"}}} ' + firstName2 + ' {{{__ "in Santa Fe, but we\'ll miss"}}} ' + firstName1 + '!</p><br/><br/>');
-				} else if ($('input[name=attWed1]:checked').val() === 'No' && $('input[name=attWed2]:checked').val() === 'No') {
+				} else if ($('input[name="attWed1"]:checked').val() === 'No' && $('input[name="attWed2"]:checked').val() === 'No') {
 					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Aw, we\'re so sorry you won\'t be able to join us!"}}}</p><br/><br/>');
 				}
 			} else {
-				if ($('input[name=attWed1]:checked').val() === 'Yes') {
+				if ($('input[name="attWed1"]:checked').val() === 'Yes') {
 					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Yay! We\'re so excited to see you in Santa Fe!"}}}</p><br/><br/>');
-				} else if ($('input[name=attWed1]:checked').val() === 'No') {
+				} else if ($('input[name="attWed1"]:checked').val() === 'No') {
 					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Aw, we\'re so sorry you won\'t be able to join us!"}}}</p><br/><br/>');
 				}
 			}
@@ -152,28 +152,28 @@
 				    					if ((1*selectedGuest.children) === 0) $('.children').remove();
 						    			var attWed1checked = 'Neither';
 						    			var attWed2checked = 'Neither';
-						    			if ($('input[name=attWed1][value="Yes"').is(':checked')) {
+						    			if ($('input[name="attWed1"][value="Yes"]').is(':checked')) {
 						    				attWed1checked = 'Yes';
 						    			}
-						    			if ($('input[name=attWed1][value="No"').is(':checked')) {
+						    			if ($('input[name="attWed1"][value="No"]').is(':checked')) {
 						    				attWed1checked = 'No';
 						    			}
-						    			if ($('input[name=attWed2][value="Yes"').is(':checked')) {
+						    			if ($('input[name="attWed2"][value="Yes"]').is(':checked')) {
 						    				attWed2checked = 'Yes';
 						    			}
-						    			if ($('input[name=attWed2][value="No"').is(':checked')) {
+						    			if ($('input[name="attWed2"][value="No"]').is(':checked')) {
 						    				attWed2checked = 'No';
 						    			}
-						    			$('input[name=attWed1][value="No"]').click( function () {
+						    			$('input[name="attWed1"][value="No"]').click( function () {
 						    				attWed1checked = 'No';
 						    			});
-						    			$('input[name=attWed1][value="Yes"]').click( function () {
+						    			$('input[name="attWed1"][value="Yes"]').click( function () {
 						    				attWed1checked = 'Yes';
 						    			});
-						    			$('input[name=attWed2][value="No"]').click( function () {
+						    			$('input[name="attWed2"][value="No"]').click( function () {
 						    				attWed2checked = 'No';
 						    			});
-						    			$('input[name=attWed2][value="Yes"]').click( function () {
+						    			$('input[name="attWed2"][value="Yes"]').click( function () {
 						    				attWed2checked = 'Yes';
 						    			});
 
@@ -215,11 +215,11 @@
 						    			fillIn(selectedGuest);
 						    			console.log('selectedGuest.children: ' + selectedGuest.children);
 				    					if ((1*selectedGuest.children) === 0) $('.children').remove();
-						    			if ($('input[name=attWed1][value="Yes"').is(':checked')) {
+						    			if ($('input[name="attWed1"][value="Yes"]').is(':checked')) {
 						    				console.log('Yes is checked at beginning');
 						    				attWed1checked = 'Yes';
 						    				console.log('attWed1checked: ' + attWed1checked);
-						    			} else if ($('input[name=attWed1][value="No"').is(':checked')) {
+						    			} else if ($('input[name="attWed1"][value="No"]').is(':checked')) {
 						    				console.log('No is checked at beginning');
 						    				attWed1checked = 'No';
 						    				console.log('attWed1checked: ' + attWed1checked);
@@ -230,7 +230,7 @@
 						    				console.log('Neither radio button is checked at the beginning');
 						    			}
 
-						    			$('input[name=attWed1][value="No"]').click( function () {
+						    			$('input[name="attWed1"][value="No"]').click( function () {
 						    				$('.guestBring').fadeOut();
 						    				console.log('attWed1 No has been checked')
 						    				attWed1checked = 'No';
@@ -239,7 +239,7 @@
 						    				console.log('bringGuestClicked: ' + bringGuestClicked);
 						    			});
 
-						    			$('input[name=attWed1][value="Yes"]').click( function () {
+						    			$('input[name="attWed1"][value="Yes"]').click( function () {
 					    					$('.guestBring').fadeIn();
 					    					attWed1checked = 'Yes';
 					    					console.log('attWed1checked: ' + attWed1checked);
@@ -248,7 +248,7 @@
 					    					}
 					    				});
 										
-										$('button[name=bringGuestYes]').click( function (e) {
+										$('button[name="bringGuestYes"]').click( function (e) {
 											e.preventDefault();
 											bringGuestClicked = 'Yes';
 											console.log('bringGuestClicked: ' + bringGuestClicked);
@@ -262,12 +262,12 @@
 							    				$('.guestBring').fadeOut('slow', function () {
 							    					$(this).replaceWith(formGuest);
 							    					$('.guestBring').fadeIn();
-							    					$('input[name=attWed2][value="Yes"').prop("checked", true);
+							    					$('input[name="attWed2"][value="Yes"]').prop("checked", true);
 							    				});
 							    			});
 					    				});
 
-					    				$('button[name=bringGuestNo]').click( function (e) {
+					    				$('button[name="bringGuestNo"]').click( function (e) {
 						    				e.preventDefault();
 						    				bringGuestClicked = 'No';
 						    				console.log('bringGuestClicked: ' + bringGuestClicked);
@@ -298,7 +298,7 @@
 						    					});
 					    					} else if (bringGuestClicked === 'Yes') {
 					    						var guestsPass = passGuests();
-								    			var fullName2a = $('input[name=fullName2]').val();
+								    			var fullName2a = $('input[name="fullName2"]').val();
 					    						if (fullName2a === '' || fullName2a == null) {
 					    							swal('{{{__ "Whoops! What\'s your guest\'s name?"}}}');
 					    						} else {
