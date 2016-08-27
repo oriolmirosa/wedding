@@ -50,17 +50,19 @@
 	    								<p style="margin-bottom: 0px;">{{description.localized}}</p>
 	    						</div>
 	    						<div class="col-sm-3 col-xs-12">
-	    							<div class="row">
-	    								<div class="col-xs-4 col-sm-12" style="min-height: 25px; display: flex; align-items: center; justify-content: center;">
-	    									<p style="font-size: 22px; font-weight: 800; text-decoration: bold; text-align: center; margin-bottom: 0px; line-height: 1em;"><strong>${{price}}</strong></p>
+	    							<div class="row registry-xs-below">
+	    								<div class="col-xs-4 col-sm-12" style="min-height: 25px; padding-left: 0px; padding-right: 0px;">
+    										<div style="padding: 3px; align-items: center; justify-content: center;">
+												<p style="font-size: 22px; margin-bottom: 0; font-weight: 800; text-decoration: bold; text-align: center;"><strong>${{price}}</strong></p>
+											</div>
 										</div>
 										<div class="col-xs-4 col-sm-12" style="min-height: 25px; padding-left: 0px; padding-right: 0px;">
 											<div style="padding: 3px; display: flex; align-items: center; justify-content: center;">
 	    										<p style="color: #1c1c1c; margin-bottom: 0; font-size: 14px; text-align: center;"><strong>{{remaining}}</strong>&nbsp;{{#with ../this}}{{{__ 'remaining'}}}{{/with}}</p>
 											</div>
 										</div>
-										<div class="col-xs-4 col-sm-12 dropdown" style="display: flex; justify-content: center; min-height: 25px;">
-		    								<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="btn-remain" data-remain="{{_id}}" aria-haspopup="true" aria-expanded="true" style="width: 75px; padding-top: 0px; padding-bottom: 0px; border-color: #fff; background-color: #1c1c1c; border-radius: 0px; color: #fff; font-size: 12px;">{{#with ../this}}{{{__ 'Give'}}}{{/with}}<span>...&nbsp;</span><span class="caret" style="color: #fff;"></span></button>
+										<div class="col-xs-4 col-sm-12 dropdown" style="display: flex; height: 31px; padding-left: 0px; padding-right: 0px; align-items: center; justify-content: center;">
+    										<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="btn-remain" data-remain="{{_id}}" aria-haspopup="true" aria-expanded="true" style="height: 25px; width: 75px; padding-top: 0px; padding-bottom: 0px; border-color: #fff; background-color: #1c1c1c; border-radius: 0px; color: #fff; font-size: 12px;">{{#with ../this}}{{{__ 'Give'}}}{{/with}}<span>...&nbsp;</span><span class="caret" style="color: #fff;"></span></button>
 	    									<ul class="dropdown-menu itemsremaining" style=" min-width: 70px; width: 70px;">
 	    										{{#times remaining}}
     									    	<li style="text-align: center;"><a href="#">{{this}}</a></li>
