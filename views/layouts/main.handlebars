@@ -22,7 +22,7 @@
 	    <script>
 		    $(document).ready(function() {
 		    		
-				var menuspans = document.querySelectorAll(".navbar-nav li a span");
+				var menuspans = document.querySelectorAll(".navbar-nav>li>a>span");
 
 				menuspans.forEach( function (el) {
 					el.parentNode.style.width = el.offsetWidth + 30 + 'px';
@@ -102,25 +102,25 @@
 				    </div>
 
 				    <!-- Collect the nav links, forms, and other content for toggling -->
-				    <div class="navbar-collapse collapse pull-right" style="visibility: hidden;">
+				    <div class="navbar-collapse collapse pull-right">
 				      <ul class="nav navbar-nav navbar-right">
 						<li>
-							<a class="menu" href="/ourstory"><span>{{{__ 'Our Story'}}}</span></a>
+							<a class="menu" href="/ourstory"><span style="visibility: hidden;">{{{__ 'Our Story'}}}</span></a>
             			</li>
           				<li>
-          				 	<a class="menu" href="/travel"><span>{{{__ 'Travel'}}}</span></a>
+          				 	<a class="menu" href="/travel"><span style="visibility: hidden;">{{{__ 'Travel'}}}</span></a>
 						</li>
           				<li>
-							<a class="menu" href="/events"><span>{{{__ 'Events'}}}</span></a>
+							<a class="menu" href="/events"><span style="visibility: hidden;">{{{__ 'Events'}}}</span></a>
 					    </li>
 					    <li class="active">
-							<a class="menu" href="/rsvp"><span>{{{__ 'RSVP'}}}</span></a>
+							<a class="menu" href="/rsvp"><span style="visibility: hidden;">{{{__ 'RSVP'}}}</span></a>
 					    </li>
 					    <li>
-							<a class="menu" href="/registry"><span>{{{__ 'Registry'}}}</span></a>
+							<a class="menu" href="/registry"><span style="visibility: hidden;">{{{__ 'Registry'}}}</span></a>
 					    </li>
           				<li>
-					     	<a class="menu home" href="/"><span>{{{__ 'Home'}}}</span></a>
+					     	<a class="menu home" href="/"><span style="visibility: hidden;">{{{__ 'Home'}}}</span></a>
             			</li>
 				      </ul>
 				    </div><!-- /.navbar-collapse -->
