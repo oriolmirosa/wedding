@@ -60,7 +60,7 @@
 											</div>
 										</div>
 										<div class="col-xs-4 col-sm-12 dropdown" style="display: flex; justify-content: center; min-height: 25px;">
-		    								<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="btn-remain" data-remain="{{_id}}" aria-haspopup="true" aria-expanded="true" style="width: 75px; padding-top: 0px; padding-bottom: 0px; border-color: #fff; background-color: #1c1c1c; border-radius: 0px; color: #fff; font-size: 12px;">{{#with ../this}}{{{__ 'Give'}}}{{/with}}&nbsp;<span>...</span><span class="caret" style="color: #fff;"></span></button>
+		    								<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="btn-remain" data-remain="{{_id}}" aria-haspopup="true" aria-expanded="true" style="width: 75px; padding-top: 0px; padding-bottom: 0px; border-color: #fff; background-color: #1c1c1c; border-radius: 0px; color: #fff; font-size: 12px;">{{#with ../this}}{{{__ 'Give'}}}{{/with}}<span>...&nbsp;</span><span class="caret" style="color: #fff;"></span></button>
 	    									<ul class="dropdown-menu itemsremaining" style=" min-width: 70px; width: 70px;">
 	    										{{#times remaining}}
     									    	<li style="text-align: center;"><a href="#">{{this}}</a></li>
@@ -75,7 +75,7 @@
 					</div>
 				</div>
 	     	   	<div class="modal-footer">
-	        		<button type="button" class="btn btn-default" data-dismiss="modal">{{{__ 'Close'}}}</button>
+	        		<button type="button" class="btn btn-default" id="btn-registry-close" data-dismiss="modal">{{{__ 'Close'}}}</button>
 	      		</div>
 	    	</div>
 	    </div>

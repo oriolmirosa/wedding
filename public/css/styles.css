@@ -339,6 +339,14 @@ p.hiddenblur {
   margin-top: 3px;
 }
 
+#btn-registry-close {
+  padding-bottom: 3px;
+}
+
+div.col-xs-4.col-sm-12.dropdown {
+  
+}
+
 .menu {
 	font-family: Josefin Sans;
 	font-size: 12px;
