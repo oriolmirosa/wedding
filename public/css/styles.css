@@ -17,6 +17,7 @@ body {
 
 a.language {
   font-variant: small-caps;
+  color: #b89065;
 }
 
 @media screen and (max-width: 600px) {
