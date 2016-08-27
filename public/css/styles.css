@@ -33,6 +33,10 @@ a.language {
 		background-repeat: no-repeat;
 	  background-attachment: fixed;
 	  background-position: center;
+  }
+
+  .hidedesktop {
+    visibility: hidden;
 	}
 
   #language {
