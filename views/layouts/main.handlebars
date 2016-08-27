@@ -3,8 +3,8 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Sarah and Oriol</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<!-- <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script> -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+		<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 		<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> -->
 		<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
@@ -52,6 +52,23 @@
    					$('a.language').html('switch to english version');
    				}
    				console.log('currLang: ' + currLang);
+
+   				$('a.language').click( function (e) {
+					e.preventDefault();
+					console.log('currLang: ' + currLang);
+					console.log('clicked language');
+					if (currLang === 'ca') {
+						var parameter = { lang: 'en' };	
+					} else {
+						var parameter = { lang: 'ca' };
+					}
+					
+					$.get('/language', parameter, function (language) {
+						console.log(language);
+						location.reload(true);
+					});
+				});
+				
    			});
 
 
@@ -72,26 +89,6 @@
         			}
 				});
 			});
-
-			$(function () {
-
-				$('a.language').click( function (e) {
-					e.preventDefault();
-					console.log('currLang: ' + currLang);
-					console.log('clicked language');
-					if (currLang === 'ca') {
-						var parameter = { lang: 'en' };	
-					} else {
-						var parameter = { lang: 'ca' };
-					}
-					
-					$.get('/language', parameter, function (language) {
-						console.log(language);
-						location.reload(true);
-					});
-				});
-
-    		});
 
     		$(function () {
 		
