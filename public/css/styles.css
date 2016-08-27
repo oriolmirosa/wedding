@@ -100,6 +100,7 @@ div .navbar-collapse .collapse .pull-right {
     padding: 10px 10px 10px 0px;
     /*margin-right: 10px;*/
     color: #c4c4c4;
+    z-index: 10001;
   }
 
   .navbar-nav>li {
@@ -296,7 +297,7 @@ p {
 	text-align: right;
 	list-style: none;
 	line-height: 1em;
-	z-index: 8002;
+	z-index: 10000;
 }
 
 .portrait-crop-first {
