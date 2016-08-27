@@ -24,14 +24,15 @@
 		    $(function () {
 		    	
 				var menuspans = document.querySelectorAll(".navbar-nav li a span");
-
-				menuspans.forEach( function (el) {
-					el.parentNode.style.width = el.offsetWidth + 30 + 'px';
+				Array.prototype.forEach.call(menuspans, function (el) {
+				// menuspans.forEach( function (el) {
+					el.parentNode.style.width = el.offsetWidth + 33 + 'px';
 					el.style.visibility = 'visible';
 				});
 
 				document.querySelectorAll('button.navbar-toggle').onclick = function (e) {
-					menuspans.forEach( function (el) {
+					Array.prototype.forEach.call(menuspans, function (el) {
+					// menuspans.forEach( function (el) {
 						el.parentNode.style.width = el.offsetWidth + 30 + 'px';
 						el.style.visibility = 'visible';
 					});		    		
