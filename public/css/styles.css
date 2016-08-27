@@ -114,6 +114,7 @@ div .navbar-collapse .collapse .pull-right {
   
   button.navbar-toggle {
     margin-bottom: 15px;
+
   }
 
   a.navbar-brand {
@@ -150,7 +151,8 @@ div .navbar-collapse .collapse .pull-right {
 }
 
 ul.dropdown-menu {
-  margin-right: 95px;
+  /*margin-right: 0px;*/
+  left: 23px;
 }
 
 
@@ -276,6 +278,17 @@ ul.dropdown-menu {
   h1 {
     font-size: 5vw !important;
   }
+}
+
+button.dropdown-toggle {
+  position: relative;
+}
+
+ul.dropdown-menu {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 100%;
 }
 
 div .col-xs-12 {
