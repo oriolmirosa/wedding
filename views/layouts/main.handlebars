@@ -23,13 +23,13 @@
 	    <script>
 		    $(function () {
 		    	
-				var menuspans = document.querySelectorAll(".navbar-nav>li>a>span");
+				var menuspans = document.querySelectorAll(".navbar-nav li a span");
 
 				menuspans.forEach( function (el) {
 					el.parentNode.style.width = el.offsetWidth + 30 + 'px';
 					el.style.visibility = 'visible';
 				});
-				
+
 				document.querySelectorAll('button.navbar-toggle').onclick = function (e) {
 					menuspans.forEach( function (el) {
 						el.parentNode.style.width = el.offsetWidth + 30 + 'px';
