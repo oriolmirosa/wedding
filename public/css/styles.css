@@ -313,6 +313,32 @@ p.pull-left.totalcart {
   font-weight: 700;
 }
 
+div.hiddenblur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  height: 99%;
+  vertical-align: middle;
+  border-radius: 6px;
+}
+
+p.hiddenblur {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  font-size: 18px;
+  z-index: 9999;
+  color: #fff;
+  margin-top: 3px;
+}
+
 .menu {
 	font-family: Josefin Sans;
 	font-size: 12px;
