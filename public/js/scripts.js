@@ -57,6 +57,12 @@ $(function() {
 
 		console.log('totalCart: ' + totalCart);
 
+		var prova = document.querySelectorAll('[data-remain="' + id + '"]');
+
+		Array.prototype.forEach.call(prova, function (el) {
+			console.log('prova: ' + el.innerHTML);
+		}	
+
 		var $rightButton = $('[data-remain="' + id + '"]');
 		var rightButton = document.querySelector('[data-remain="' + id + '"]');
 
@@ -69,7 +75,7 @@ $(function() {
 		console.log('rightButton.innerHTML: ' + rightButton.innerHTML);
 
 		// var remaining = $('[data-remain="' + id + '"]').parent().prev().children().first().children().first().find("strong").html();
-		var prova = document.querySelectorAll('[data-remain="' + id + '"]');
+		
 		// var prova = rightButton.parentNode.parentNode.tagName
 
 		console.log(prova[0].innerHTML);
