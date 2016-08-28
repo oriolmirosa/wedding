@@ -77,12 +77,12 @@ $(function() {
 			console.log(el.innerHTML);
 		}	
 
-		// console.log('prova: ' + prova)
-		// console.log('prova[0]: ' + prova[0]);
-		// console.log('prova[1].innerHTML: ' + prova[1].innerHTML);
-		// console.log('prova[2].innerHTML: ' + prova[2].innerHTML);
+		console.log('prova: ' + prova)
+		console.log('prova[0]: ' + prova[0]);
+		console.log('prova[1].innerHTML: ' + prova[1].innerHTML);
+		console.log('prova[2].innerHTML: ' + prova[2].innerHTML);
 
-		var remaining = 6;
+		var remaining = prova[0].innerHTML;
 
 		var left;
 
@@ -98,10 +98,10 @@ $(function() {
 		// rightButton.parentNode.previousSibling.firstChild.firstChild.querySelector('strong').innerHTML = left.toString();
 		// rightButton.querySelector('span').innerHTML = '&nbsp;' + numberSelected + '&nbsp;'
 
-		// prova[0].innerHTML = left.toString();
+		prova[0].innerHTML = left.toString();
 		// $('[data-remain="' + id + '"]').parent().prev().children().first().children().first().find("strong").html(left.toString());
 
-		// prova[2].innerHTML = '&nbsp;' + numberSelected + '&nbsp;'
+		prova[2].innerHTML = '&nbsp;' + numberSelected + '&nbsp;'
 		// $('[data-remain="' + id + '"]').find('span').first().html('&nbsp;' + numberSelected + '&nbsp;');
 
 		$('.totalcart').find('span').text('$' + totalCart);
