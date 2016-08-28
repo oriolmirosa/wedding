@@ -4,7 +4,8 @@ $(function() {
 
 	var totals = [];
 	$('.dropdown').each(function(index) {
-		var prova = $(this).children().first().next().children().length;
+		var fulfilled = $(this).children().first().next().children().length;
+		console.log('fulfilled[' + index + ']: ' + fulfilled);
 		if ($(this).children().first().next().children().length == 1) {
 			$(this).children().first().html('Fulfilled');
 			$(this).children().first().prop("disabled", true);
@@ -16,11 +17,13 @@ $(function() {
 	
 	$(".dropdown").on("shown.bs.dropdown", function (event) {
 	    initialValue = $(this).children().first().find('span').first().text();
+	    console.log('initialValue: ' + initialValue);
 	});
 
 	$('.itemsremaining li > a').click(function (e) {
 		e.preventDefault();
 		var numberSelected = $(this).text();
+		console.log('numberSelected: ' + numberSelected);
 
 		var id = $(this).parent().parent().prev().data('remain');
 		
