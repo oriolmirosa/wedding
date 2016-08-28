@@ -125,6 +125,10 @@ div .navbar-collapse .collapse .pull-right {
     padding-top: 0px;
     margin-top: 17px;
   }
+  
+  a.ourstory {
+    white-space: nowrap;
+  }
 }
 
 
