@@ -82,7 +82,7 @@ $(function() {
 		// console.log('prova[1].innerHTML: ' + prova[1].innerHTML);
 		// console.log('prova[2].innerHTML: ' + prova[2].innerHTML);
 
-		var remaining = prova[0].innerHTML;
+		var remaining = 6;
 
 		var left;
 
