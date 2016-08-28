@@ -183,6 +183,10 @@ ul.dropdown-menu {
 	color: #1c1c1c;
 }
 
+.navbar-default .navbar-nav>li>a:active {
+  color: #1c1c1c;
+}
+
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
 	background-color: #fff;
 }
