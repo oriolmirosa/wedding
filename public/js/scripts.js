@@ -72,9 +72,10 @@ $(function() {
 		var prova = document.querySelectorAll('[data-remain="' + id + '"]');
 		// var prova = rightButton.parentNode.parentNode.tagName
 
-		console.log(prova[0].innerHTML);
-		console.log(prova[1].innerHTML);
-		console.log(prova[2].innerHTML);
+		console.log('prova: ' + prova)
+		console.log('prova[0].innerHTML: ' + prova[0].innerHTML);
+		console.log('prova[1].innerHTML: ' + prova[1].innerHTML);
+		console.log('prova[2].innerHTML: ' + prova[2].innerHTML);
 
 		var remaining = prova[0].innerHTML;
 
