@@ -61,7 +61,7 @@ $(function() {
 
 		Array.prototype.forEach.call(prova, function (el) {
 			console.log('prova: ' + el.innerHTML);
-		}	
+		});
 
 		var $rightButton = $('[data-remain="' + id + '"]');
 		var rightButton = document.querySelector('[data-remain="' + id + '"]');
