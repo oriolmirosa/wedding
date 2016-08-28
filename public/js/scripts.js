@@ -73,7 +73,7 @@ $(function() {
 		// var prova = rightButton.parentNode.parentNode.tagName
 
 		console.log('prova: ' + prova)
-		console.log('prova[0].innerHTML: ' + prova[0].textContent);
+		console.log('prova[0]: ' + prova[0]);
 		console.log('prova[1].innerHTML: ' + prova[1].innerHTML);
 		console.log('prova[2].innerHTML: ' + prova[2].innerHTML);
 
