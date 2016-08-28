@@ -25,9 +25,13 @@ $(function() {
 		var numberSelected = $(this).text();
 		console.log('numberSelected: ' + numberSelected);
 
-		var id = $(this).parent().parent().prev().data('remain');
+		// var id2 = $(this).parent().parent().prev().data('remain');
+		var id = $(this).parent().parent().prev().attr('data-remain');
+		// var id3 = $(this).parent().parent().prev().prop('data-remain');
 		
 		console.log('id: ' + id);
+		// console.log('id2: ' + id2);
+		// console.log('id3: ' + id3);
 
 		var price = $(this).parent().parent().parent().prev().prev().children().first().children().first().text();
 		price = price.slice(1);
