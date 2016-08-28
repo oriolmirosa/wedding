@@ -57,35 +57,42 @@ $(function() {
 
 		console.log('totalCart: ' + totalCart);
 
-		var prova = document.querySelectorAll('[data-remain="' + id + '"]');
+		// var prova = document.querySelectorAll('[data-remain="' + id + '"]');
 
-		console.log('prova.length: ' + prova.length);
-		console.log('typeof prova: ' + typeof prova);
+		// console.log('prova.length: ' + prova.length);
+		// console.log('typeof prova: ' + typeof prova);
 
-		Array.prototype.forEach.call(prova, function (el) {
-			console.log('prova: ' + el.innerHTML);
-		});
+		// Array.prototype.forEach.call(prova, function (el) {
+		// 	console.log('prova: ' + el.innerHTML);
+		// });
 
-		var $rightButton = $('[data-remain="' + id + '"]');
-		var rightButton = document.querySelector('[data-remain="' + id + '"]');
+		var $remain = $('strong[data-remain="' + id + '"]');
+		var $selected = $('span[data-remain="' + id + '"]');
 
-		console.log('typeof $rightButton: ' + typeof $rightButton);
-		console.log('$rightButton: ' + $rightButton);
-		console.log('$rightButton.text(): ' + $rightButton.text());
+		console.log('$remain.text(): ' + $remain.text());
+		console.log('$remain.html(): ' + $remain.html());
+		console.log('$selected.text(): ' + $selected.text());
+		console.log('$selected.html(): ' + $selected.html());
 
-		console.log('typeof rightButton: ' + typeof rightButton);
-		console.log('rightButton: ' + rightButton);
-		console.log('rightButton.innerHTML: ' + rightButton.innerHTML);
+		// var rightButton = document.querySelector('[data-remain="' + id + '"]');
+
+		// console.log('typeof $rightButton: ' + typeof $rightButton);
+		// console.log('$rightButton: ' + $rightButton);
+		// console.log('$rightButton.text(): ' + $rightButton.text());
+
+		// console.log('typeof rightButton: ' + typeof rightButton);
+		// console.log('rightButton: ' + rightButton);
+		// console.log('rightButton.innerHTML: ' + rightButton.innerHTML);
 
 		// var remaining = $('[data-remain="' + id + '"]').parent().prev().children().first().children().first().find("strong").html();
 		
 		// var prova = rightButton.parentNode.parentNode.tagName
 
-		console.log(prova[0].innerHTML);
-		console.log(prova[1].innerHTML);
-		console.log(prova[2].innerHTML);
+		// console.log(prova[0].innerHTML);
+		// console.log(prova[1].innerHTML);
+		// console.log(prova[2].innerHTML);
 
-		var remaining = prova[0].innerHTML;
+		var remaining = $remain.text();
 
 		var left;
 
@@ -101,10 +108,10 @@ $(function() {
 		// rightButton.parentNode.previousSibling.firstChild.firstChild.querySelector('strong').innerHTML = left.toString();
 		// rightButton.querySelector('span').innerHTML = '&nbsp;' + numberSelected + '&nbsp;'
 
-		prova[0].innerHTML = left.toString();
+		$remain.text(left.toString());
 		// $('[data-remain="' + id + '"]').parent().prev().children().first().children().first().find("strong").html(left.toString());
 
-		prova[2].innerHTML = '&nbsp;' + numberSelected + '&nbsp;'
+		$selected.html('&nbsp;' + numberSelected + '&nbsp;');
 		// $('[data-remain="' + id + '"]').find('span').first().html('&nbsp;' + numberSelected + '&nbsp;');
 
 		$('.totalcart').find('span').text('$' + totalCart);
