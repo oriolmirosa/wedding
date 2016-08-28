@@ -59,6 +59,9 @@ $(function() {
 
 		var prova = document.querySelectorAll('[data-remain="' + id + '"]');
 
+		console.log('prova.length: ' + prova.length);
+		console.log('typeof prova: ' + typeof prova);
+
 		Array.prototype.forEach.call(prova, function (el) {
 			console.log('prova: ' + el.innerHTML);
 		});
