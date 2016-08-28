@@ -263,14 +263,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "views/rsvp.handlebars",
-			"settings":
-			{
-				"buffer_size": 18760,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -358,11 +350,12 @@
 	"expanded_folders":
 	[
 		"/Users/mirosa/Documents/Programming/Node/wedding-test",
-		"/Users/mirosa/Documents/Programming/Node/wedding-test/bower_components",
-		"/Users/mirosa/Documents/Programming/Node/wedding-test/views/layouts"
+		"/Users/mirosa/Documents/Programming/Node/wedding-test/bower_components"
 	],
 	"file_history":
 	[
+		"/Users/mirosa/Documents/Programming/Node/wedding-test/views/layouts/main.handlebars",
+		"/Users/mirosa/Documents/Programming/Node/wedding-test/views/rsvp.handlebars",
 		"/Users/mirosa/Documents/Programming/Node/wedding-test/views/index.handlebars",
 		"/Users/mirosa/Documents/Programming/Node/wedding/server/routes.js",
 		"/Users/mirosa/Documents/Programming/Node/wedding/server/i18n.js",
@@ -516,49 +509,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "views/rsvp.handlebars",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 18760,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3066,
-								3066
-							]
-						],
-						"settings":
-						{
-							"WordCount":
-							{
-								"changes": 9,
-								"count": 535,
-								"modified": false,
-								"selection": false,
-								"status": -1,
-								"syntax": "plain text"
-							},
-							"auto_complete": false,
-							"sorttabs_lastactivated": 1472259515.89,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 4044.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
