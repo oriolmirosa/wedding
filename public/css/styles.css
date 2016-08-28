@@ -285,6 +285,7 @@ ul.dropdown-menu {
 }
 
 @media only screen and (max-width: 350px) {
+
   div.dropdown{
     width: 90px;
   }
@@ -299,11 +300,6 @@ ul.dropdown-menu {
   left: 50%;
   transform: translate(-50%, 0);
   top: 100%;
-}
-
-div .col-xs-12 {
-	padding-right: 0px;
-	padding-left: 0px;
 }
 
 .navbar-default .navbar-brand {
@@ -366,19 +362,41 @@ div.col-xs-4.col-sm-12.dropdown {
 	z-index: 10000;
 }
 
-.portrait-crop-first {
-    display: inline-block;
-    height: 89vh;
-    width: 100%;
-    overflow: hidden;
-    z-index: 8000;
+@media all and (orientation: portrait) {
+
+  .portrait-crop-first {
+      display: inline-block;
+      height: 40vh;
+      width: 100%;
+      overflow: hidden;
+      z-index: 8000;
+  }
+
+  .portrait-crop {
+      display: inline-block;
+      height: 40vh;
+      width: 100%;
+      overflow: hidden;
+  }
+
 }
 
-.portrait-crop {
-    display: inline-block;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
+@media all and (orientation: landscape) {
+
+  .portrait-crop-first {
+      display: inline-block;
+      height: 89vh;
+      width: 100%;
+      overflow: hidden;
+      z-index: 8000;
+  }
+
+  .portrait-crop {
+      display: inline-block;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+  }
 }
 
 .portrait-crop-225 {
@@ -486,6 +504,44 @@ input[type=number]::-webkit-inner-spin-button {
 
 h2 {
   font-size: 18px !important;
+}
+
+h4 {
+  font-size: 28px;
+}
+
+@media only screen and (max-width: 400px) {
+
+  h4 {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+
+  div.mycols {
+    padding: 40px 15px 40px 15px;
+  }
+
+  .index-row {
+    margin-top: 30px;
+    margin-bottom: 35px;
+  }
+}
+
+@media only screen and (min-width: 451px) and (max-width: 800px) {
+
+  div.mycols {
+    padding: 70px 7% 70px 7%;
+  }
+}
+
+
+@media only screen and (min-width: 801px) {
+
+  div.mycols {
+    padding: 90px 10% 90px 10%;
+  }
 }
 
 .sweet-alert {
