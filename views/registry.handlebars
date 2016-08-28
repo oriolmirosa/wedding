@@ -58,16 +58,16 @@
 										</div>
 										<div class="col-xs-4 col-sm-12" style="min-height: 25px; padding-left: 0px; padding-right: 0px;">
 											<div style="padding: 3px; display: flex; align-items: center; justify-content: center;">
-	    										<p style="color: #1c1c1c; margin-bottom: 0; font-size: 14px; text-align: center;"><strong>{{remaining}}</strong>&nbsp;{{#with ../this}}{{{__ 'remaining'}}}{{/with}}</p>
+	    										<p style="color: #1c1c1c; margin-bottom: 0; font-size: 14px; text-align: center;"><strong data-remain="{{_id}}">{{remaining}}</strong>&nbsp;{{#with ../this}}{{{__ 'remaining'}}}{{/with}}</p>
 											</div>
 										</div>
 										<div class="col-xs-4 col-sm-12 dropdown" style="display: flex; height: 31px; padding-left: 0px; padding-right: 0px; align-items: center; justify-content: center;">
-    										<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="btn-remain" data-remain="{{_id}}" aria-haspopup="true" aria-expanded="true" style="height: 25px; width: 75px; padding-top: 0px; padding-bottom: 0px; border-color: #fff; background-color: #1c1c1c; border-radius: 0px; color: #fff; font-size: 12px;">{{#with ../this}}{{{__ 'Give'}}}{{/with}}<span>...&nbsp;</span><span class="caret" style="color: #fff;"></span></button>
+    										<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="btn-remain" data-remain="{{_id}}" aria-haspopup="true" aria-expanded="true" style="height: 25px; width: 75px; padding-top: 0px; padding-bottom: 0px; border-color: #fff; background-color: #1c1c1c; border-radius: 0px; color: #fff; font-size: 12px;">{{#with ../this}}{{{__ 'Give'}}}{{/with}}<span data-remain="{{_id}}">...&nbsp;</span><span class="caret" style="color: #fff;"></span></button>
 	    									<ul class="dropdown-menu itemsremaining" style=" min-width: 70px; width: 70px;">
 	    										{{#times remaining}}
     									    	<li style="text-align: center;"><a href="#">{{this}}</a></li>
 										    	{{/times}}
-										  </ul>
+										  	</ul>
 										</div>
 									</div>
 	    						</div>
