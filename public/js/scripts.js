@@ -55,32 +55,26 @@ $(function() {
 			totalCart += totals[i].amount;
 		}
 
-		// console.log('totalCart: ' + totalCart);
+		console.log('totalCart: ' + totalCart);
 
-		// var $rightButton = $('[data-remain="' + id + '"]');
-		// var rightButton = document.querySelector('[data-remain="' + id + '"]');
+		var $rightButton = $('[data-remain="' + id + '"]');
+		var rightButton = document.querySelector('[data-remain="' + id + '"]');
 
-		// console.log('typeof $rightButton: ' + typeof $rightButton);
-		// console.log('$rightButton: ' + $rightButton);
-		// console.log('$rightButton.text(): ' + $rightButton.text());
+		console.log('typeof $rightButton: ' + typeof $rightButton);
+		console.log('$rightButton: ' + $rightButton);
+		console.log('$rightButton.text(): ' + $rightButton.text());
 
-		// console.log('typeof rightButton: ' + typeof rightButton);
-		// console.log('rightButton: ' + rightButton);
-		// console.log('rightButton.innerHTML: ' + rightButton.innerHTML);
+		console.log('typeof rightButton: ' + typeof rightButton);
+		console.log('rightButton: ' + rightButton);
+		console.log('rightButton.innerHTML: ' + rightButton.innerHTML);
 
 		// var remaining = $('[data-remain="' + id + '"]').parent().prev().children().first().children().first().find("strong").html();
 		var prova = document.querySelectorAll('[data-remain="' + id + '"]');
 		// var prova = rightButton.parentNode.parentNode.tagName
 
-
-		Array.prototype.forEach.call(prova, function (el) {
-			console.log(el.innerHTML);
-		}	
-
-		console.log('prova: ' + prova)
-		console.log('prova[0]: ' + prova[0]);
-		console.log('prova[1].innerHTML: ' + prova[1].innerHTML);
-		console.log('prova[2].innerHTML: ' + prova[2].innerHTML);
+		console.log(prova[0].innerHTML);
+		console.log(prova[1].innerHTML);
+		console.log(prova[2].innerHTML);
 
 		var remaining = prova[0].innerHTML;
 
