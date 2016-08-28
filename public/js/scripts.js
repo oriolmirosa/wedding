@@ -15,7 +15,7 @@ $(function() {
 	var isVisible = false;
 	
 	$(".dropdown").on("shown.bs.dropdown", function(event){
-	    initialValue = $(this).children().first().find('span:first').text();
+	    initialValue = $(this).children().first().find('span').first().text();
 	});
 
 	$('.itemsremaining li > a').click(function (e) {
@@ -67,7 +67,7 @@ $(function() {
 
 		$('[data-remain=' + id + ']').parent().prev().children().first().children().first().find("strong").html(left.toString());
 
-		$('[data-remain=' + id + ']').find('span:first').html('&nbsp;' + numberSelected + '&nbsp;');
+		$('[data-remain=' + id + ']').find('span').first().html(numberSelected);
 
 		$('.totalcart').find('span').text('$' + totalCart);
 		
