@@ -55,7 +55,9 @@ $(function() {
 
 		console.log(totalCart);
 
-		var remaining = $('[data-remain="' + id + '"]').parent().prev().children().first().children().first().find("strong").html();
+		var $rightButton = $('button').data('remain') === id;
+
+		var remaining = $rightButton.parent().prev().children().first().children().first().find("strong").html();
 
 		var left;
 
@@ -65,9 +67,11 @@ $(function() {
 			left = 1*remaining + 1*initialValue - 1*numberSelected;
 		}
 
-		$('[data-remain="' + id + '"]').parent().prev().children().first().children().first().find("strong").html(left.toString());
 
-		$('[data-remain="' + id + '"]').find('span').first().html('&nbsp;' + numberSelected + '&nbsp;');
+
+		$rightButton.parent().prev().children().first().children().first().find("strong").html(left.toString());
+
+		$rightButton.find('span').first().html('&nbsp;' + numberSelected + '&nbsp;');
 
 		$('.totalcart').find('span').text('$' + totalCart);
 		
