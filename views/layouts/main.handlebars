@@ -54,6 +54,15 @@
    				}
    				console.log('currLang: ' + currLang);
 
+   				if (currLang === 'ca') {
+					var parameter = { lang: 'ca' };	
+				} else {
+					var parameter = { lang: 'en' };
+				}
+					
+				$.get('/language', parameter, function (language) {
+				});
+
    				$('a.language').click( function (e) {
 					e.preventDefault();
 					console.log('currLang: ' + currLang);
