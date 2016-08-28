@@ -55,18 +55,18 @@ $(function() {
 			totalCart += totals[i].amount;
 		}
 
-		console.log('totalCart: ' + totalCart);
+		// console.log('totalCart: ' + totalCart);
 
-		var $rightButton = $('[data-remain="' + id + '"]');
-		var rightButton = document.querySelector('[data-remain="' + id + '"]');
+		// var $rightButton = $('[data-remain="' + id + '"]');
+		// var rightButton = document.querySelector('[data-remain="' + id + '"]');
 
-		console.log('typeof $rightButton: ' + typeof $rightButton);
-		console.log('$rightButton: ' + $rightButton);
-		console.log('$rightButton.text(): ' + $rightButton.text());
+		// console.log('typeof $rightButton: ' + typeof $rightButton);
+		// console.log('$rightButton: ' + $rightButton);
+		// console.log('$rightButton.text(): ' + $rightButton.text());
 
-		console.log('typeof rightButton: ' + typeof rightButton);
-		console.log('rightButton: ' + rightButton);
-		console.log('rightButton.innerHTML: ' + rightButton.innerHTML);
+		// console.log('typeof rightButton: ' + typeof rightButton);
+		// console.log('rightButton: ' + rightButton);
+		// console.log('rightButton.innerHTML: ' + rightButton.innerHTML);
 
 		// var remaining = $('[data-remain="' + id + '"]').parent().prev().children().first().children().first().find("strong").html();
 		var prova = document.querySelectorAll('[data-remain="' + id + '"]');
