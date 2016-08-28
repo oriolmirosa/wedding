@@ -25,13 +25,20 @@ $(function() {
 		var numberSelected = $(this).text();
 		console.log('numberSelected: ' + numberSelected);
 
-		// var id2 = $(this).parent().parent().prev().data('remain');
-		var id = $(this).parent().parent().prev().attr('data-remain');
-		// var id3 = $(this).parent().parent().prev().prop('data-remain');
+		thisLink = $(this)[0];
+
+		console.log('typeof thisLink: ' + typeof thisLink);
+
+		var id2 = $(this).parent().parent().prev().attr('data-remain');
+		var id1 = $(this).parent().parent().prev().data('remain');
+		var id3 = $(this).parent().parent().prev().prop('data-remain');
+		var id = thisLink.parentNode.parentNode.parentNode.childNodes[1].getAttribute('data-remain');
+		//parentNode.previousSibling.getAttribute('data-remain');
 		
 		console.log('id: ' + id);
-		// console.log('id2: ' + id2);
-		// console.log('id3: ' + id3);
+		console.log('id1: ' + id1);
+		console.log('id2: ' + id2);
+		console.log('id3: ' + id3);
 
 		var price = $(this).parent().parent().parent().prev().prev().children().first().children().first().text();
 		price = price.slice(1);
