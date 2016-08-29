@@ -131,6 +131,9 @@ div .navbar-collapse .collapse .pull-right {
   }
 }
 
+.faqquestion {
+  font-weight: 900;
+}
 
 
 @media screen and (min-width: 771px) {
