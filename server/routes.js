@@ -25,8 +25,8 @@ module.exports = function(app) {
 		console.log("Cookies :  ", req.cookies);
 		res.render('index');
 	});
-	router.get('/ourstory', auth, function(req, res) {
-		res.render('ourstory');
+	router.get('/faq', auth, function(req, res) {
+		res.render('faq');
 	});
 	router.get('/travel', auth, function(req, res) {
 		res.render('travel');
