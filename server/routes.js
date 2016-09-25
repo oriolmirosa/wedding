@@ -42,7 +42,7 @@ module.exports = function(app) {
   		console.log('cookies set, sending the new language back');
   		res.send(req.query.lang);
 	});
-	
+
 	router.get('/rsvp', auth, rsvp.index);
 	router.get('/registry', auth, registry.index);
 	router.post('/passwordsite', scripts.password);
