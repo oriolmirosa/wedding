@@ -40,6 +40,8 @@ module.exports = {
 			children: req.body.children,
 			childWed: req.body.childWed,
 			childReh: req.body.childReh,
+			food1: req.body.food1,
+			food2: req.body.food2,
 			message: req.body.message
 		});
 		newGuest.save(function (err, item) {
@@ -63,6 +65,8 @@ module.exports = {
 			guest.children = req.body.children;
 			guest.childWed = req.body.childWed;
 			guest.childReh = req.body.childReh;
+			guest.food1 = req.body.food1;
+			guest.food2 = req.body.food2;
 			guest.message = req.body.message;
 			guest.save(function (err) {
 				res.redirect('/rsvp/guests');
