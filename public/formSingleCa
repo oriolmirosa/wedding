@@ -70,12 +70,12 @@
 					</tr>
 					<tr>
 						<td style="vertical-align: middle;">Missatge</td>
-						<td colspan="2"><textarea name="message" class="form-control message"></textarea></td>
+						<td colspan="2"><textarea name="message" class="form-control message" placeholder="Digueu-nos quant ens estimeu, si teniu al·lèrgies a algun aliment, etc."></textarea></td>
 					</tr>
 				</table>
 				<div class="super-wrapper">
 					<div class="tooltip-wrapper" data-title="Clica el botó 'Enviar' de més amunt i el teu nom a la llista per modificar el formulari que acabes d'enviar">
-						<button type="submit" class="btn btn-default pull-right" id="btn-send" style="text-align: center; 70px; padding-top: 6px; padding-bottom: 2px; border-color: #fff; background-color: #1c1c1c; border-radius: 0px; color: #fff; font-size: 12px; margin-right: 15px;">Enviar</button>
+						<button type="submit" class="btn btn-default pull-right" id="btn-send" style="text-align: center; 70px; padding-top: 6px; padding-bottom: 2px; border-color: #1c1c1c; background-color: #fff; border-radius: 0px; color: #1c1c1c; font-size: 12px; margin-right: 15px;">Enviar</button>
 					</div>
 				</div>
 			</div>

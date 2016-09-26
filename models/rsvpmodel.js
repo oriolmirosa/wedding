@@ -16,6 +16,8 @@ var RsvpSchema = new Schema({
 	children: { type: Number, default: 0, min: 0  },
 	childWed: { type: Number, default: 0, min: 0 },
 	childReh: { type: Number, default: 0, min: 0 },
+	food1: { type: String, default: 'Everything!' },
+	food2: { type: String, default: 'Everything!' },
 	message: { type: String }
 });
 
