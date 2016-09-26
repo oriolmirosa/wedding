@@ -145,6 +145,8 @@
 					    				$('.guestsForm').html(formCouple);
 					    				$('.fullName1').html(selectedGuest.firstName1 + ' ' + selectedGuest.lastName1);
 					    				$('.fullName2').html(selectedGuest.firstName2 + ' ' + selectedGuest.lastName2);
+					    				$('.firstName1').html(selectedGuest.firstName1 + ' eats:');
+					    				$('.firstName2').html(selectedGuest.firstName2 + ' eats:');
 					    				var allNames = $('.fullName1').html() + ' & ' + $('.fullName2').html()
 						    			$('html, body').animate({ scrollTop: $(document).height() }, 1000);
 						    			fillIn(selectedGuest);
@@ -362,7 +364,7 @@
 						<div class="input-group">
       						<input type="text" class="form-control" name="guestname" placeholder="{{{__ 'Search for...'}}}" style="border-color: #000;" autofocus>
       						<span class="input-group-btn">
-        						<button class="btn btn-default" id="guest-btn" type="submit" style="border-color: #000; color: #fff; background-color: #000;">{{{__ 'Go!'}}}</button>
+        						<button class="btn btn-default" id="guest-btn" type="submit" style="border-color: #000; color: #000; background-color: #fff;">{{{__ 'Go!'}}}</button>
       						</span>
     					</div>
     				</form>
