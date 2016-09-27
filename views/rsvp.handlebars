@@ -38,6 +38,11 @@
 			var childReh = $('input[name="childReh"]').val();
 			$('#response .childReh').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+childReh+'</p></td>');
 
+			var food1 = $('input[name="food1"]').val();
+			$('#response .food1').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food1+'</p></td>');
+			var food2 = $('input[name="food2"]').val();
+			$('#response .food2').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food2+'</p></td>');
+
 			var message = $('.message').val();
 			$('#response .messagenew').replaceWith('<td colspan="2" style="height: 40px; border: 1px solid black;"><p style="text-align: left">'+message+'</p></td>');			
 		};
@@ -51,6 +56,8 @@
 			$('input[name="attReh2"]:radio').val([selectedGuest.attReh2]);
 			$('input[name="childWed"]').val(selectedGuest.childWed);
 			$('input[name="childReh"]').val(selectedGuest.childReh);
+			$('input[name="food1"]').val(selectedGuest.food1);
+			$('input[name="food2"]').val(selectedGuest.food2);
 			$('.message').text(selectedGuest.message);
 		};
 
@@ -63,6 +70,8 @@
 				attReh2: $('input[name="attReh2"]:checked').val(),
 				childWed: $('input[name="childWed"]').val(),
 				childReh: $('input[name="childReh"]').val(),
+				food1: $('input[name="food1"]').val(),
+				food2: $('input[name="food2"]').val(),
 				message: $('.message').val()
 			}
 			console.log($('.message').val());
