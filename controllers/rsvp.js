@@ -25,6 +25,7 @@ module.exports = {
 	},
 
 	newGuests: function (req, res) {
+		console.log(req.body)
 		var newGuest = new Rsvp({
 			couple: req.body.couple,
 			firstName1: req.body.firstName1,
