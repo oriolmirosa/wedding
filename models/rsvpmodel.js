@@ -13,7 +13,7 @@ var RsvpSchema = new Schema({
 	attWed2: { type: String },
 	attReh1: { type: String },
 	attReh2: { type: String },
-	children: { type: Number, default: 0, min: 0  },
+	children: { type: Number, default: 0, min: 0 },
 	childWed: { type: Number, default: 0, min: 0 },
 	childReh: { type: Number, default: 0, min: 0 },
 	food1: { type: String, default: 'Everything!' },

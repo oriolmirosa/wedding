@@ -57,6 +57,19 @@
     								</select>
 			    				</div>
 			    			</div>
+
+								<div class="form-group col-md-12">
+									<label class="col-md-4" for="food1">Guest 1: Food</label>
+									<div class="col-md-8">
+				    				<select class="form-control" name="food1">
+				    				  <option value='Everything!'>Everything!</option>
+				    				  <option value='Fish'>Fish</option>
+				    				  <option value='Vegetables'>Vegetables</option>
+				    				  <option value='Vegan crap'>Vegan crap</option>
+				    				</select>
+				    			</div>
+			    			</div>
+
 			    			<div class="form-group col-md-12">
 			    				<label class="col-md-4" for="firstName2">Guest 2: First Name:</label>
 			    				<div class="col-md-8">
@@ -95,6 +108,19 @@
     								</select>
 			    				</div>
 			    			</div>
+
+			    			<div class="form-group col-md-12">
+									<label class="col-md-4" for="food2">Guest 2: Food</label>
+									<div class="col-md-8">
+				    				<select class="form-control" name="food2">
+				    				  <option value='Everything!'>Everything!</option>
+				    				  <option value='Fish'>Fish</option>
+				    				  <option value='Vegetables'>Vegetables</option>
+				    				  <option value='Vegan crap'>Vegan crap</option>
+				    				</select>
+				    			</div>
+			    			</div>
+
 			    			<div class="form-group col-md-12">
 			    				<label class="col-md-4" for="children">Number of children they have:</label>
 			    				<div class="col-md-8">
@@ -113,6 +139,7 @@
 			    					<input type="number" name="childReh" class="form-control">
 			    				</div>
 			    			</div>
+
 			    			<div class="form-group col-md-12">
 			    				<label class="col-md-4" for="message">Message:</label>
 			    				<div class="col-md-8">
@@ -197,6 +224,21 @@
 									</select>
 			    				</div>
 			    			</div>
+
+								<div class="form-group col-md-12">
+									<label class="col-md-4" for="food1">Guest 1: Food</label>
+									<div class="col-md-8">
+				    				<select class="form-control" name="food1">
+				    				{{#select food1}}
+				    				<option value='Everything!'>Everything!</option>
+				    				<option value='Fish'>Fish</option>
+				    				<option value='Vegetables'>Vegetables</option>
+				    				<option value='Vegan crap'>Vegan crap</option>
+				    				{{/select}}
+				    				</select>
+				    			</div>
+			    			</div>
+
 			    			<div class="form-group col-md-12">
 			    				<label class="col-md-4" for="firstName2">Guest 2: First Name:</label>
 			    				<div class="col-md-8">
@@ -239,6 +281,21 @@
 									</select>
 			    				</div>
 			    			</div>
+
+			    			<div class="form-group col-md-12">
+									<label class="col-md-4" for="food2">Guest 2: Food</label>
+									<div class="col-md-8">
+				    				<select class="form-control" name="food2">
+				    				{{#select food2}}
+				    				<option value='Everything!'>Everything!</option>
+				    				<option value='Fish'>Fish</option>
+				    				<option value='Vegetables'>Vegetables</option>
+				    				<option value='Vegan crap'>Vegan crap</option>
+				    				{{/select}}
+				    				</select>
+				    			</div>
+			    			</div>
+
 			    			<div class="form-group col-md-12">
 			    				<label class="col-md-4" for="children">Number of children they have:</label>
 			    				<div class="col-md-8">
