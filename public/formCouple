@@ -1,142 +1,142 @@
 <div class="panel panel-default" style="border-color: #1c1c1c; margin-top: 50px;">
-	<!-- <div class="panel-heading" style="line-height: 1em;">
-		<h3 class="panel-title" style="text-align: center;">Edit guest number {{@index}}</h3>
-	</div> -->
-	<form class="form-email" role="form">
-		<div class="panel-body form-horizontal" style="padding-bottom: 45px;">
-			<!-- <div class="form-group col-md-12">
-				<label class="col-md-4" for="id">Id:</label>
-				<div class="col-md-8">
-					<input type="text" name="id" class="form-control" value="" readonly>
-				</div>
-			</div>
-			<div class="form-group col-md-12">
-				<label class="col-md-4" for="couple">Couple?:</label>
-				<div class="col-md-8">
-    				<select class="form-control" name="couple">
-						{{#select couple}}
-						<option value="Select an option">Select an option</option>
-						<option value="Couple">Couple</option>
-						<option value="Single">Single</option>
-						{{/select}}
-					</select>
-				</div>
-			</div> -->
-			<!-- <div class="form-group col-md-12"> -->
-				<table class="table table-form" style="width: 100%; table-layout: fixed;">
-					<tr valign="middle">
-						<td><input name="id" hidden></td>
-						<td style="text-align: center; font-weight: 700;">Will attend wedding</td>
-						<td style="text-align: center; font-weight: 700;">Will attend rehearsal dinner</td>
-					</tr>
-					<tr>
-						<td class="fullName1" style="vertical-align: middle;"></td>
-						<td class="attWed1" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
-							<label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attWed1" value="Yes">Yes</label>
-							<label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attWed1" value="No">No</label>
-						</td>
-						<td class="attReh1" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
-							<label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attReh1" value="Yes">Yes</label>
-							<label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attReh1" value="No">No</label>
-						</td>
-					</tr>
-					<tr>
-						<td class="fullName2" style="vertical-align: middle;"></td>
-						<td class="attWed2" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
-							<label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attWed2" value="Yes">Yes</label>
-							<label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attWed2" value="No">No</label>
-						</td>
-						<td class="attReh2" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
-							<label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attReh2" value="Yes">Yes</label>
-							<label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attReh2" value="No">No</label>
-						</td>
-					</tr>
-					<tr class="children">
-						<td style="vertical-align: middle;">Number of children under 12</td>
-						<td class="childWed" style="text-align: center; vertical-align: middle; line-height: 1.7em; height: 25px;">
-							<input id="demo3" type="text" value="" name="childWed" min="0" max="3">
-        					<script>
-            					$("input[name='childWed']").TouchSpin({
-            						min: 0,
-            						max: 3
-            					});
-        					</script>
-							<!-- <input type="number" name="childWed" min="0" style="text-align: center; width: 50px;"> -->
-						</td>
-						<td class="childReh" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
-							<input id="demo3" type="text" value="" name="childReh" min="0" max="3">
-        					<script>
-            					$("input[name='childReh']").TouchSpin({
-            						min: 0,
-            						max: 3
-            					});
-        					</script>
-							<!-- <input type="number" name="childReh" min="0" style="text-align: center; width: 50px;"> -->
-						</td>
-					</tr>
-					<tr class="hidden-xs">
-						<td style="vertical-align: middle;">
-							<div class="firstName1" style="display: inline-block; padding-top: 2px;"></div>&nbsp;&nbsp;
-							<select class="form-control" style="width: 100px; height: 27px; display: inline-block; float: right; margin-right: 50px;">
-								<option value='Everything!'>Everything!</option>
-								<option value='Pescatarian'>Pescatarian</option>
-								<option value='Vegetarian'>Vegetarian</option>
-								<option value='Vegan'>Vegan</option>
-							</select>
-						</td>
-						<td colspan="2" rowspan="2" class="messagenew" style="vertical-align: middle;">Message
-							<textarea name="message" class="form-control message hidden-sm" placeholder="Tell us how much you love us, any food allergies, etc."></textarea></td>
-					</tr>
-					<tr class="hidden-xs">
-						<td style="vertical-align: middle;">
-							<div class="firstName2" style="display: inline-block; padding-top: 2px;"></div>&nbsp;&nbsp;
-							<select class="form-control" style="width: 100px; height: 27px; display: inline-block; float: right; margin-right: 50px;">
-								<option value='Everything!'>Everything!</option>
-								<option value='Pescatarian'>Pescatarian</option>
-								<option value='Vegetarian'>Vegetarian</option>
-								<option value='Vegan'>Vegan</option>
-							</select>
-						</td>
-					</tr>
-				</table>
-				<table class="table table-form hidden-sm hidden-md hidden-lg" style="table-layout: fixed;">
-					<tr style="width: 100%;">
-					  <td>
-					  	<div class="firstName1" style="vertical-align: middle; display: inline-block; padding-top: 2px;"></div>
-					  </td>
-					  <td colspan="2">
-				    	<select class="form-control" style="height: 30px; width: 120px; display: inline-block;">
-				      	<option value='Everything!'>Everything!</option>
-				     		<option value='Pescatarian'>Pescatarian</option>
-				      	<option value='Vegetarian'>Vegetarian</option>
-				      	<option value='Vegan'>Vegan</option>
-				    	</select>
-					  </td>
-					</tr>
-					<tr>
-					  <td>
-					  	<div class="firstName2" style="vertical-align: middle; display: inline-block; padding-top: 2px;"></div>
-					  </td>
-					  <td colspan="2">
-				    	<select class="form-control" style="height: 30px; width: 120px; display: inline-block;">
-				      	<option value='Everything!'>Everything!</option>
-				      	<option value='Pescatarian'>Pescatarian</option>
-				      	<option value='Vegetarian'>Vegetarian</option>
-				      	<option value='Vegan'>Vegan</option>
-				    	</select>
-					  </td>
-					</tr>
-					<tr>
-					  <td style="vertical-align: middle;">Message:</td>
-					  <td colspan="2" class="messagenew"><textarea name="message" class="form-control message" placeholder="Tell us how much you love us, any food allergies, etc."></textarea></td>
-					</tr>
-				</table>
-				<div class="super-wrapper">
-					<div class="tooltip-wrapper" data-title="Click the 'Go!' button above and your name on the list to modify the form you just submitted">
-						<button type="submit" class="btn btn-default pull-right" id="btn-send" style="text-align: center; padding-top: 6px; padding-bottom: 2px; border-color: #1c1c1c; background-color: #fff; border-radius: 0px; color: #1c1c1c; font-size: 12px; margin-right: 15px;">Send</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</form>
+  <!-- <div class="panel-heading" style="line-height: 1em;">
+    <h3 class="panel-title" style="text-align: center;">Edit guest number {{@index}}</h3>
+  </div> -->
+  <form class="form-email" role="form">
+    <div class="panel-body form-horizontal" style="padding-bottom: 45px;">
+      <!-- <div class="form-group col-md-12">
+        <label class="col-md-4" for="id">Id:</label>
+        <div class="col-md-8">
+          <input type="text" name="id" class="form-control" value="" readonly>
+        </div>
+      </div>
+      <div class="form-group col-md-12">
+        <label class="col-md-4" for="couple">Couple?:</label>
+        <div class="col-md-8">
+            <select class="form-control" name="couple">
+            {{#select couple}}
+            <option value="Select an option">Select an option</option>
+            <option value="Couple">Couple</option>
+            <option value="Single">Single</option>
+            {{/select}}
+          </select>
+        </div>
+      </div> -->
+      <!-- <div class="form-group col-md-12"> -->
+        <table class="table table-form" style="width: 100%; table-layout: fixed;">
+          <tr valign="middle">
+            <td><input name="id" hidden></td>
+            <td style="text-align: center; font-weight: 700;">Will attend wedding</td>
+            <td style="text-align: center; font-weight: 700;">Will attend rehearsal dinner</td>
+          </tr>
+          <tr>
+            <td class="fullName1" style="vertical-align: middle;"></td>
+            <td class="attWed1" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+              <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attWed1" value="Yes">Yes</label>
+              <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attWed1" value="No">No</label>
+            </td>
+            <td class="attReh1" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+              <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attReh1" value="Yes">Yes</label>
+              <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attReh1" value="No">No</label>
+            </td>
+          </tr>
+          <tr>
+            <td class="fullName2" style="vertical-align: middle;"></td>
+            <td class="attWed2" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+              <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attWed2" value="Yes">Yes</label>
+              <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attWed2" value="No">No</label>
+            </td>
+            <td class="attReh2" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+              <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attReh2" value="Yes">Yes</label>
+              <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attReh2" value="No">No</label>
+            </td>
+          </tr>
+          <tr class="children">
+            <td style="vertical-align: middle;">Number of children under 12</td>
+            <td class="childWed" style="text-align: center; vertical-align: middle; line-height: 1.7em; height: 25px;">
+              <input id="demo3" type="text" value="" name="childWed" min="0" max="3">
+                  <script>
+                      $("input[name='childWed']").TouchSpin({
+                        min: 0,
+                        max: 3
+                      });
+                  </script>
+              <!-- <input type="number" name="childWed" min="0" style="text-align: center; width: 50px;"> -->
+            </td>
+            <td class="childReh" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+              <input id="demo3" type="text" value="" name="childReh" min="0" max="3">
+                  <script>
+                      $("input[name='childReh']").TouchSpin({
+                        min: 0,
+                        max: 3
+                      });
+                  </script>
+              <!-- <input type="number" name="childReh" min="0" style="text-align: center; width: 50px;"> -->
+            </td>
+          </tr>
+          <tr class="hidden-xs">
+            <td style="vertical-align: middle;">
+              <div class="firstName1" style="display: inline-block; padding-top: 2px;"></div>&nbsp;&nbsp;
+              <select class="form-control food1" name="food1" style="width: 100px; height: 27px; display: inline-block; float: right; margin-right: 50px;">
+                <option value='Everything!'>Everything!</option>
+                <option value='Fish'>Fish</option>
+                <option value='Vegetables'>Vegetables</option>
+                <option value='Vegan crap'>Vegan crap</option>
+              </select>
+            </td>
+            <td colspan="2" rowspan="2" class="messagenew" style="vertical-align: middle;">Message
+              <textarea name="message" class="form-control message hidden-sm" placeholder="Tell us how much you love us, any food allergies, etc."></textarea></td>
+          </tr>
+          <tr class="hidden-xs">
+            <td style="vertical-align: middle;">
+              <div class="firstName2" style="display: inline-block; padding-top: 2px;"></div>&nbsp;&nbsp;
+              <select class="form-control food2" name="food2" style="width: 100px; height: 27px; display: inline-block; float: right; margin-right: 50px;">
+                <option value='Everything!'>Everything!</option>
+                <option value='Fish'>Fish</option>
+                <option value='Vegetables'>Vegetables</option>
+                <option value='Vegan crap'>Vegan crap</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <table class="table table-form hidden-sm hidden-md hidden-lg" style="table-layout: fixed;">
+          <tr style="width: 100%;">
+            <td>
+              <div class="firstName1" style="vertical-align: middle; display: inline-block; padding-top: 2px;"></div>
+            </td>
+            <td colspan="2">
+              <select class="form-control food1" name="food1" style="height: 30px; width: 120px; display: inline-block;">
+                <option value='Everything!'>Everything!</option>
+                <option value='Fish'>Fish</option>
+                <option value='Vegetables'>Vegetables</option>
+                <option value='Vegan crap'>Vegan crap</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="firstName2" style="vertical-align: middle; display: inline-block; padding-top: 2px;"></div>
+            </td>
+            <td colspan="2">
+              <select class="form-control food2" name="food2" style="height: 30px; width: 120px; display: inline-block;">
+                <option value='Everything!'>Everything!</option>
+                <option value='Fish'>Fish</option>
+                <option value='Vegetables'>Vegetables</option>
+                <option value='Vegan crap'>Vegan crap</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">Message:</td>
+            <td colspan="2" class="messagenew"><textarea name="message" class="form-control message" placeholder="Tell us how much you love us, any food allergies, etc."></textarea></td>
+          </tr>
+        </table>
+        <div class="super-wrapper">
+          <div class="tooltip-wrapper" data-title="Click the 'Go!' button above and your name on the list to modify the form you just submitted">
+            <button type="submit" class="btn btn-default pull-right" id="btn-send" style="text-align: center; padding-top: 6px; padding-bottom: 2px; border-color: #1c1c1c; background-color: #fff; border-radius: 0px; color: #1c1c1c; font-size: 12px; margin-right: 15px;">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
