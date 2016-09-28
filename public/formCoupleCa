@@ -27,7 +27,7 @@
 					<tr valign="middle">
 						<td><input name="id" hidden></td>
 						<td style="text-align: center; font-weight: 700;">Assistirà al casament</td>
-						<td style="text-align: center; font-weight: 700;">Assistirà al sopar d'assaig</td>
+						<td style="text-align: center; font-weight: 700;">Assistirà al sopar de benvinguda</td>
 					</tr>
 					<tr>
 						<td class="fullName1" style="vertical-align: middle;"></td>
@@ -74,15 +74,67 @@
 							<!-- <input type="number" name="childReh" min="0" style="text-align: center; width: 50px;"> -->
 						</td>
 					</tr>
-					<tr>
-						<td style="vertical-align: middle;">Missatge</td>
-						<td colspan="2" class="messagenew"><textarea name="message" class="form-control message" placeholder="Digueu-nos quant ens estimeu, si teniu al·lèrgies a algun aliment, etc."></textarea></td>
-					</tr>
-				</table>
-				<div class="super-wrapper">
-					<div class="tooltip-wrapper" data-title="Click the 'Go!' button above and your name on the list to modify the form you just submitted">
-						<button type="submit" class="btn btn-default pull-right" id="btn-send" style="text-align: center; 70px; padding-top: 6px; padding-bottom: 2px; border-color: #1c1c1c; background-color: #fff; border-radius: 0px; color: #1c1c1c; font-size: 12px; margin-right: 15px;">Enviar</button>
-					</div>
+					<tr class="hidden-xs">
+            <td style="vertical-align: middle;">
+              <div class="firstName1" style="display: inline-block; padding-top: 2px;"></div>&nbsp;&nbsp;
+              <select class="form-control food1desk" name="food1" style="width: 100px; height: 27px; display: inline-block; float: right; margin-right: 0px;">
+                <option value="Everything!">De tot!</option>
+                <option value="Fish">Peix</option>
+                <option value="Vegetables">Vegetals</option>
+                <option value="Vegan crap">Vegà</option>
+              </select>
+            </td>
+            <td colspan="2" rowspan="2" class="messagenew" style="vertical-align: middle;">Missatge
+              <textarea name="message" class="form-control message" placeholder="Tell us how much you love us, any food allergies, etc."></textarea></td>
+          </tr>
+          <tr class="hidden-xs">
+            <td style="vertical-align: middle;">
+              <div class="firstName2" style="display: inline-block; padding-top: 2px;"></div>&nbsp;&nbsp;
+              <select class="form-control food2desk" name="food2" style="width: 100px; height: 27px; display: inline-block; float: right; margin-right: 0px;">
+                <option value="Everything!">De tot!</option>
+                <option value="Fish">Peix</option>
+                <option value="Vegetables">Vegetals</option>
+                <option value="Vegan crap">Vegà</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <table class="table table-form hidden-sm hidden-md hidden-lg" style="table-layout: fixed;">
+          <tr style="width: 100%;">
+            <td>
+              <div class="firstName1" style="vertical-align: middle; display: inline-block; padding-top: 2px;"></div>
+            </td>
+            <td colspan="2">
+              <select class="form-control food1mob" name="food1" style="height: 30px; width: 120px; display: inline-block;">
+                <option value="Everything!">De tot!</option>
+                <option value="Fish">Peix</option>
+                <option value="Vegetables">Vegetals</option>
+                <option value="Vegan crap">Vegà</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="firstName2" style="vertical-align: middle; display: inline-block; padding-top: 2px;"></div>
+            </td>
+            <td colspan="2">
+              <select class="form-control food2mob" name="food2" style="height: 30px; width: 120px; display: inline-block;">
+                <option value="Everything!">De tot!</option>
+                <option value="Fish">Peix</option>
+                <option value="Vegetables">Vegetals</option>
+                <option value="Vegan crap">Vegà</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">Missatge:</td>
+            <td colspan="2" class="messagenew"><textarea name="message" class="form-control message" placeholder="Digueu-nos quant ens estimeu, si teniu al·lèrgies a algun aliment, etc."></textarea></td>
+          </tr>
+        </table>
+        <div class="super-wrapper">
+          <div class="tooltip-wrapper" data-title="Clica el botó 'Enviar' de més amunt i el teu nom a la llista per modificar el formulari que acabes d'enviar">
+            <button type="submit" class="btn btn-default pull-right" id="btn-send" style="text-align: center; padding-top: 6px; padding-bottom: 2px; border-color: #1c1c1c; background-color: #fff; border-radius: 0px; color: #1c1c1c; font-size: 12px; margin-right: 15px;">Enviar</button>
+          </div>
 				</div>
 			</div>
 		</div>
