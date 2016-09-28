@@ -77,24 +77,25 @@
           <tr class="hidden-xs">
             <td style="vertical-align: middle;">
               <div class="firstName1" style="display: inline-block; padding-top: 2px;"></div>&nbsp;&nbsp;
-              <select class="form-control food1" name="food1" style="width: 100px; height: 27px; display: inline-block; float: right; margin-right: 50px;">
-                <option value='Everything!'>Everything!</option>
-                <option value='Fish'>Fish</option>
-                <option value='Vegetables'>Vegetables</option>
-                <option value='Vegan crap'>Vegan crap</option>
+              <select class="form-control food1desk" name="food1" style="width: 100px; height: 27px; display: inline-block; float: right; margin-right: 15px;">
+                <option value="Everything!">Everything!</option>
+                <option value="Fish">Fish</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Vegan crap">Vegan crap</option>
               </select>
             </td>
             <td colspan="2" rowspan="2" class="messagenew" style="vertical-align: middle;">Message
-              <textarea name="message" class="form-control message hidden-sm" placeholder="Tell us how much you love us, any food allergies, etc."></textarea></td>
+              <textarea name="message" class="form-control message" placeholder="Tell us how much you love us, any food allergies, etc."></textarea>
+            </td>
           </tr>
           <tr class="hidden-xs">
             <td style="vertical-align: middle;">
               <div class="firstName2" style="display: inline-block; padding-top: 2px;"></div>&nbsp;&nbsp;
-              <select class="form-control food2" name="food2" style="width: 100px; height: 27px; display: inline-block; float: right; margin-right: 50px;">
-                <option value='Everything!'>Everything!</option>
-                <option value='Fish'>Fish</option>
-                <option value='Vegetables'>Vegetables</option>
-                <option value='Vegan crap'>Vegan crap</option>
+              <select class="form-control food2desk" name="food2" style="width: 100px; height: 27px; display: inline-block; float: right; margin-right: 15px;">
+                <option value="Everything!">Everything!</option>
+                <option value="Fish">Fish</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Vegan crap">Vegan crap</option>
               </select>
             </td>
           </tr>
@@ -105,11 +106,11 @@
               <div class="firstName1" style="vertical-align: middle; display: inline-block; padding-top: 2px;"></div>
             </td>
             <td colspan="2">
-              <select class="form-control food1" name="food1" style="height: 30px; width: 120px; display: inline-block;">
-                <option value='Everything!'>Everything!</option>
-                <option value='Fish'>Fish</option>
-                <option value='Vegetables'>Vegetables</option>
-                <option value='Vegan crap'>Vegan crap</option>
+              <select class="form-control food1mob" name="food1" style="height: 30px; width: 120px; display: inline-block;">
+                <option value="Everything!">Everything!</option>
+                <option value="Fish">Fish</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Vegan crap">Vegan crap</option>
               </select>
             </td>
           </tr>
@@ -118,11 +119,11 @@
               <div class="firstName2" style="vertical-align: middle; display: inline-block; padding-top: 2px;"></div>
             </td>
             <td colspan="2">
-              <select class="form-control food2" name="food2" style="height: 30px; width: 120px; display: inline-block;">
-                <option value='Everything!'>Everything!</option>
-                <option value='Fish'>Fish</option>
-                <option value='Vegetables'>Vegetables</option>
-                <option value='Vegan crap'>Vegan crap</option>
+              <select class="form-control food2mob" name="food2" style="height: 30px; width: 120px; display: inline-block;">
+                <option value="Everything!">Everything!</option>
+                <option value="Fish">Fish</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Vegan crap">Vegan crap</option>
               </select>
             </td>
           </tr>

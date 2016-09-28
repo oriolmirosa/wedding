@@ -56,12 +56,23 @@
 			$('input[name="attReh2"]:radio').val([selectedGuest.attReh2]);
 			$('input[name="childWed"]').val(selectedGuest.childWed);
 			$('input[name="childReh"]').val(selectedGuest.childReh);
-			$('input[name="food1"]').val(selectedGuest.food1);
-			$('input[name="food2"]').val(selectedGuest.food2);
+			$('.food1desk').val(selectedGuest.food1);
+			$('.food2desk').val(selectedGuest.food2);
+			$('.food1mob').val(selectedGuest.food1);
+			$('.food2mob').val(selectedGuest.food2);
 			$('.message').text(selectedGuest.message);
 		};
 
 		function passGuests () {
+			var food1
+			var food2
+			if ($(window).width() < 450) {
+				food1 = '.food1mob'
+				food2 = '.food2mob'
+			} else {
+				food1 = '.food1desk'
+				food2 = '.food2desk'
+			}
 			var guestsPass = {
 				id: $('input[name=id]').val(),
 				attWed1: $('input[name="attWed1"]:checked').val(),
@@ -70,11 +81,11 @@
 				attReh2: $('input[name="attReh2"]:checked').val(),
 				childWed: $('input[name="childWed"]').val(),
 				childReh: $('input[name="childReh"]').val(),
-				food1: $('input[name="food1"]').val(),
-				food2: $('input[name="food2"]').val(),
+				food1: $(food1).val(),
+				food2: $(food2).val(),
 				message: $('.message').val()
 			}
-			console.log($('.message').val());
+			console.log(`guestsPass.food1: ${guestsPass.food1}`);
 			return guestsPass;
 		};
 
@@ -113,7 +124,7 @@
 				$.get( '/searchguests', parameters, function(data) {
 	      			if ($.isEmptyObject(data)) {
 	      				$('.table-list').empty();
-						$('.table-list').append('<caption class="text-align-center" style="color: #000;">{{{__ 'Your search found no matches. Try again'}}}!</caption>');	      				
+								$('.table-list').append('<caption class="text-align-center" style="color: #000;">{{{__ 'Your search found no matches. Try again'}}}!</caption>');	      				
 	      			} else {
 		      			ul = '';
 		      			tr = ''
@@ -154,8 +165,13 @@
 					    				$('.guestsForm').html(formCouple);
 					    				$('.fullName1').html(selectedGuest.firstName1 + ' ' + selectedGuest.lastName1);
 					    				$('.fullName2').html(selectedGuest.firstName2 + ' ' + selectedGuest.lastName2);
-					    				$('.firstName1').html(selectedGuest.firstName1 + ' eats:');
-					    				$('.firstName2').html(selectedGuest.firstName2 + ' eats:');
+					    				if (currLang === 'ca') {
+					    					$('.firstName1').html(selectedGuest.firstName1 + ' menja:');
+					    					$('.firstName2').html(selectedGuest.firstName2 + ' menja:');
+					    				} else {
+					    					$('.firstName1').html(selectedGuest.firstName1 + ' eats:');
+					    					$('.firstName2').html(selectedGuest.firstName2 + ' eats:');
+					    				}	
 					    				var allNames = $('.fullName1').html() + ' & ' + $('.fullName2').html()
 						    			$('html, body').animate({ scrollTop: $(document).height() }, 1000);
 						    			fillIn(selectedGuest);
@@ -218,6 +234,13 @@
 					    				$('.guestsForm').html(formSingle);
 					    				$('.fullName1').html(selectedGuest.firstName1 + ' ' + selectedGuest.lastName1);
 					    				var firstName1 = selectedGuest.firstName1;
+					    				if (currLang === 'ca') {
+					    					$('.firstName1').html(selectedGuest.firstName1 + ' menja:');
+					    					$('.firstName2').html(selectedGuest.firstName2 + ' menja:');
+					    				} else {
+					    					$('.firstName1').html(selectedGuest.firstName1 + ' eats:');
+					    					$('.firstName2').html(selectedGuest.firstName2 + ' eats:');
+					    				}
 					    				var bringGuestClicked = 'Neither';
 					    				console.log('bringGuestClicked: ' + bringGuestClicked);
 					    				var attWed1checked = 'Neither';
@@ -274,6 +297,12 @@
 							    					$(this).replaceWith(formGuest);
 							    					$('.guestBring').fadeIn();
 							    					$('input[name="attWed2"][value="Yes"]').prop("checked", true);
+							    					if (currLang === 'ca') {
+							    						$('.firstName2').html('Convidat menja:');
+							    					} else {
+							    						$('.firstName2').html('Guest eats:');
+							    					}
+							    					$('.hiddenGuest').fadeIn();
 							    				});
 							    			});
 					    				});
