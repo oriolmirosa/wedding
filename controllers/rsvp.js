@@ -85,6 +85,8 @@ module.exports = {
 			guest.attReh2 = req.query.attReh2;
 			if (req.query.childWed) guest.childWed = req.query.childWed;
 			if (req.query.childReh) guest.childReh = req.query.childReh;
+			guest.food1 = req.query.food1;
+			if (req.query.food2) guest.food2 = req.query.food2;
 			guest.message = req.query.message;
 			guest.save(function (err) {
 				res.send(true);

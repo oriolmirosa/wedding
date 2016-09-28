@@ -83,22 +83,23 @@
 
 
 			$(function () {
+        if ($(window).width() > 800) {
+     				var url = window.location.pathname;
 
-   				var url = window.location.pathname;
+     				$('.nav li a').click(function() {
+     					$(this).css('color', '#1c1c1c');
+     					$(this).parent().siblings().removeClass('active');
+     				});
 
-   				$('.nav li a').click(function() {
-   					$(this).css('color', '#1c1c1c');
-   					$(this).parent().siblings().removeClass('active');
-   				});
-
-				$('.nav li').children().each(function() {
-					var href = $(this).attr('href');
-       				if(url === href) {
-             			$(this).parent().addClass('active');
-        			} else {
-        				$(this).parent().removeClass('active');
-        			}
-				});
+  				$('.nav li').children().each(function() {
+  					var href = $(this).attr('href');
+         				if(url === href) {
+               			$(this).parent().addClass('active');
+          			} else {
+          				$(this).parent().removeClass('active');
+          			}
+  				});
+        }
 			});
 
     		$(function () {
