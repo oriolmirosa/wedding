@@ -15,36 +15,95 @@
 		var response;
 
 		function createResponse () {
-			$('.table-form').clone(true, true).appendTo($('#response'));
-			$('#response .table').css('border', '1px solid black');
-			$('#response input[name="id"]').remove();
-			$('#response table').css('border', '1px solid black');
-			$('#response th').css('border', '1px solid black');
-			$('#response td').css('border', '1px solid black');
-			$('#response td').css('padding', '5px');
-			$('#response table').css('border-radius', '6px');
-			$('#response .table').css('border-collapse', 'collapse');
+			if ($(window).width() < 450) {
+				food1 = '.food1mob'
+				food2 = '.food2mob'
+			} else {
+				food1 = '.food1desk'
+				food2 = '.food2desk'
+			}
+
+			var table = '<table id="responseTable"></table>'
+
+			$('#response').append(table)
+
+			$('#responseTable').css('border', '1px solid black');
+			$('#responseTable').css('border', '1px solid black');
+			$('#responseTable th').css('border', '1px solid black');
+			$('#responseTable td').css('border', '1px solid black');
+			$('#responseTable td').css('padding', '5px');
+			$('#responseTable').css('border-radius', '6px');
+			$('#responseTable').css('border-collapse', 'collapse');
+
+			$('#responseTable').append('<tr><td style="height: 40px; width: 200px; border: 1px solid black;"></td><td style="height: 40px; width: 200px; border: 1px solid black;"><p style="text-align: center"><strong>Will attend wedding</strong></p></td><td style="height: 40px; width: 200px; border: 1px solid black;"><p style="text-align: center"><strong>Will attend rehearsal dinner</strong></p></td></tr>');
+
+			var name1 = $('.fullName1').html();
 			var attWed1 = $('input[name="attWed1"]:checked').val();
-			$('#response .attWed1').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed1+'</p></td>');
-			var attWed2 = $('input[name="attWed2"]:checked').val();
-			$('#response .attWed2').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed2+'</p></td>');
-			var attReh1 = $('input[name="attReh1"]:checked').val();
-			$('#response .attReh1').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh1+'</p></td>');
-			var attReh2 = $('input[name="attReh2"]:checked').val();
-			$('#response .attReh2').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh2+'</p></td>');
+			var attReh1 = $('input[name="attReh1"]:checked').val()
+			
+			$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+name1+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed1+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh1+'</p></td></tr>');
+			
+			var name2 = $('.fullName2').html();
+
+			if (name2 != null && name2.slice(0, 8) !== 'Will you') {
+				var attWed2 = $('input[name="attWed2"]:checked').val();
+				var attReh2 = $('input[name="attReh2"]:checked').val()
+				
+				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+name2+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed1+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh2+'</p></td></tr>');
+			}
 
 			var childWed = $('input[name="childWed"]').val();
-			$('#response .childWed').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+childWed+'</p></td>');
 			var childReh = $('input[name="childReh"]').val();
-			$('#response .childReh').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+childReh+'</p></td>');
+			
+			if (childWed != null) {
+				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">Number of children under 12</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+childWed+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+childReh+'</p></td></tr>');
+			}
 
-			var food1 = $('input[name="food1"]').val();
-			$('#response .food1').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food1+'</p></td>');
-			var food2 = $('input[name="food2"]').val();
-			$('#response .food2').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food2+'</p></td>');
+			var food1 = $(food1).val();
+			
+			$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+name1+' eats:</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food1+'</p></td><td></td></tr>')
+
+			if (name2 != null && name2.slice(0, 8) !== 'Will you') {
+				var food2 = $(food2).val();
+			
+				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+name2+' eats:</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food2+'</p></td><td></td></tr>');
+			}
 
 			var message = $('.message').val();
-			$('#response .messagenew').replaceWith('<td colspan="2" style="height: 40px; border: 1px solid black;"><p style="text-align: left">'+message+'</p></td>');			
+
+			$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">Message</p></td><td colspan="2" style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+message+'</p></td></tr>')
+
+
+			// $('.table-form').clone(true, true).appendTo($('#response'));
+			// $('#response .table').css('border', '1px solid black');
+			// $('#response input[name="id"]').remove();
+			// $('#response table').css('border', '1px solid black');
+			// $('#response th').css('border', '1px solid black');
+			// $('#response td').css('border', '1px solid black');
+			// $('#response td').css('padding', '5px');
+			// $('#response table').css('border-radius', '6px');
+			// $('#response .table').css('border-collapse', 'collapse');
+			// var attWed1 = $('input[name="attWed1"]:checked').val();
+			// $('#response .attWed1').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed1+'</p></td>');
+			// var attWed2 = $('input[name="attWed2"]:checked').val();
+			// $('#response .attWed2').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed2+'</p></td>');
+			// var attReh1 = $('input[name="attReh1"]:checked').val();
+			// $('#response .attReh1').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh1+'</p></td>');
+			// var attReh2 = $('input[name="attReh2"]:checked').val();
+			// $('#response .attReh2').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh2+'</p></td>');
+
+			// var childWed = $('input[name="childWed"]').val();
+			// $('#response .childWed').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+childWed+'</p></td>');
+			// var childReh = $('input[name="childReh"]').val();
+			// $('#response .childReh').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+childReh+'</p></td>');
+
+			// var food1val = $(food1).val();
+			// $('#response .food1').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food1val+'</p></td>');
+			// var food2val = $(food2).val();
+			// $('#response .food2').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food2val+'</p></td>');
+
+			// var message = $('.message').val();
+			// $('#response .messagenew').replaceWith('<td colspan="2" style="height: 40px; border: 1px solid black;"><p style="text-align: left">'+message+'</p></td>');
 		};
 		
 
@@ -218,7 +277,7 @@
 							    					$("html, body").animate({ scrollTop: $(document).height() }, 1000);
 							    				});
 							    				createResponse();
-							    				response = $('<div>').append($('#response .table-form').clone(true, true)).html();
+							    				response = $('#response').html();
 					    						$.post( '/sendemail', { allNames: allNames, response: response }, function(data) {
 					    						});
 							    			}
@@ -333,6 +392,8 @@
 						    						thankyouNote(firstName1);
 						    						var allNames = firstName1 + ' ' + selectedGuest.lastName1;
 						    						$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+						    						createResponse();
+								    				response = $('#response').html();
 						    						$.post( '/sendemail', { allNames: allNames, response: response }, function(data) {
 						    						});
 						    					});
@@ -364,6 +425,8 @@
 								    						}
 								    						$("html, body").animate({ scrollTop: $(document).height() }, 1000);
 								    						var allNames = firstName1 + ' ' + selectedGuest.lastName1 + ' & ' + fullName2a;
+								    						createResponse();
+								    						response = $('#response').html();
 								    						$.post( '/sendemail', { allNames: allNames, response: response }, function(data) {
 								    						});
 								    					}
