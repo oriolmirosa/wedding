@@ -150,7 +150,6 @@ module.exports = {
 			var foodEve = 0;
 			var foodFish = 0;
 			var foodVeget = 0;
-			var foodVegan = 0;
 			for (var i = 0; i < viewModel.guests.length; i++) {
 				if (viewModel.guests[i].attWed1 === 'Yes') yes += 1;
 				if (viewModel.guests[i].attWed2 === 'Yes') yes += 1;
@@ -165,11 +164,9 @@ module.exports = {
 				if (viewModel.guests[i].attWed1 === 'Yes' && viewModel.guests[i].food1 === 'Everything!') foodEve += 1;
 				if (viewModel.guests[i].attWed1 === 'Yes' && viewModel.guests[i].food1 === 'Fish') foodFish += 1;
 				if (viewModel.guests[i].attWed1 === 'Yes' && viewModel.guests[i].food1 === 'Vegetables') foodVeget += 1;
-				if (viewModel.guests[i].attWed1 === 'Yes' && viewModel.guests[i].food1 === 'Vegan crap') foodVegan += 1;
 				if (viewModel.guests[i].attWed2 === 'Yes' && viewModel.guests[i].food2 === 'Everything!') foodEve += 1;
 				if (viewModel.guests[i].attWed2 === 'Yes' && viewModel.guests[i].food2 === 'Fish') foodFish += 1;
 				if (viewModel.guests[i].attWed2 === 'Yes' && viewModel.guests[i].food2 === 'Vegetables') foodVeget += 1;
-				if (viewModel.guests[i].attWed2 === 'Yes' && viewModel.guests[i].food2 === 'Vegan crap') foodVegan += 1;
 			}
 			viewModel.summary.yes = yes;
 			viewModel.summary.no = no;
@@ -181,7 +178,6 @@ module.exports = {
 			viewModel.summary.foodEve = foodEve;
 			viewModel.summary.foodFish = foodFish;
 			viewModel.summary.foodVeget = foodVeget;
-			viewModel.summary.foodVegan = foodVegan;
 			res.render('summary', viewModel);
 		});
 	},
