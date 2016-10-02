@@ -52,6 +52,7 @@ module.exports = function(app) {
 	router.post('/deleteitem', registry.deleteItem);
 	router.post('/givesession', registry.giveSession);
 	router.get('/rsvp/guests', auth, rsvp.guests);
+	router.get('/rsvp/summary', auth, rsvp.summary);
 	router.post('/newguest', rsvp.newGuests);
 	router.post('/updateguests', rsvp.updateGuests);
 	router.post('/deleteguests', rsvp.deleteGuests);
