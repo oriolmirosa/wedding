@@ -1,8 +1,62 @@
 <main style="background-color: #fff;">
   <div class="container-fluid">
     <div class="row">
-      <div>{{summary}}</div><br/><br/>
-      <div>{{guests}}</div>
+      <div class="col-md-2"></div>
+      <div class="col-md-8"><br/><br/>
+        <div style="text-align: center;"><strong>SUMMARY</strong></div>
+          <table align="center" style="border: solid 1px black; border-collapse: collapse;">
+            <tr>
+              <td style="width: 350px; border: solid 1px black; border-collapse: collapse; padding-left: 10px;">Total number of guests:</td><td style="width: 50px; border: solid 1px black; border-collapse: collapse; text-align: center;">{{summary.numGuests}}</td>
+            </tr>
+            <tr>
+              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px;">Guests attending ceremony:</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{summary.yes}}</td>
+            </tr>
+            <tr>
+              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px;">Guests attending rehearsal:</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{summary.reh}}</td>
+            </tr>
+            <tr>
+              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px;">Guests NOT attending:</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{summary.no}}</td>
+            </tr>
+            <tr>
+              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px;">Guests who haven't RSVP'd yet:</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{summary.notAnswered}}</td>
+            </tr>
+            <tr>
+              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px;">Number of children under 12 attending wedding:</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{summary.childWed}}</td>
+            </tr>
+            <tr>
+              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px;">Number of children under 12 attending rehearsal:</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{summary.childReh}}</td>
+            </tr>
+            <tr>
+              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px;">Number of guests who eat everything:</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{summary.foodEve}}</td>
+            </tr>
+            <tr>
+              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px;">Number of guests who eat fish:</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{summary.foodFish}}</td>
+            </tr>
+            <tr>
+              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px;">Number of guests who eat vegetables:</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{summary.foodVeget}}</td>
+            </tr>
+            <tr>
+              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px;">Number of guests who eat vegan crap:</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{summary.foodVegan}}</td>
+            </tr>
+          </table><br/><br/><br/>
+          <div style="text-align: center;"><strong>GUESTS</strong></div>
+          <table align="center" style="border: solid 1px black; border-collapse: collapse;">
+            <tr>
+              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px; width: 200px;"><strong>Guest name</strong></td><td style="border: solid 1px black; border-collapse: collapse; width: 150px; text-align: center;"><strong>Attend wedding</strong></td><td style="border: solid 1px black; border-collapse: collapse; width: 150px; text-align: center;"><strong>Attend rehearsal</strong></td><td style="border: solid 1px black; border-collapse: collapse; width: 150px; text-align: center;"><strong>Eats...</strong></td>
+            </tr>
+          {{#each guests}}  
+            <tr>
+              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px;">{{firstName1}}&nbsp;{{lastName1}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{attWed1}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{attReh1}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{food1}}</td>
+            <tr>
+            {{#if firstName2}}
+            </tr>  
+              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px;">{{firstName2}}&nbsp;{{lastName2}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{attWed2}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{attReh2}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{food2}}</td>
+            </tr>
+            {{/if}}
+          {{/each}}
+          </table><br/><br/><br/>
+        </div>
+      <div class="col-md-2"></div>
     </div>
   </div>
 </main>
