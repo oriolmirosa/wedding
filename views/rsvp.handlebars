@@ -32,46 +32,46 @@
 			$('#responseTable th').css('border', '1px solid black');
 			$('#responseTable td').css('border', '1px solid black');
 			$('#responseTable td').css('padding', '5px');
-			$('#responseTable').css('border-radius', '6px');
+			$('#responseTable').css('border-radius', '5px');
 			$('#responseTable').css('border-collapse', 'collapse');
 
-			$('#responseTable').append('<tr><td style="height: 40px; width: 200px; border: 1px solid black;"></td><td style="height: 40px; width: 200px; border: 1px solid black;"><p style="text-align: center"><strong>Will attend wedding</strong></p></td><td style="height: 40px; width: 200px; border: 1px solid black;"><p style="text-align: center"><strong>Will attend rehearsal dinner</strong></p></td></tr>');
+			$('#responseTable').append('<tr><td style="height: 40px; width: 220px; border: 1px solid black;"></td><td style="height: 40px; width: 220px; border: 1px solid black;"><p style="text-align: center"><strong>Will attend wedding</strong></p></td><td style="height: 40px; width: 220px; border: 1px solid black;"><p style="text-align: center"><strong>Will attend rehearsal dinner</strong></p></td></tr>');
 
 			var name1 = $('.fullName1').html();
 			var attWed1 = $('input[name="attWed1"]:checked').val();
-			var attReh1 = $('input[name="attReh1"]:checked').val()
+			var attReh1 = $('input[name="attReh1"]:checked').val() != null ? $('input[name="attReh1"]:checked').val() : '?'
 			
-			$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+name1+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed1+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh1+'</p></td></tr>');
+			$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+name1+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed1+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh1+'</p></td></tr>');
 			
-			var name2 = $('.fullName2').html();
+			var name2 = $('.fullName2').html() || $('.fullName2td').html();
 
-			if (name2 != null && name2.slice(0, 8) !== 'Will you') {
+			if (name2 != null && name2.slice(0, 8) !== 'Will you' && name2.slice(0, 8) !== 'Portaràs') {
 				var attWed2 = $('input[name="attWed2"]:checked').val();
-				var attReh2 = $('input[name="attReh2"]:checked').val()
+				var attReh2 = $('input[name="attReh2"]:checked').val() != null ? $('input[name="attReh2"]:checked').val() : '?'
 				
-				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+name2+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed1+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh2+'</p></td></tr>');
+				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+name2+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed1+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh2+'</p></td></tr>');
 			}
 
 			var childWed = $('input[name="childWed"]').val();
 			var childReh = $('input[name="childReh"]').val();
 			
 			if (childWed != null) {
-				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">Number of children under 12</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+childWed+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+childReh+'</p></td></tr>');
+				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">Number of children under 12</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+childWed+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+childReh+'</p></td></tr>');
 			}
 
 			var food1 = $(food1).val();
 			
-			$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+name1+' eats:</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food1+'</p></td><td></td></tr>')
+			$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+name1.split(" ")[0]+' eats:</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food1+'</p></td><td></td></tr>')
 
-			if (name2 != null && name2.slice(0, 8) !== 'Will you') {
+			if (name2 != null && name2.slice(0, 8) !== 'Will you' && name2.slice(0, 8) !== 'Portaràs') {
 				var food2 = $(food2).val();
 			
-				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+name2+' eats:</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food2+'</p></td><td></td></tr>');
+				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+name2.split(" ")[0]+' eats:</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food2+'</p></td><td></td></tr>');
 			}
 
 			var message = $('.message').val();
 
-			$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">Message</p></td><td colspan="2" style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+message+'</p></td></tr>')
+			$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">Message:</p></td><td colspan="2" style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+message+'</p></td></tr>')
 
 
 			// $('.table-form').clone(true, true).appendTo($('#response'));

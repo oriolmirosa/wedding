@@ -133,6 +133,31 @@ module.exports = {
 		});
 	},
 
+	summary: function (req, res) {
+		var viewModel = {
+			summary: [],
+			guests: []
+		};
+		Rsvp.find({}, {}, {}, function (err, guests) {
+			if(err) { throw err; }
+			viewModel.guests = guests;
+			viewModel.summary[0] = {numguests: viewModel.guests.length};
+			var yes, no, notAnswered;
+			for (var i = 0; i < viewModel.guests.length; i++) {
+				if (viewModel.guests[i].attWed1 === 'Yes') yes += 1;
+				if (viewModel.guests[i].attWed2 === 'Yes') yes += 1;
+				if (viewModel.guests[i].attWed1 === 'No') no += 1;
+				if (viewModel.guests[i].attWed2 === 'No') no += 1;
+				if (viewModel.guests[i].attWed1 !== 'Yes' && viewModel.guests[i].attWed1 !== 'No') notAnswered += 1;
+				if (viewModel.guests[i].attWed2 !== 'Yes' && viewModel.guests[i].attWed2 !== 'No') notAnswered += 1;
+			}
+			viewModel.summary[1] = {yes: yes};
+			viewModel.summary[2] = {no: no};
+			viewModel.summary[3] = {notAnswered: notAnswered};
+			res.render('summary', viewModel);
+		});
+	},
+
 	sendEmail: function (req, res) {
 		var transporter = nodemailer.createTransport({
 	        service: 'Gmail',
@@ -146,7 +171,7 @@ module.exports = {
 
 		var mailOptions = {
 		    from: 'oriolmirosa@gmail.com', // sender address
-		    to: 'oriolmirosa@gmail.com', // list of receivers
+		    to: 'oriolmirosa@gmail.com, skaron@gmail.com', // list of receivers
 		    subject: 'Wedding RSVP!', // Subject line
 		    html: emailBody
 		};
