@@ -135,25 +135,53 @@ module.exports = {
 
 	summary: function (req, res) {
 		var viewModel = {
-			summary: [],
+			summary: {},
 			guests: []
 		};
 		Rsvp.find({}, {}, {}, function (err, guests) {
 			if(err) { throw err; }
 			viewModel.guests = guests;
-			viewModel.summary[0] = {numguests: viewModel.guests.length};
-			var yes, no, notAnswered;
+			var yes = 0;
+			var no = 0;
+			var notAnswered = 0;
+			var reh = 0;
+			var childWed = 0;
+			var childReh = 0;
+			var foodEve = 0;
+			var foodFish = 0;
+			var foodVeget = 0;
+			var foodVegan = 0;
 			for (var i = 0; i < viewModel.guests.length; i++) {
 				if (viewModel.guests[i].attWed1 === 'Yes') yes += 1;
 				if (viewModel.guests[i].attWed2 === 'Yes') yes += 1;
 				if (viewModel.guests[i].attWed1 === 'No') no += 1;
 				if (viewModel.guests[i].attWed2 === 'No') no += 1;
 				if (viewModel.guests[i].attWed1 !== 'Yes' && viewModel.guests[i].attWed1 !== 'No') notAnswered += 1;
-				if (viewModel.guests[i].attWed2 !== 'Yes' && viewModel.guests[i].attWed2 !== 'No') notAnswered += 1;
+				if (viewModel.guests[i].attWed2 !== 'Yes' && viewModel.guests[i].attWed2 !== 'No' && viewModel.guests[i].lastName2 != null && viewModel.guests[i].lastName2 != '') notAnswered += 1;
+				if (viewModel.guests[i].attReh1 === 'Yes') reh += 1;
+				if (viewModel.guests[i].attReh2 === 'Yes') reh += 1;
+				if (typeof viewModel.guests[i].childWed === 'number') childWed += viewModel.guests[i].childWed;
+				if (typeof viewModel.guests[i].childReh === 'number') childReh += viewModel.guests[i].childReh;
+				if (viewModel.guests[i].attWed1 === 'Yes' && viewModel.guests[i].food1 === 'Everything!') foodEve += 1;
+				if (viewModel.guests[i].attWed1 === 'Yes' && viewModel.guests[i].food1 === 'Fish') foodFish += 1;
+				if (viewModel.guests[i].attWed1 === 'Yes' && viewModel.guests[i].food1 === 'Vegetables') foodVeget += 1;
+				if (viewModel.guests[i].attWed1 === 'Yes' && viewModel.guests[i].food1 === 'Vegan crap') foodVegan += 1;
+				if (viewModel.guests[i].attWed2 === 'Yes' && viewModel.guests[i].food2 === 'Everything!') foodEve += 1;
+				if (viewModel.guests[i].attWed2 === 'Yes' && viewModel.guests[i].food2 === 'Fish') foodFish += 1;
+				if (viewModel.guests[i].attWed2 === 'Yes' && viewModel.guests[i].food2 === 'Vegetables') foodVeget += 1;
+				if (viewModel.guests[i].attWed2 === 'Yes' && viewModel.guests[i].food2 === 'Vegan crap') foodVegan += 1;
 			}
-			viewModel.summary[1] = {yes: yes};
-			viewModel.summary[2] = {no: no};
-			viewModel.summary[3] = {notAnswered: notAnswered};
+			viewModel.summary.yes = yes;
+			viewModel.summary.no = no;
+			viewModel.summary.notAnswered = notAnswered;
+			viewModel.summary.numGuests = yes + no + notAnswered;
+			viewModel.summary.reh = reh;
+			viewModel.summary.childWed = childWed;
+			viewModel.summary.childReh = childReh;
+			viewModel.summary.foodEve = foodEve;
+			viewModel.summary.foodFish = foodFish;
+			viewModel.summary.foodVeget = foodVeget;
+			viewModel.summary.foodVegan = foodVegan;
 			res.render('summary', viewModel);
 		});
 	},
