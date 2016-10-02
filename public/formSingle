@@ -75,7 +75,6 @@
                 <option value="Everything!">Everything!</option>
                 <option value="Fish">Fish</option>
                 <option value="Vegetables">Vegetables</option>
-                <option value="Vegan crap">Vegan crap</option>
               </select>
             </td>
             <td colspan="2" rowspan="2" class="messagenew" style="vertical-align: middle;">Message
@@ -88,7 +87,6 @@
                 <option value="Everything!">Everything!</option>
                 <option value="Fish">Fish</option>
                 <option value="Vegetables">Vegetables</option>
-                <option value="Vegan crap">Vegan crap</option>
               </select>
             </td>
           </tr>
@@ -103,7 +101,6 @@
                 <option value="Everything!">Everything!</option>
                 <option value="Fish">Fish</option>
                 <option value="Vegetables">Vegetables</option>
-                <option value="Vegan crap">Vegan crap</option>
               </select>
             </td>
           </tr>
@@ -116,7 +113,6 @@
                 <option value="Everything!">Everything!</option>
                 <option value="Fish">Fish</option>
                 <option value="Vegetables">Vegetables</option>
-                <option value="Vegan crap">Vegan crap</option>
               </select>
             </td>
           </tr>
