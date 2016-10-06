@@ -14,49 +14,6 @@
 		<script>
 			$(function() {
 
-				var body = $('body');
-				var backgrounds = new Array(
-					'url("/img/jj-ls.jpg")',
-					'url("/img/jj2-ls.jpg")',
-					'url("/img/Downtown-SF.jpg")',
-					'url("/img/new-mexico-road.jpg")',
-					'url("/img/Santa-Fe-NM.jpg")',
-					'url("/img/sarahoriolBO.jpg")',
-					'url("/img/sarahoriolSF.jpg")'
-					);
-
-				var current = 0;
-
-				function nextBackground() {
-					body.css(
-						'background',
-						backgrounds[current = ++current % backgrounds.length]
-					);
-
-					body.css(
-						'background-size', 'cover'
-					);
-
-					body.css(
-						'background-repeat', 'no-repeat'
-					);
-
-					body.css(
-						'background-attachment', 'fixed'
-					);
-
-					body.css(
-						'background-position', 'center'
-					);
-
-					setTimeout(nextBackground, 3000);
-				}
-
-				setTimeout(nextBackground, 3000);
-				body.css('background', backgrounds[0]);
-
-
-
 				$('input[name="password"]').on('input', function() {
 					if ($('.bad-password').is(':visible')) {
 						console.log('visible!');
@@ -80,7 +37,7 @@
 			});
 		</script>
 	</head>
-	<body>
+	<body class="login-background-image">
 		<div style="height: 100vh; position: relative;">
 			<div class="panel panel-default" style="position: absolute; top: 30%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%); border-color: #1c1c1c;">
 				<div class="panel-heading" style="line-height: 1em; text-align: center;">{{{__ 'SARAH &amp; ORIOL\'s WEDDING WEBSITE'}}}</div>
