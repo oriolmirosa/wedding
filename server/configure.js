@@ -41,9 +41,14 @@ module.exports = function(app) {
       					return ! RegExp(t).test(v) ? v : v.replace(t, t + ' selected="selected"');
     				})
     				.join('\n')
-			},
-			__: function() { return i18n.__.apply(this, arguments); },
-    		__n: function() { return i18n.__n.apply(this, arguments); }
+				},
+				__: function() { return i18n.__.apply(this, arguments); },
+    		__n: function() { return i18n.__n.apply(this, arguments); },
+				inc: function(number, options) {
+					if (typeof(number) === 'undefined' || number === null)
+        		return null;
+    			return number + (options.hash.inc || 1);
+				}
     	}
 	}).engine);
 	app.set('view engine', 'handlebars');
