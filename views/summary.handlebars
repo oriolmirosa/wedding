@@ -37,23 +37,42 @@
             </tr>
           </table><br/><br/><br/>
           <div style="text-align: center;"><strong>GUESTS</strong></div>
-          <table align="center" style="border: solid 1px black; border-collapse: collapse;">
-            <tr>
-              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px; width: 200px;"><strong>Guest name</strong></td><td style="border: solid 1px black; border-collapse: collapse; width: 150px; text-align: center;"><strong>Attend wedding</strong></td><td style="border: solid 1px black; border-collapse: collapse; width: 150px; text-align: center;"><strong>Attend rehearsal</strong></td><td style="border: solid 1px black; border-collapse: collapse; width: 150px; text-align: center;"><strong>Eats...</strong></td>
-            </tr>
-          {{#each guests}}
-            <tr>
-              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px;">{{firstName1}}&nbsp;{{lastName1}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{attWed1}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{attReh1}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{food1}}</td>
-            <tr>
-            {{#if firstName2}}
-            </tr>
-              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px;">{{firstName2}}&nbsp;{{lastName2}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{attWed2}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{attReh2}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{food2}}</td>
-            </tr>
-            {{/if}}
-          {{/each}}
+          <table class="guestsTable" align="center" style="border: solid 1px black; border-collapse: collapse;">
+						<thead>
+	            <tr>
+	              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px; width: 200px;"><strong>Guest name</strong></td><td style="border: solid 1px black; border-collapse: collapse; width: 150px; text-align: center;"><strong>Attend wedding</strong></td><td style="border: solid 1px black; border-collapse: collapse; width: 150px; text-align: center;"><strong>Attend rehearsal</strong></td><td style="border: solid 1px black; border-collapse: collapse; width: 150px; text-align: center;"><strong>Eats...</strong></td>
+	            </tr>
+						</thead>
+						<tbody>
+          		{{#each guests}}
+		            <tr>
+		              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px;">{{firstName1}}&nbsp;{{lastName1}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{attWed1}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{attReh1}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{food1}}</td>
+		            </tr>
+		            {{#if firstName2}}
+		            <tr>
+		              <td style="border: solid 1px black; border-collapse: collapse; padding-left: 10px;">{{firstName2}}&nbsp;{{lastName2}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{attWed2}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{attReh2}}</td><td style="border: solid 1px black; border-collapse: collapse; text-align: center;">{{food2}}</td>
+		            </tr>
+		            {{/if}}
+          		{{/each}}
+						</tbody>
           </table><br/><br/><br/>
         </div>
       <div class="col-md-2"></div>
     </div>
   </div>
 </main>
+<style>
+	.guestsTable {
+	    counter-reset: rowNumber;
+	}
+
+	.guestsTable tbody tr {
+	    counter-increment: rowNumber;
+	}
+
+	.guestsTable tbody tr td:first-child::before {
+	    content: counter(rowNumber);
+	    min-width: 1em;
+	    margin-right: 0.5em;
+	}
+</style>
