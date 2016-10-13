@@ -1,28 +1,7 @@
 <div class="panel panel-default" style="border-color: #1c1c1c; margin-top: 50px;">
-  <!-- <div class="panel-heading" style="line-height: 1em;">
-    <h3 class="panel-title" style="text-align: center;">Edit guest number {{@index}}</h3>
-  </div> -->
   <form class="form-email" role="form">
     <div class="panel-body form-horizontal" style="padding-bottom: 45px;">
-      <!-- <div class="form-group col-md-12">
-        <label class="col-md-4" for="id">Id:</label>
-        <div class="col-md-8">
-          <input type="text" name="id" class="form-control" value="" readonly>
-        </div>
-      </div>
-      <div class="form-group col-md-12">
-        <label class="col-md-4" for="couple">Couple?:</label>
-        <div class="col-md-8">
-            <select class="form-control" name="couple">
-            {{#select couple}}
-            <option value="Select an option">Select an option</option>
-            <option value="Couple">Couple</option>
-            <option value="Single">Single</option>
-            {{/select}}
-          </select>
-        </div>
-      </div> -->
-      <!-- <div class="form-group col-md-12"> -->
+
         <table class="table table-form" style="width: 100%; table-layout: fixed;">
           <tr valign="middle">
             <td><input name="id" hidden></td>
@@ -49,6 +28,39 @@
             <td class="attReh2" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
               <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attReh2" value="Yes">Yes</label>
               <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attReh2" value="No">No</label>
+            </td>
+          </tr>
+					<tr class="guest3">
+            <td class="fullName3" style="vertical-align: middle;"></td>
+            <td class="attWed3" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+              <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attWed3" value="Yes">Yes</label>
+              <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attWed3" value="No">No</label>
+            </td>
+            <td class="attReh3" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+              <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attReh3" value="Yes">Yes</label>
+              <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attReh3" value="No">No</label>
+            </td>
+          </tr>
+					<tr class="guest4">
+            <td class="fullName4" style="vertical-align: middle;"></td>
+            <td class="attWed4" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+              <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attWed4" value="Yes">Yes</label>
+              <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attWed4" value="No">No</label>
+            </td>
+            <td class="attReh4" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+              <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attReh4" value="Yes">Yes</label>
+              <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attReh4" value="No">No</label>
+            </td>
+          </tr>
+					<tr class="guest5">
+            <td class="fullName5" style="vertical-align: middle;"></td>
+            <td class="attWed5" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+              <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attWed5" value="Yes">Yes</label>
+              <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attWed5" value="No">No</label>
+            </td>
+            <td class="attReh5" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+              <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attReh5" value="Yes">Yes</label>
+              <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attReh5" value="No">No</label>
             </td>
           </tr>
           <tr class="children">
@@ -97,7 +109,38 @@
               </select>
             </td>
           </tr>
+					<tr class="hidden-xs guest3">
+            <td style="vertical-align: middle;">
+              <div class="firstName3" style="display: inline-block; padding-top: 2px;"></div>&nbsp;&nbsp;
+              <select class="form-control food3desk" name="food3" style="width: 100px; height: 27px; display: inline-block; float: right; margin-right: 15px;">
+                <option value="Everything!">Everything!</option>
+                <option value="Fish">Fish</option>
+                <option value="Vegetables">Vegetables</option>
+              </select>
+            </td>
+          </tr>
+					<tr class="hidden-xs guest4">
+            <td style="vertical-align: middle;">
+              <div class="firstName4" style="display: inline-block; padding-top: 2px;"></div>&nbsp;&nbsp;
+              <select class="form-control food4desk" name="food4" style="width: 100px; height: 27px; display: inline-block; float: right; margin-right: 15px;">
+                <option value="Everything!">Everything!</option>
+                <option value="Fish">Fish</option>
+                <option value="Vegetables">Vegetables</option>
+              </select>
+            </td>
+          </tr>
+					<tr class="hidden-xs guest5">
+            <td style="vertical-align: middle;">
+              <div class="firstName5" style="display: inline-block; padding-top: 2px;"></div>&nbsp;&nbsp;
+              <select class="form-control food5desk" name="food5" style="width: 100px; height: 27px; display: inline-block; float: right; margin-right: 15px;">
+                <option value="Everything!">Everything!</option>
+                <option value="Fish">Fish</option>
+                <option value="Vegetables">Vegetables</option>
+              </select>
+            </td>
+          </tr>
         </table>
+
         <table class="table table-form hidden-sm hidden-md hidden-lg" style="table-layout: fixed;">
           <tr style="width: 100%;">
             <td>
@@ -117,6 +160,42 @@
             </td>
             <td colspan="2">
               <select class="form-control food2mob" name="food2" style="height: 30px; width: 120px; display: inline-block;">
+                <option value="Everything!">Everything!</option>
+                <option value="Fish">Fish</option>
+                <option value="Vegetables">Vegetables</option>
+              </select>
+            </td>
+          </tr>
+					<tr class="guest3">
+            <td>
+              <div class="firstName3" style="vertical-align: middle; display: inline-block; padding-top: 2px;"></div>
+            </td>
+            <td colspan="2">
+              <select class="form-control food3mob" name="food3" style="height: 30px; width: 120px; display: inline-block;">
+                <option value="Everything!">Everything!</option>
+                <option value="Fish">Fish</option>
+                <option value="Vegetables">Vegetables</option>
+              </select>
+            </td>
+          </tr>
+					<tr class="guest4">
+            <td>
+              <div class="firstName4" style="vertical-align: middle; display: inline-block; padding-top: 2px;"></div>
+            </td>
+            <td colspan="2">
+              <select class="form-control food4mob" name="food4" style="height: 30px; width: 120px; display: inline-block;">
+                <option value="Everything!">Everything!</option>
+                <option value="Fish">Fish</option>
+                <option value="Vegetables">Vegetables</option>
+              </select>
+            </td>
+          </tr>
+					<tr class="guest5">
+            <td>
+              <div class="firstName5" style="vertical-align: middle; display: inline-block; padding-top: 2px;"></div>
+            </td>
+            <td colspan="2">
+              <select class="form-control food5mob" name="food5" style="height: 30px; width: 120px; display: inline-block;">
                 <option value="Everything!">Everything!</option>
                 <option value="Fish">Fish</option>
                 <option value="Vegetables">Vegetables</option>
