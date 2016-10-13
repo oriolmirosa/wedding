@@ -287,7 +287,7 @@ module.exports = {
 
 		var mailOptions = {
 		    from: 'oriolmirosa@gmail.com', // sender address
-		    to: 'oriolmirosa@gmail.com', // list of receivers
+		    to: 'oriolmirosa@gmail.com, skaron@gmail.com', // list of receivers
 		    subject: 'Wedding RSVP!', // Subject line
 		    html: emailBody
 		};
