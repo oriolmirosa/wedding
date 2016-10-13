@@ -150,10 +150,15 @@ module.exports = {
 		for (var i = 0; i < name.length; i++) {
 			var temp = '(^|\s)' + name[i] + '(\s|$)';
 			console.log('temp[' + i + ']: ' + temp);
-			var temp2 = new RegExp(temp, "i")
+			var temp2 = new RegExp(temp, "i");
 			console.log('regexName[' + i + ']: ' + temp2);
 			// var temp3 = '(^|\s)' + name[i] + '(\s|$)';
 			regexName.push(temp2);
+			if (name[i - 1]) {
+				var temp3 = '(^|\s)' + name[i - 1] + ' ' + name[i] + '(\s|$)';
+				var temp4 = new RegExp(temp3, "i");
+				regexName.push(temp4);
+			}
 		}
 
 		Rsvp.find( { $or:
