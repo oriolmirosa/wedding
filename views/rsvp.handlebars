@@ -18,9 +18,15 @@
 			if ($(window).width() < 450) {
 				food1 = '.food1mob'
 				food2 = '.food2mob'
+				food3 = '.food3mob'
+				food4 = '.food4mob'
+				food5 = '.food5mob'
 			} else {
 				food1 = '.food1desk'
 				food2 = '.food2desk'
+				food3 = '.food3desk'
+				food4 = '.food4desk'
+				food5 = '.food5desk'
 			}
 
 			var table = '<table id="responseTable"></table>'
@@ -40,38 +46,83 @@
 			var name1 = $('.fullName1').html();
 			var attWed1 = $('input[name="attWed1"]:checked').val();
 			var attReh1 = $('input[name="attReh1"]:checked').val() != null ? $('input[name="attReh1"]:checked').val() : '?'
-			
+
 			$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+name1+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed1+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh1+'</p></td></tr>');
-			
+
 			var name2 = $('.fullName2').html() || $('.fullName2td').html();
 
 			if (name2 != null && name2.slice(0, 8) !== 'Will you' && name2.slice(0, 8) !== 'Portaràs') {
 				var attWed2 = $('input[name="attWed2"]:checked').val();
 				var attReh2 = $('input[name="attReh2"]:checked').val() != null ? $('input[name="attReh2"]:checked').val() : '?'
-				
-				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+name2+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed1+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh2+'</p></td></tr>');
+
+				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+name2+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed2+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh2+'</p></td></tr>');
+			}
+
+			var name3 = $('.fullName3').html() || $('.fullName3td').html();
+
+			if (name3 != null && name3.slice(0, 8) !== 'Will you' && name3.slice(0, 8) !== 'Portaràs') {
+				var attWed3 = $('input[name="attWed3"]:checked').val();
+				var attReh3 = $('input[name="attReh3"]:checked').val() != null ? $('input[name="attReh3"]:checked').val() : '?'
+
+				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+name3+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed3+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh3+'</p></td></tr>');
+			}
+
+			var name4 = $('.fullName4').html() || $('.fullName4td').html();
+
+			if (name4 != null && name4.slice(0, 8) !== 'Will you' && name4.slice(0, 8) !== 'Portaràs') {
+				var attWed4 = $('input[name="attWed4"]:checked').val();
+				var attReh4 = $('input[name="attReh4"]:checked').val() != null ? $('input[name="attReh4"]:checked').val() : '?'
+
+				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+name4+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed4+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh4+'</p></td></tr>');
+			}
+
+			var name5 = $('.fullName5').html() || $('.fullName5td').html();
+
+			if (name5 != null && name5.slice(0, 8) !== 'Will you' && name5.slice(0, 8) !== 'Portaràs') {
+				var attWed5 = $('input[name="attWed5"]:checked').val();
+				var attReh5 = $('input[name="attReh5"]:checked').val() != null ? $('input[name="attReh5"]:checked').val() : '?'
+
+				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+name5+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed5+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh5+'</p></td></tr>');
 			}
 
 			var childWed = $('input[name="childWed"]').val();
 			var childReh = $('input[name="childReh"]').val();
-			
+
 			if (childWed != null) {
 				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">Number of children under 12</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+childWed+'</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+childReh+'</p></td></tr>');
 			}
 
 			var food1 = $(food1).val();
-			
-			$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+name1.split(" ")[0]+' eats:</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food1+'</p></td><td></td></tr>')
+
+			$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+name1.split(" ")[0]+' eats:</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food1+'</p></td><td style="height: 40px; border: 1px solid black;"> </td></tr>')
 
 			if (name2 != null && name2.slice(0, 8) !== 'Will you' && name2.slice(0, 8) !== 'Portaràs') {
 				var food2 = $(food2).val();
-			
-				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+name2.split(" ")[0]+' eats:</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food2+'</p></td><td></td></tr>');
+
+				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+name2.split(" ")[0]+' eats:</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food2+'</p></td><td style="height: 40px; border: 1px solid black;"></td></tr>');
+			}
+
+			if (name3 != null && name3.slice(0, 8) !== 'Will you' && name3.slice(0, 8) !== 'Portaràs') {
+				var food3 = $(food3).val();
+
+				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+name3.split(" ")[0]+' eats:</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food3+'</p></td><td style="height: 40px; border: 1px solid black;"></td></tr>');
+			}
+
+			if (name4 != null && name4.slice(0, 8) !== 'Will you' && name4.slice(0, 8) !== 'Portaràs') {
+				var food4 = $(food4).val();
+
+				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+name4.split(" ")[0]+' eats:</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food4+'</p></td><td style="height: 40px; border: 1px solid black;"></td></tr>');
+			}
+
+			if (name5 != null && name5.slice(0, 8) !== 'Will you' && name5.slice(0, 8) !== 'Portaràs') {
+				var food5 = $(food5).val();
+
+				$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+name5.split(" ")[0]+' eats:</p></td><td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+food5+'</p></td><td style="height: 40px; border: 1px solid black;"></td></tr>');
 			}
 
 			var message = $('.message').val();
 
-			$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">Message:</p></td><td colspan="2" style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+message+'</p></td></tr>')
+			$('#responseTable').append('<tr><td style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">Message:</p></td><td colspan="5" style="height: 40px; border: 1px solid black;"><p style="text-align: left; padding-left: 10px;">'+message+'</p></td></tr>')
 
 
 			// $('.table-form').clone(true, true).appendTo($('#response'));
@@ -85,7 +136,7 @@
 			// $('#response .table').css('border-collapse', 'collapse');
 			// var attWed1 = $('input[name="attWed1"]:checked').val();
 			// $('#response .attWed1').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed1+'</p></td>');
-			// var attWed2 = $('input[name="attWed2"]:checked').val();
+			// var attWed5 = $('input[name="attWed2"]:checked').val();
 			// $('#response .attWed2').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attWed2+'</p></td>');
 			// var attReh1 = $('input[name="attReh1"]:checked').val();
 			// $('#response .attReh1').replaceWith('<td style="height: 40px; border: 1px solid black;"><p style="text-align: center">'+attReh1+'</p></td>');
@@ -105,7 +156,7 @@
 			// var message = $('.message').val();
 			// $('#response .messagenew').replaceWith('<td colspan="2" style="height: 40px; border: 1px solid black;"><p style="text-align: left">'+message+'</p></td>');
 		};
-		
+
 
 		function fillIn (selectedGuest) {
 			$('input[name="id"]').val(selectedGuest._id);
@@ -113,24 +164,45 @@
 			$('input[name="attReh1"]:radio').val([selectedGuest.attReh1]);
 			$('input[name="attWed2"]:radio').val([selectedGuest.attWed2]);
 			$('input[name="attReh2"]:radio').val([selectedGuest.attReh2]);
+			$('input[name="attWed3"]:radio').val([selectedGuest.attWed3]);
+			$('input[name="attReh3"]:radio').val([selectedGuest.attReh3]);
+			$('input[name="attWed4"]:radio').val([selectedGuest.attWed4]);
+			$('input[name="attReh4"]:radio').val([selectedGuest.attReh4]);
+			$('input[name="attWed5"]:radio').val([selectedGuest.attWed5]);
+			$('input[name="attReh5"]:radio').val([selectedGuest.attReh5]);
 			$('input[name="childWed"]').val(selectedGuest.childWed);
 			$('input[name="childReh"]').val(selectedGuest.childReh);
 			$('.food1desk').val(selectedGuest.food1);
 			$('.food2desk').val(selectedGuest.food2);
+			$('.food3desk').val(selectedGuest.food3);
+			$('.food4desk').val(selectedGuest.food4);
+			$('.food5desk').val(selectedGuest.food5);
 			$('.food1mob').val(selectedGuest.food1);
 			$('.food2mob').val(selectedGuest.food2);
+			$('.food3mob').val(selectedGuest.food3);
+			$('.food4mob').val(selectedGuest.food4);
+			$('.food5mob').val(selectedGuest.food5);
 			$('.message').text(selectedGuest.message);
 		};
 
 		function passGuests () {
 			var food1
 			var food2
+			var food3
+			var food4
+			var food5
 			if ($(window).width() < 450) {
 				food1 = '.food1mob'
 				food2 = '.food2mob'
+				food3 = '.food3mob'
+				food4 = '.food4mob'
+				food5 = '.food5mob'
 			} else {
 				food1 = '.food1desk'
 				food2 = '.food2desk'
+				food3 = '.food3desk'
+				food4 = '.food4desk'
+				food5 = '.food5desk'
 			}
 			var guestsPass = {
 				id: $('input[name=id]').val(),
@@ -138,34 +210,105 @@
 				attReh1: $('input[name="attReh1"]:checked').val(),
 				attWed2: $('input[name="attWed2"]:checked').val(),
 				attReh2: $('input[name="attReh2"]:checked').val(),
+				attWed3: $('input[name="attWed3"]:checked').val(),
+				attReh3: $('input[name="attReh3"]:checked').val(),
+				attWed4: $('input[name="attWed4"]:checked').val(),
+				attReh4: $('input[name="attReh4"]:checked').val(),
+				attWed5: $('input[name="attWed5"]:checked').val(),
+				attReh5: $('input[name="attReh5"]:checked').val(),
 				childWed: $('input[name="childWed"]').val(),
 				childReh: $('input[name="childReh"]').val(),
 				food1: $(food1).val(),
 				food2: $(food2).val(),
+				food3: $(food3).val(),
+				food4: $(food4).val(),
+				food5: $(food5).val(),
 				message: $('.message').val()
 			}
 			console.log(`guestsPass.food1: ${guestsPass.food1}`);
 			return guestsPass;
 		};
 
-		function thankyouNote (firstName1, firstName2) {
-			if (firstName2 != null) {
-				if ($('input[name="attWed1"]:checked').val() === 'Yes' && $('input[name="attWed2"]:checked').val() === 'Yes') {
+		function thankyouNote (firstName1, firstName2, firstName3, firstName4, firstName5) {
+			var names = Array.from(arguments)
+			names = names.filter(function (n) { return n })
+			console.log(`names ${names}`)
+			var attend = [];
+			for (var i = 1; i <= names.length; i++) {
+				if ($('input[name="attWed' + i + '"]:checked').val() === 'Yes') {
+					attend.push(1)
+				} else {
+					attend.push(0)
+				}
+			}
+			var guestsCome = []
+			var guestsDontCome = []
+			for (var i = 0; i < names.length; i++) {
+				if (attend[i]) {
+					guestsCome.push(names[i])
+				} else {
+					guestsDontCome.push(names[i])
+				}
+			}
+			console.log(`guestsCome: ${guestsCome}`)
+			console.log(`guestsDontCome: ${guestsDontCome}`)
+			var sum = attend.reduce(function (a, b) {
+    		return a + b;
+			});
+
+			if (sum === attend.length) {
+				if (attend.length === 1) {
+					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Yay! We\'re so excited to see you in Santa Fe!"}}}</p><br/><br/>');
+				} else if (attend.length === 2) {
 					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Yay! We\'re so excited to see you both in Santa Fe!"}}}</p><br/><br/>');
-				} else if ($('input[name="attWed1"]:checked').val() === 'Yes' && $('input[name="attWed2"]:checked').val() === 'No') {
-					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "We\'re so excited to see"}}} ' + firstName1 + ' {{{__ "in Santa Fe, but we\'ll miss"}}} ' + firstName2 + '!</p><br/><br/>');
-				} else if ($('input[name="attWed1"]:checked').val() === 'No' && $('input[name="attWed2"]:checked').val() === 'Yes') {
-					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "We\'re so excited to see"}}} ' + firstName2 + ' {{{__ "in Santa Fe, but we\'ll miss"}}} ' + firstName1 + '!</p><br/><br/>');
-				} else if ($('input[name="attWed1"]:checked').val() === 'No' && $('input[name="attWed2"]:checked').val() === 'No') {
+				} else {
+					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Yay! We\'re so excited to see you all in Santa Fe!"}}}</p><br/><br/>');
+				}
+			} else if (sum === 0) {
+				if (attend.length === 1) {
+					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Aww, we\'re so sorry you won\'t be able to join us!"}}}</p><br/><br/>');
+				} else {
 					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Aw, we\'re so sorry you won\'t be able to join us!"}}}</p><br/><br/>');
 				}
 			} else {
-				if ($('input[name="attWed1"]:checked').val() === 'Yes') {
-					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Yay! We\'re so excited to see you in Santa Fe!"}}}</p><br/><br/>');
-				} else if ($('input[name="attWed1"]:checked').val() === 'No') {
-					$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Aw, we\'re so sorry you won\'t be able to join us!"}}}</p><br/><br/>');
+				var attending = ''
+				if (guestsCome.length === 1){
+					attending = guestsCome[0]
+				} else {
+					for (var j = 0; j < guestsCome.length - 2; j++) {
+						attending += guestsCome[j] + ', '
+					}
+					attending += guestsCome[guestsCome.length - 2] + ' & ' + guestsCome[guestsCome.length - 1]
 				}
+				var notAttending = ''
+				if (guestsDontCome.length === 1){
+					notAttending = guestsDontCome[0]
+				} else {
+					for (var k = 0; k < guestsDontCome.length - 2; k++) {
+						notAttending += guestsDontCome[k] + ', '
+					}
+					notAttending += guestsDontCome[guestsDontCome.length - 2] + ' & ' + guestsDontCome[guestsDontCome.length - 1]
+				}
+				$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "We\'re so excited to see"}}} ' + attending + ' {{{__ "in Santa Fe, but we\'ll miss"}}} ' + notAttending + '!</p><br/><br/>');
 			}
+
+			// if (firstName2 != null) {
+			// 	if ($('input[name="attWed1"]:checked').val() === 'Yes' && $('input[name="attWed2"]:checked').val() === 'Yes') {
+			// 		$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Yay! We\'re so excited to see you both in Santa Fe!"}}}</p><br/><br/>');
+			// 	} else if ($('input[name="attWed1"]:checked').val() === 'Yes' && $('input[name="attWed2"]:checked').val() === 'No') {
+			// 		$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "We\'re so excited to see"}}} ' + firstName1 + ' {{{__ "in Santa Fe, but we\'ll miss"}}} ' + firstName2 + '!</p><br/><br/>');
+			// 	} else if ($('input[name="attWed1"]:checked').val() === 'No' && $('input[name="attWed2"]:checked').val() === 'Yes') {
+			// 		$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "We\'re so excited to see"}}} ' + firstName2 + ' {{{__ "in Santa Fe, but we\'ll miss"}}} ' + firstName1 + '!</p><br/><br/>');
+			// 	} else if ($('input[name="attWed1"]:checked').val() === 'No' && $('input[name="attWed2"]:checked').val() === 'No') {
+			// 		$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Aw, we\'re so sorry you won\'t be able to join us!"}}}</p><br/><br/>');
+			// 	}
+			// } else {
+			// 	if ($('input[name="attWed1"]:checked').val() === 'Yes') {
+			// 		$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Yay! We\'re so excited to see you in Santa Fe!"}}}</p><br/><br/>');
+			// 	} else if ($('input[name="attWed1"]:checked').val() === 'No') {
+			// 		$('.guestsForm').append('<p style="text-align: center; font-size: 22px; font-weight: 800;">{{{__ "Aw, we\'re so sorry you won\'t be able to join us!"}}}</p><br/><br/>');
+			// 	}
+			// }
 		};
 
 		$('#guest-btn').click( function (e) {
@@ -173,7 +316,7 @@
 			if ($('.guestsForm')) {
     			$('.guestsForm').children().remove();
     		}
-    		
+
     		var parameters = { name: $('input[name="guestname"]').val() };
 			$(this).blur();
 
@@ -183,7 +326,7 @@
 				$.get( '/searchguests', parameters, function(data) {
 	      			if ($.isEmptyObject(data)) {
 	      				$('.table-list').empty();
-								$('.table-list').append('<caption class="text-align-center" style="color: #000;">{{{__ 'Your search found no matches. Try again'}}}!</caption>');	      				
+								$('.table-list').append('<caption class="text-align-center" style="color: #000;">{{{__ 'Your search found no matches. Try again'}}}!</caption>');
 	      			} else {
 		      			ul = '';
 		      			tr = ''
@@ -202,6 +345,7 @@
 				    		var selectedIndex = 1*($(this).attr('data-index'));
 				    		console.log('selectedIndex: ' + selectedIndex);
 				    		var selectedGuest = data[parseInt(selectedIndex)].guests;
+								console.log('selectedGuest: ' + JSON.stringify(selectedGuest, null, 4));
 				    		console.log('selectedGuest.firstName1: ' + selectedGuest.firstName1);
 				    		$('.table-list tr').each( function (index) {
 				    			var rowText = $(this).text();
@@ -224,20 +368,57 @@
 					    				$('.guestsForm').html(formCouple);
 					    				$('.fullName1').html(selectedGuest.firstName1 + ' ' + selectedGuest.lastName1);
 					    				$('.fullName2').html(selectedGuest.firstName2 + ' ' + selectedGuest.lastName2);
+											if (selectedGuest.firstName3 != null && selectedGuest.firstName3 !== '') {
+												var firstName3 = selectedGuest.firstName3;
+												$('.fullName3').html(selectedGuest.firstName3 + ' ' + selectedGuest.lastName3);
+											} else {
+												$('.guest3').remove();
+											}
+											if (selectedGuest.firstName4 != null && selectedGuest.firstName4 !== '') {
+												var firstName4 = selectedGuest.firstName4;
+												$('.fullName4').html(selectedGuest.firstName4 + ' ' + selectedGuest.lastName4);
+											} else {
+												$('.guest4').remove();
+											}
+											if (selectedGuest.firstName5 != null && selectedGuest.firstName5 !== '') {
+												var firstName5 = selectedGuest.firstName5;
+												$('.fullName5').html(selectedGuest.firstName5 + ' ' + selectedGuest.lastName5);
+											} else {
+												$('.guest5').remove();
+											}
 					    				if (currLang === 'ca') {
 					    					$('.firstName1').html(selectedGuest.firstName1 + ' menja:');
 					    					$('.firstName2').html(selectedGuest.firstName2 + ' menja:');
+												$('.firstName3').html(selectedGuest.firstName3 + ' menja:');
+												$('.firstName4').html(selectedGuest.firstName4 + ' menja:');
+												$('.firstName5').html(selectedGuest.firstName5 + ' menja:');
 					    				} else {
 					    					$('.firstName1').html(selectedGuest.firstName1 + ' eats:');
 					    					$('.firstName2').html(selectedGuest.firstName2 + ' eats:');
-					    				}	
-					    				var allNames = $('.fullName1').html() + ' & ' + $('.fullName2').html()
+												$('.firstName3').html(selectedGuest.firstName3 + ' eats:');
+												$('.firstName4').html(selectedGuest.firstName4 + ' eats:');
+												$('.firstName5').html(selectedGuest.firstName5 + ' eats:');
+					    				}
+					    				var allNames
+											if ($('.fullName5')) {
+													allnames = $('.fullName1').html() + ', ' + $('.fullName2').html() + ', ' + $('.fullName3').html() + ', ' + $('.fullName4').html() + ' & ' + $('.fullName5').html()
+											} else if ($('.fullName4')) {
+													allnames = $('.fullName1').html() + ', ' + $('.fullName2').html() + ', ' + $('.fullName3').html() + ' & ' + $('.fullName4').html()
+											} else if ($('.fullName3')) {
+													allnames = $('.fullName1').html() + ', ' + $('.fullName2').html() + ' & ' + $('.fullName3').html()
+											} else {
+													allnames = $('.fullName1').html() + ' & ' + $('.fullName2').html()
+											}
 						    			$('html, body').animate({ scrollTop: $(document).height() }, 1000);
 						    			fillIn(selectedGuest);
 						    			console.log('selectedGuest.children: ' + selectedGuest.children);
 				    					if ((1*selectedGuest.children) === 0) $('.children').remove();
-						    			var attWed1checked = 'Neither';
+
+											var attWed1checked = 'Neither';
 						    			var attWed2checked = 'Neither';
+											var attWed3checked = 'Neither';
+											var attWed4checked = 'Neither';
+											var attWed5checked = 'Neither';
 						    			if ($('input[name="attWed1"][value="Yes"]').is(':checked')) {
 						    				attWed1checked = 'Yes';
 						    			}
@@ -250,6 +431,25 @@
 						    			if ($('input[name="attWed2"][value="No"]').is(':checked')) {
 						    				attWed2checked = 'No';
 						    			}
+											if ($('input[name="attWed3"][value="Yes"]').is(':checked')) {
+						    				attWed3checked = 'Yes';
+						    			}
+						    			if ($('input[name="attWed3"][value="No"]').is(':checked')) {
+						    				attWed3checked = 'No';
+						    			}
+											if ($('input[name="attWed4"][value="Yes"]').is(':checked')) {
+						    				attWed4checked = 'Yes';
+						    			}
+						    			if ($('input[name="attWed4"][value="No"]').is(':checked')) {
+						    				attWed4checked = 'No';
+						    			}
+											if ($('input[name="attWed5"][value="Yes"]').is(':checked')) {
+						    				attWed5checked = 'Yes';
+						    			}
+						    			if ($('input[name="attWed5"][value="No"]').is(':checked')) {
+						    				attWed5checked = 'No';
+						    			}
+
 						    			$('input[name="attWed1"][value="No"]').click( function () {
 						    				attWed1checked = 'No';
 						    			});
@@ -262,10 +462,29 @@
 						    			$('input[name="attWed2"][value="Yes"]').click( function () {
 						    				attWed2checked = 'Yes';
 						    			});
+											$('input[name="attWed3"][value="No"]').click( function () {
+						    				attWed3checked = 'No';
+						    			});
+						    			$('input[name="attWed3"][value="Yes"]').click( function () {
+						    				attWed3checked = 'Yes';
+						    			});
+											$('input[name="attWed4"][value="No"]').click( function () {
+						    				attWed4checked = 'No';
+						    			});
+						    			$('input[name="attWed4"][value="Yes"]').click( function () {
+						    				attWed4checked = 'Yes';
+						    			});
+											$('input[name="attWed5"][value="No"]').click( function () {
+						    				attWed5checked = 'No';
+						    			});
+						    			$('input[name="attWed5"][value="Yes"]').click( function () {
+						    				attWed5checked = 'Yes';
+						    			});
 
 						    			$('#btn-send').click(function (e) {
 						    				e.preventDefault();
-						    				if (attWed1checked == 'Neither' || attWed2checked == 'Neither' ) {
+
+						    				if (attWed1checked == 'Neither' || attWed2checked == 'Neither' || (attWed3checked == 'Neither' && $('input[name="attWed3"]').length)  || (attWed4checked == 'Neither' && $('input[name="attWed4"]').length) || (attWed5checked == 'Neither' && $('input[name="attWed5"]').length)) {
 						    					swal('{{{__ "Whoops! Looks like you forgot to tell us if you\'ll be coming to the wedding!"}}}');
 					    					} else {
 					    						$(this).blur();
@@ -273,7 +492,7 @@
 						    					$('.tooltip-wrapper').tooltip();
 							    				var guestsPass = passGuests();
 							    				$.get( '/updateguestsbythem', guestsPass, function(data) {
-							    					thankyouNote(firstName1, firstName2);
+							    					thankyouNote(firstName1, firstName2, firstName3, firstName4, firstName5);
 							    					$("html, body").animate({ scrollTop: $(document).height() }, 1000);
 							    				});
 							    				createResponse();
@@ -340,7 +559,7 @@
 					    						bringGuestClicked = 'Neither';
 					    					}
 					    				});
-										
+
 										$('button[name="bringGuestYes"]').click( function (e) {
 											e.preventDefault();
 											bringGuestClicked = 'Yes';
@@ -400,7 +619,7 @@
 					    					} else if (bringGuestClicked === 'Yes') {
 					    						var guestsPass = passGuests();
 								    			var fullName2a = $('input[name="fullName2"]').val();
-					    						if (fullName2a === '' || fullName2a == null) {
+					    						if ((fullName2a === '' || fullName2a == null) && $('input[name="attWed2"][value="Yes"]').is(':checked')) {
 					    							swal('{{{__ "Whoops! What\'s your guest\'s name?"}}}');
 					    						} else {
 					    							fullName2 = fullName2a.split(/\s+/);
@@ -443,7 +662,7 @@
 			}
     	});
 	});
-		
+
 </script>
 
 <main>
