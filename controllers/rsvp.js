@@ -196,6 +196,7 @@ module.exports = {
 			var no = 0;
 			var notAnswered = 0;
 			var reh = 0;
+			var potentialChild = 0;
 			var childWed = 0;
 			var childReh = 0;
 			var foodEve = 0;
@@ -224,6 +225,7 @@ module.exports = {
 				if (viewModel.guests[i].attReh5 === 'Yes') reh += 1;
 				if (typeof viewModel.guests[i].childWed === 'number') childWed += viewModel.guests[i].childWed;
 				if (typeof viewModel.guests[i].childReh === 'number') childReh += viewModel.guests[i].childReh;
+				if (typeof viewModel.guests[i].children === 'number') potentialChild += viewModel.guests[i].children;
 				if (viewModel.guests[i].attWed1 === 'Yes' && viewModel.guests[i].food1 === 'Everything!') foodEve += 1;
 				if (viewModel.guests[i].attWed1 === 'Yes' && viewModel.guests[i].food1 === 'Fish') foodFish += 1;
 				if (viewModel.guests[i].attWed1 === 'Yes' && viewModel.guests[i].food1 === 'Vegetables') foodVeget += 1;
@@ -265,6 +267,7 @@ module.exports = {
 			viewModel.summary.notAnswered = notAnswered;
 			viewModel.summary.numGuests = yes + no + notAnswered;
 			viewModel.summary.reh = reh;
+			viewModel.summary.potentialChild = potentialChild;
 			viewModel.summary.childWed = childWed;
 			viewModel.summary.childReh = childReh;
 			viewModel.summary.foodEve = foodEve;
