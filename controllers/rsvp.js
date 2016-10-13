@@ -239,6 +239,26 @@ module.exports = {
 				if (viewModel.guests[i].attWed5 === 'Yes' && viewModel.guests[i].food5 === 'Everything!') foodEve += 1;
 				if (viewModel.guests[i].attWed5 === 'Yes' && viewModel.guests[i].food5 === 'Fish') foodFish += 1;
 				if (viewModel.guests[i].attWed5 === 'Yes' && viewModel.guests[i].food5 === 'Vegetables') foodVeget += 1;
+				if (viewModel.guests[i].attWed1 === 'Select an option') viewModel.guests[i].attWed1 = '';
+				if (viewModel.guests[i].attWed2 === 'Select an option') viewModel.guests[i].attWed2 = '';
+				if (viewModel.guests[i].attWed3 === 'Select an option') viewModel.guests[i].attWed3 = '';
+				if (viewModel.guests[i].attWed4 === 'Select an option') viewModel.guests[i].attWed4 = '';
+				if (viewModel.guests[i].attWed5 === 'Select an option') viewModel.guests[i].attWed5 = '';
+				if (viewModel.guests[i].attWed1 === 'Select an option')  viewModel.guests[i].attWed1 = '';
+				if (viewModel.guests[i].attWed2 === 'Select an option')  viewModel.guests[i].attWed2 = '';
+				if (viewModel.guests[i].attWed3 === 'Select an option')  viewModel.guests[i].attWed3 = '';
+				if (viewModel.guests[i].attWed4 === 'Select an option')  viewModel.guests[i].attWed4 = '';
+				if (viewModel.guests[i].attWed5 === 'Select an option')  viewModel.guests[i].attWed5 = '';
+				if (viewModel.guests[i].attReh1 === 'Select an option') viewModel.guests[i].attReh1 = '';
+				if (viewModel.guests[i].attReh2 === 'Select an option') viewModel.guests[i].attReh2 = '';
+				if (viewModel.guests[i].attReh3 === 'Select an option') viewModel.guests[i].attReh3 = '';
+				if (viewModel.guests[i].attReh4 === 'Select an option') viewModel.guests[i].attReh4 = '';
+				if (viewModel.guests[i].attReh5 === 'Select an option') viewModel.guests[i].attReh5 = '';
+				if (viewModel.guests[i].attWed1 === '' && viewModel.guests[i].attReh1 === '') viewModel.guests[i].food1 = '';
+				if (viewModel.guests[i].attWed2 === '' && viewModel.guests[i].attReh2 === '') viewModel.guests[i].food2 = '';
+				if (viewModel.guests[i].attWed3 === '' && viewModel.guests[i].attReh3 === '') viewModel.guests[i].food3 = '';
+				if (viewModel.guests[i].attWed4 === '' && viewModel.guests[i].attReh4 === '') viewModel.guests[i].food4 = '';
+				if (viewModel.guests[i].attWed5 === '' && viewModel.guests[i].attReh5 === '') viewModel.guests[i].food5 = '';
 			}
 			viewModel.summary.yes = yes;
 			viewModel.summary.no = no;
