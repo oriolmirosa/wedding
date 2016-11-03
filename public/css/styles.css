@@ -1,5 +1,5 @@
 * {
-	font-family: Josefin Sans;
+	font-family: 'Quicksand', sans-serif;
 }
 
 body {
@@ -75,7 +75,7 @@ div.container-fluid.title-nav-wrapper {
 }
 
 .navbar-brand{
-	font-family: Josefin Sans;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 18px;
 	text-transform: uppercase;
   text-decoration: none;
@@ -326,7 +326,7 @@ ul.dropdown-menu {
 }
 
 p {
-	font-family: Josefin Sans;
+	font-family: 'Quicksand', sans-serif;
 }
 
 p.pull-left.totalcart {
@@ -369,7 +369,7 @@ div.col-xs-4.col-sm-12.dropdown {
 }
 
 .menu {
-	font-family: Josefin Sans;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 12px;
 	text-align: right;
 	list-style: none;
@@ -484,7 +484,7 @@ div.col-xs-4.col-sm-12.dropdown {
   background-color: #fff;
   border: 0;
   border-radius: 0px;
-  font-family: Josefin Sans;
+  font-family: 'Quicksand', sans-serif;
   line-height: 1em;
 }*/
 
