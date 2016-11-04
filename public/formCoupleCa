@@ -6,7 +6,7 @@
           <tr valign="middle">
             <td><input name="id" hidden></td>
             <td style="text-align: center; font-weight: 700;">Assistirà al casament</td>
-            <td style="text-align: center; font-weight: 700;">Assistirà al sopar de benvinguda</td>
+            <!-- <td style="text-align: center; font-weight: 700;">Assistirà al sopar de benvinguda</td> -->
           </tr>
           <tr>
             <td class="fullName1" style="vertical-align: middle;"></td>
@@ -14,10 +14,10 @@
               <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attWed1" value="Yes">Sí&nbsp;&nbsp;</label>
               <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attWed1" value="No">No</label>
             </td>
-            <td class="attReh1" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+            <!-- <td class="attReh1" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
               <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attReh1" value="Yes">Sí&nbsp;&nbsp;</label>
               <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attReh1" value="No">No</label>
-            </td>
+            </td> -->
           </tr>
           <tr>
             <td class="fullName2" style="vertical-align: middle;"></td>
@@ -25,10 +25,10 @@
               <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attWed2" value="Yes">Sí&nbsp;&nbsp;</label>
               <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attWed2" value="No">No</label>
             </td>
-            <td class="attReh2" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+            <!-- <td class="attReh2" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
               <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attReh2" value="Yes">Sí&nbsp;&nbsp;</label>
               <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attReh2" value="No">No</label>
-            </td>
+            </td> -->
           </tr>
 					<tr class="guest3">
             <td class="fullName3" style="vertical-align: middle;"></td>
@@ -36,10 +36,10 @@
               <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attWed3" value="Yes">Sí&nbsp;&nbsp;</label>
               <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attWed3" value="No">No</label>
             </td>
-            <td class="attReh3" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+            <!-- <td class="attReh3" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
               <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attReh3" value="Yes">Sí&nbsp;&nbsp;</label>
               <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attReh3" value="No">No</label>
-            </td>
+            </td> -->
           </tr>
 					<tr class="guest4">
             <td class="fullName4" style="vertical-align: middle;"></td>
@@ -47,10 +47,10 @@
               <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attWed4" value="Yes">Sí&nbsp;&nbsp;</label>
               <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attWed4" value="No">No</label>
             </td>
-            <td class="attReh4" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+            <!-- <td class="attReh4" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
               <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attReh4" value="Yes">Sí&nbsp;&nbsp;</label>
               <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attReh4" value="No">No</label>
-            </td>
+            </td> -->
           </tr>
 					<tr class="guest5">
             <td class="fullName5" style="vertical-align: middle;"></td>
@@ -58,10 +58,10 @@
               <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attWed5" value="Yes">Sí&nbsp;&nbsp;</label>
               <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attWed5" value="No">No</label>
             </td>
-            <td class="attReh5" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+            <!-- <td class="attReh5" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
               <label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attReh5" value="Yes">Sí&nbsp;&nbsp;</label>
               <label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attReh5" value="No">No</label>
-            </td>
+            </td> -->
           </tr>
           <tr class="children">
             <td style="vertical-align: middle;">Número de nens menors de 12 anys</td>
@@ -73,9 +73,8 @@
                         max: 3
                       });
                   </script>
-              <!-- <input type="number" name="childWed" min="0" style="text-align: center; width: 50px;"> -->
             </td>
-            <td class="childReh" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+            <!-- <td class="childReh" style="text-align: center; vertical-align: middle; line-height: 1.7em;">
               <input id="demo3" type="text" value="" name="childReh" min="0" max="3">
                   <script>
                       $("input[name='childReh']").TouchSpin({
@@ -83,8 +82,7 @@
                         max: 3
                       });
                   </script>
-              <!-- <input type="number" name="childReh" min="0" style="text-align: center; width: 50px;"> -->
-            </td>
+            </td> -->
           </tr>
           <tr class="hidden-xs">
             <td style="vertical-align: middle;">
