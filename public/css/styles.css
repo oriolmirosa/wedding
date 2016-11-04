@@ -48,7 +48,7 @@ a.language {
 
 @media screen and (max-width: 770px) {
 	.login-background-image {
-  	background-image: url('/img/jj-pt.jpg');
+  	background-image: url('/img/jj-ls.jpg');
   	background-size: cover;
   	background-repeat: no-repeat;
     background-attachment: fixed;
