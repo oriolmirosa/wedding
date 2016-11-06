@@ -20,7 +20,7 @@
 	" in Santa Fe, but we'll miss ": " a Santa Fe, però trobarem a faltar a ",
 	"Your search found no matches. Try again": "La cerca no ha trobat cap resultat. Prova un altre cop",
 	"Select your party from the list below:": "Selecciona els noms del teu grup a la llista:",
-	"Whoops! Looks like you forgot to tell us if you'll be coming to the wedding!": "Ui! Sembla que us heu oblidat de din-nos si veniu a la boda!",
+	"Whoops! Looks like you forgot to tell us if you'll be coming to the wedding!": "Ui! Sembla que us heu oblidat de dir-nos si veniu a la boda!",
 	"Whoops! Will you be bringing a guest?": "Ui! Portareu a un convidat?",
 	"Yay! We\\'re so excited to see you both in Santa Fe!": "Visca! Ens fa molta il·lusió veure-us a tots dos a Santa Fe!",
 	"We\\'re so excited to see": "Ens fa molta il·lusió veure a",
@@ -169,5 +169,7 @@
 	"Barrio de Analco Historic District": "Districte Històric del 'Barrio de Analco'",
 	"Nedra Matteucci Gallery": "Galeria Nedra Matteucci",
 	"Hiking": "Excursions",
-	"Bandelier National Monument": "Monument Nacional Bandelier"
+	"Bandelier National Monument": "Monument Nacional Bandelier",
+	"Should I bring my kids?": "Podem portar els nens?",
+	"Kids are welcome! However, we know that sometimes you want to party without them. Depending on how many children come to Santa Fe, we'll arrange a kids' room at our wedding hotel or a kids' area at our reception (staffed by reliable babysitters, of course). Please contact us if you'd be interested in a childcare option.": "Esclar que sí! Però sabem que, de tant en tant, voleu anar de festa sense ells. Depenent de quans nens acabin venint a Santa Fe, posarem una sala per nens a l'hotel de la boda o una àrea per nens al convit (òbviament, amb personal qualificat per vigilar-los). No dubteu en contactar-nos si esteu interessats en aquesta opció."
 }
