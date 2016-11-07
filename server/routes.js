@@ -17,11 +17,11 @@ module.exports = function(app) {
 	   	}
 	};
 
-	const letsEncryptReponse = process.env.CERTBOT_RESPONSE;
+	const letsEncryptResponse = process.env.CERTBOT_RESPONSE;
 
 	// Return the Let's Encrypt certbot response:
 	router.get('/.well-known/acme-challenge/:content', function(req, res) {
-	  res.send('hola');
+	  res.send(letsEncryptResponse);
 	});
 
 	router.get('/login', function (req, res) {
