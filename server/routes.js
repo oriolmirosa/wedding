@@ -17,6 +17,13 @@ module.exports = function(app) {
 	   	}
 	};
 
+	const letsEncryptReponse = process.env.vH_iK-IRuFGjEjrwWE789XW5KAuTHhRB_m4m0uUu8iU.TZwXM2TXo6bqmBF22cTdeg1l1qG9iLTRH-XnKlYYpsg;
+
+	// Return the Let's Encrypt certbot response:
+	app.get('/.well-known/acme-challenge/:content', function(req, res) {
+	  res.send(letsEncryptReponse);
+	});
+
 	router.get('/login', function (req, res) {
 		console.log(res.__('Hello i18n'));
 		res.render('login', {layout: 'empty.handlebars'});
