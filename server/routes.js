@@ -17,11 +17,11 @@ module.exports = function(app) {
 	   	}
 	};
 
-	const letsEncryptReponse = process.env.vH_iK-IRuFGjEjrwWE789XW5KAuTHhRB_m4m0uUu8iU.TZwXM2TXo6bqmBF22cTdeg1l1qG9iLTRH-XnKlYYpsg;
+	const letsEncryptReponse = process.env.CERTBOT_RESPONSE;
 
 	// Return the Let's Encrypt certbot response:
 	router.get('/.well-known/acme-challenge/:content', function(req, res) {
-	  res.send(letsEncryptReponse);
+	  res.send('hola');
 	});
 
 	router.get('/login', function (req, res) {
