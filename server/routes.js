@@ -12,7 +12,7 @@ module.exports = function(app) {
 	  if(req.headers['x-forwarded-proto']!='https')
 	    res.redirect('https://TheKarosas.com' + req.url)
 	  else
-	    next() /* Continue to other routes if we're not redirecting */
+	    next()
 	})
 
 	// Authentication and Authorization Middleware
