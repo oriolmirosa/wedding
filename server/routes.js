@@ -8,12 +8,12 @@ var express = require('express'),
 
 module.exports = function(app) {
 
-	// router.get('*',function(req, res, next){
-	//   if(req.headers['x-forwarded-proto']!='https')
-	//     res.redirect('https://TheKarosas.com' + req.url)
-	//   else
-	//     next()
-	// })
+	router.get('*',function(req, res, next){
+	  if(req.headers['x-forwarded-proto']!='https')
+	    res.redirect('https://TheKarosas.com' + req.url)
+	  else
+	    next()
+	})
 
 	// Authentication and Authorization Middleware
 	var auth = function(req, res, next) {
