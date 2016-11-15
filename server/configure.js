@@ -56,7 +56,8 @@ module.exports = function(app) {
 	    secret: '2C44-4D44-WppQ38S',
 	    resave: true,
 	    saveUninitialized: true,
-	    cookie: { maxAge: 36000000 }
+	    cookie: { maxAge: 36000000,
+								secure: true }
 	}));
 	app.use(bodyParser.urlencoded({ extended: true }));
 	app.use(bodyParser.json());
