@@ -10,6 +10,8 @@ Base64 encode, decode, escape and unescape for URL applications.
 ## API
 
 ```js
+var base64url = require('base64-url');
+
 base64url.encode('Node.js is awesome.');
 // returns Tm9kZS5qcyBpcyBhd2Vzb21lLg
 
@@ -26,7 +28,7 @@ base64url.unescape('This-is_goingto-escape');
 
 ## Development
 
-**this projet has been set up with a precommit that forces you to follow a code style, no jshint issues and 100% of code coverage before commit**
+**this project has been set up with a precommit that forces you to follow a code style, no jshint issues and 100% of code coverage before commit**
 
 
 to run test
@@ -34,22 +36,17 @@ to run test
 npm test
 ```
 
-to run jshint
+to run lint
 ``` js
-npm run jshint
+npm run lint
 ```
 
 to run code style
 ``` js
-npm run code-style
+npm run style
 ```
 
 to check code coverage
 ``` js
-npm run check-coverage
-```
-
-to open the code coverage report
-``` js
-npm run coverage
+npm run coverage:check
 ```
