@@ -1,7 +1,7 @@
 var Rsvp = require('../models/rsvpmodel'),
 	mongoose = require('mongoose'),
 	nodemailer = require('nodemailer'),
-	helper = require('sendgrid').mail,
+	// helper = require('sendgrid').mail,
 	sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
 
 module.exports = {
@@ -282,25 +282,74 @@ module.exports = {
 	},
 
 	sendEmail: function (req, res) {
-		console.log('req.body.allNames: ' + JSON.stringify(req.body.allNames, null, 4));
-		console.log('req.body.response: ' + JSON.stringify(req.body.response, null, 4));
-		var from_email = new helper.Email('oriol@mirosa.org');
-		var to_email = new helper.Email('oriolmirosa@gmail.com');
+		// console.log('req.body.allNames: ' + JSON.stringify(req.body.allNames, null, 4));
+		// console.log('req.body.response: ' + JSON.stringify(req.body.response, null, 4));
+		// var from_email = new helper.Email('oriol@mirosa.org');
+		// var to_email = new helper.Email('oriolmirosa@gmail.com');
 		var subject = 'Wedding RSVP!';
 		var emailBody = "<p>We just received an RSVP from <strong>" + req.body.allNames + "</strong>:</p><br/>" + req.body.response;
-		var content = new helper.Content('text/html', emailBody);
-		var mail = new helper.Mail(from_email, subject, to_email, content);
+		// var content = new helper.Content('text/html', emailBody);
+		// var mail = new helper.Mail(from_email, subject, to_email, content);
+		//
+		// var request = sg.emptyRequest({
+		//   method: 'POST',
+		//   path: '/v3/mail/send',
+		//   body: mail.toJSON()
+		// });
+		//
+		// sg.API(request, function(error, response) {
+		//   console.log('SendGrid status code: ' + response.statusCode);
+		//   console.log('SendGrid response body: ' + JSON.stringify(response.body, null, 4));
+		//   console.log('SendGrid response headers: ' + JSON.stringify(response.headers, null, 4));
+		// });
 
 		var request = sg.emptyRequest({
 		  method: 'POST',
 		  path: '/v3/mail/send',
-		  body: mail.toJSON()
+		  body: {
+		    personalizations: [
+		      {
+		        to: [
+		          {
+		            email: 'oriolmirosa@gmail.com',
+		          },
+		        ],
+		        subject: subject,
+		      },
+		    ],
+		    from: {
+		      email: 'oriol@mirosa.org',
+		    },
+		    content: [
+		      {
+		        type: 'text/html',
+		        value: emailBody,
+		      },
+		    ],
+		  },
 		});
 
+		//With promise
+		sg.API(request)
+		  .then(response => {
+		    console.log(response.statusCode);
+		    console.log(response.body);
+		    console.log(response.headers);
+		  })
+		  .catch(error => {
+		    //error is an instance of SendGridError
+		    //The full response is attached to error.response
+		    console.log(error.response.statusCode);
+		  });
+
+		//With callback
 		sg.API(request, function(error, response) {
-		  console.log('SendGrid status code: ' + response.statusCode);
-		  console.log('SendGrid response body: ' + JSON.stringify(response.body, null, 4));
-		  console.log('SendGrid response headers: ' + JSON.stringify(response.headers, null, 4));
+		  if (error) {
+		    console.log('Error response received');
+		  }
+		  console.log(response.statusCode);
+		  console.log(response.body);
+		  console.log(response.headers);
 		});
 
 		// var transporter = nodemailer.createTransport({
