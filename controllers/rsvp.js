@@ -281,12 +281,12 @@ module.exports = {
 
 	sendEmail: function (req, res) {
 		var transporter = nodemailer.createTransport({
-	    host: 'server.mirosa.org',
+	    host: 'smtp.gmail.com',
 	    port: 465,
 	    secure: true, // use SSL
 	    auth: {
-	        user: 'oriol@mirosa.org',
-	        pass: '@hV.6&}B*97d'
+	        user: 'oriolmirosa@gmail.com',
+	        pass: 'Sarah666'
 	    }
 
       // service: 'Gmail',
