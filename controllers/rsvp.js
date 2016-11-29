@@ -2,7 +2,7 @@ var Rsvp = require('../models/rsvpmodel'),
 	mongoose = require('mongoose'),
 	nodemailer = require('nodemailer'),
 	helper = require('sendgrid').mail,
-	sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+	sg = require('sendgrid')('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');
 
 module.exports = {
 
