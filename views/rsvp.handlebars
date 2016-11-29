@@ -500,6 +500,7 @@
 							    				createResponse();
 							    				response = $('#response').html();
 													console.log('allNames: ' + allNames);
+													console.log('response email: ' + response);
 					    						$.post( '/sendemail', { allNames: allNames, response: response }, function(data) {
 					    						});
 							    			}
