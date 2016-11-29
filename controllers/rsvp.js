@@ -1,7 +1,8 @@
 var Rsvp = require('../models/rsvpmodel'),
 	mongoose = require('mongoose'),
 	nodemailer = require('nodemailer'),
-	helper = require('sendgrid').mail;
+	helper = require('sendgrid').mail,
+	sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
 
 module.exports = {
 
@@ -288,17 +289,16 @@ module.exports = {
 		var content = new helper.Content('text/html', emailBody);
 		var mail = new helper.Mail(from_email, subject, to_email, content);
 
-		var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
 		var request = sg.emptyRequest({
 		  method: 'POST',
 		  path: '/v3/mail/send',
-		  body: mail.toJSON(),
+		  body: mail.toJSON()
 		});
 
 		sg.API(request, function(error, response) {
-		  console.log(response.statusCode);
-		  console.log(response.body);
-		  console.log(response.headers);
+		  console.log('SendGrid status code: ' + response.statusCode);
+		  console.log('SendGrid response body: ' + response.body);
+		  console.log('SendGrid response headers: ' + response.headers);
 		});
 
 		// var transporter = nodemailer.createTransport({
