@@ -1,7 +1,7 @@
 var Rsvp = require('../models/rsvpmodel'),
 	mongoose = require('mongoose'),
 	nodemailer = require('nodemailer'),
-	var helper = require('sendgrid').mail;
+	helper = require('sendgrid').mail;
 
 module.exports = {
 
@@ -299,7 +299,7 @@ module.exports = {
 		  console.log(response.statusCode);
 		  console.log(response.body);
 		  console.log(response.headers);
-		});;
+		});
 
 		// var transporter = nodemailer.createTransport({
 	  //   host: 'smtp.gmail.com',
