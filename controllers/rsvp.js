@@ -286,7 +286,7 @@ module.exports = {
 	    secure: true, // use SSL
 	    auth: {
 	        user: 'oriolmirosa@gmail.com',
-	        pass: 'Sarah666'
+	        pass: 'Sarah666!!!'
 	    }
 
       // service: 'Gmail',
