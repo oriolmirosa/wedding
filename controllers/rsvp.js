@@ -298,8 +298,8 @@ module.exports = {
 
 		sg.API(request, function(error, response) {
 		  console.log('SendGrid status code: ' + response.statusCode);
-		  console.log('SendGrid response body: ' + JSON.stringify(response.body, null, 4);
-		  console.log('SendGrid response headers: ' + JSON.stringify(response.headers, null, 4);
+		  console.log('SendGrid response body: ' + JSON.stringify(response.body, null, 4));
+		  console.log('SendGrid response headers: ' + JSON.stringify(response.headers, null, 4));
 		});
 
 		// var transporter = nodemailer.createTransport({
