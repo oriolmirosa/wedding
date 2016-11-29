@@ -282,6 +282,7 @@ module.exports = {
 	},
 
 	sendEmail: function (req, res) {
+		console.log(JSON.stringify(req.body, null, 4));
 		var from_email = new helper.Email('oriolmirosa@gmail.com');
 		var to_email = new helper.Email('oriolmirosa@gmail.com, skaron@gmail.com');
 		var subject = 'Wedding RSVP!';
@@ -297,8 +298,8 @@ module.exports = {
 
 		sg.API(request, function(error, response) {
 		  console.log('SendGrid status code: ' + response.statusCode);
-		  console.log('SendGrid response body: ' + response.body);
-		  console.log('SendGrid response headers: ' + response.headers);
+		  console.log('SendGrid response body: ' + JSON.stringify(response.body, null, 4);
+		  console.log('SendGrid response headers: ' + JSON.stringify(response.headers, null, 4);
 		});
 
 		// var transporter = nodemailer.createTransport({
