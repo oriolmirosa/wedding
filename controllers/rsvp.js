@@ -1,6 +1,7 @@
 var Rsvp = require('../models/rsvpmodel'),
 	mongoose = require('mongoose'),
-	nodemailer = require('nodemailer');
+	nodemailer = require('nodemailer'),
+	var helper = require('sendgrid').mail;
 
 module.exports = {
 
@@ -280,39 +281,59 @@ module.exports = {
 	},
 
 	sendEmail: function (req, res) {
-		var transporter = nodemailer.createTransport({
-	    host: 'smtp.gmail.com',
-	    port: 465,
-	    secure: true, // use SSL
-	    auth: {
-	        user: 'oriolmirosa@gmail.com',
-	        pass: 'Sarah666!!!'
-	    }
+		var from_email = new helper.Email('oriolmirosa@gmail.com');
+		var to_email = new helper.Email('oriolmirosa@gmail.com, skaron@gmail.com');
+		var subject = 'Wedding RSVP!';
+		var emailBody = "<p>We just received an RSVP from <strong>" + req.body.allNames + "</strong>:</p><br/>" + req.body.response;
+		var content = new helper.Content('text/html', emailBody);
+		var mail = new helper.Mail(from_email, subject, to_email, content);
+
+		var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+		var request = sg.emptyRequest({
+		  method: 'POST',
+		  path: '/v3/mail/send',
+		  body: mail.toJSON(),
+		});
+
+		sg.API(request, function(error, response) {
+		  console.log(response.statusCode);
+		  console.log(response.body);
+		  console.log(response.headers);
+		});;
+
+		// var transporter = nodemailer.createTransport({
+	  //   host: 'smtp.gmail.com',
+	  //   port: 465,
+	  //   secure: true, // use SSL
+	  //   auth: {
+	  //       user: 'oriolmirosa@gmail.com',
+	  //       pass: 'Sarah666!!!'
+	  //   }
 
       // service: 'Gmail',
       // auth: {
       //     user: 'oriolmirosa@gmail.com', // Your email id
       //     pass: 'Sarah666!!!' // Your password
       // }
-		});
-
-		var emailBody = "<p>We just received an RSVP from <strong>" + req.body.allNames + "</strong>:</p><br/>" + req.body.response;
-
-		var mailOptions = {
-		    from: 'oriol@mirosa.org', // sender address
-		    to: 'oriolmirosa@gmail.com, skaron@gmail.com', // list of receivers
-		    subject: 'Wedding RSVP!', // Subject line
-		    html: emailBody
-		};
-
-		transporter.sendMail(mailOptions, function(error, info) {
-		    if (error) {
-		        console.log(error);
-		        res.json({yo: 'error'});
-		    } else {
-		        console.log('Message sent: ' + info.response);
-		        res.json({yo: info.response});
-		    };
-		});
-	}
+	// 	});
+	//
+	// 	var emailBody = "<p>We just received an RSVP from <strong>" + req.body.allNames + "</strong>:</p><br/>" + req.body.response;
+	//
+	// 	var mailOptions = {
+	// 	    from: 'oriol@mirosa.org', // sender address
+	// 	    to: 'oriolmirosa@gmail.com, skaron@gmail.com', // list of receivers
+	// 	    subject: 'Wedding RSVP!', // Subject line
+	// 	    html: emailBody
+	// 	};
+	//
+	// 	transporter.sendMail(mailOptions, function(error, info) {
+	// 	    if (error) {
+	// 	        console.log(error);
+	// 	        res.json({yo: 'error'});
+	// 	    } else {
+	// 	        console.log('Message sent: ' + info.response);
+	// 	        res.json({yo: info.response});
+	// 	    };
+	// 	});
+	// }
 };
