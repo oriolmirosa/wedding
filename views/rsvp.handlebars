@@ -342,6 +342,7 @@
 				    		$(this).blur();
 				    		$(this).css('pointer-events', 'none');
 				    		var selected = $(this).text();
+								var allNames = selected;
 				    		var selectedIndex = 1*($(this).attr('data-index'));
 				    		console.log('selectedIndex: ' + selectedIndex);
 				    		var selectedGuest = data[parseInt(selectedIndex)].guests;
@@ -399,16 +400,16 @@
 												$('.firstName4').html(selectedGuest.firstName4 + ' eats:');
 												$('.firstName5').html(selectedGuest.firstName5 + ' eats:');
 					    				}
-					    				var allNames;
-											if ($('.fullName5')) {
-													allnames = $('.fullName1').html() + ', ' + $('.fullName2').html() + ', ' + $('.fullName3').html() + ', ' + $('.fullName4').html() + ' & ' + $('.fullName5').html()
-											} else if ($('.fullName4')) {
-													allnames = $('.fullName1').html() + ', ' + $('.fullName2').html() + ', ' + $('.fullName3').html() + ' & ' + $('.fullName4').html()
-											} else if ($('.fullName3')) {
-													allnames = $('.fullName1').html() + ', ' + $('.fullName2').html() + ' & ' + $('.fullName3').html()
-											} else {
-													allnames = $('.fullName1').html() + ' & ' + $('.fullName2').html()
-											}
+					    				// var allNames;
+											// if ($('.fullName5')) {
+											// 		allnames = $('.fullName1').html() + ', ' + $('.fullName2').html() + ', ' + $('.fullName3').html() + ', ' + $('.fullName4').html() + ' & ' + $('.fullName5').html()
+											// } else if ($('.fullName4')) {
+											// 		allnames = $('.fullName1').html() + ', ' + $('.fullName2').html() + ', ' + $('.fullName3').html() + ' & ' + $('.fullName4').html()
+											// } else if ($('.fullName3')) {
+											// 		allnames = $('.fullName1').html() + ', ' + $('.fullName2').html() + ' & ' + $('.fullName3').html()
+											// } else {
+											// 		allnames = $('.fullName1').html() + ' & ' + $('.fullName2').html()
+											// }
 											console.log('allNames: ' + allNames);
 						    			$('html, body').animate({ scrollTop: $(document).height() }, 1000);
 						    			fillIn(selectedGuest);
@@ -611,7 +612,7 @@
 					    							$('#btn-send').prop('disabled', true);
 						    						$('.tooltip-wrapper').tooltip();
 						    						thankyouNote(firstName1);
-						    						var allNames = firstName1 + ' ' + selectedGuest.lastName1;
+						    						allNames = firstName1 + ' ' + selectedGuest.lastName1;
 						    						$("html, body").animate({ scrollTop: $(document).height() }, 1000);
 						    						createResponse();
 								    				response = $('#response').html();
@@ -645,7 +646,7 @@
 								    							thankyouNote(firstName1);
 								    						}
 								    						$("html, body").animate({ scrollTop: $(document).height() }, 1000);
-								    						var allNames = firstName1 + ' ' + selectedGuest.lastName1 + ' & ' + fullName2a;
+								    						allNames = firstName1 + ' ' + selectedGuest.lastName1 + ' & ' + fullName2a;
 								    						createResponse();
 								    						response = $('#response').html();
 								    						$.post( '/sendemail', { allNames: allNames, response: response }, function(data) {
