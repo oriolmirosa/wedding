@@ -335,5 +335,5 @@ module.exports = {
 	// 	        res.json({yo: info.response});
 	// 	    };
 	// 	});
-	// }
+	}
 };
