@@ -399,7 +399,7 @@
 												$('.firstName4').html(selectedGuest.firstName4 + ' eats:');
 												$('.firstName5').html(selectedGuest.firstName5 + ' eats:');
 					    				}
-					    				var allNames
+					    				var allNames;
 											if ($('.fullName5')) {
 													allnames = $('.fullName1').html() + ', ' + $('.fullName2').html() + ', ' + $('.fullName3').html() + ', ' + $('.fullName4').html() + ' & ' + $('.fullName5').html()
 											} else if ($('.fullName4')) {
@@ -409,6 +409,7 @@
 											} else {
 													allnames = $('.fullName1').html() + ' & ' + $('.fullName2').html()
 											}
+											console.log('allNames: ' + allNames);
 						    			$('html, body').animate({ scrollTop: $(document).height() }, 1000);
 						    			fillIn(selectedGuest);
 						    			console.log('selectedGuest.children: ' + selectedGuest.children);
@@ -497,6 +498,7 @@
 							    				});
 							    				createResponse();
 							    				response = $('#response').html();
+													console.log('allNames: ' + allNames);
 					    						$.post( '/sendemail', { allNames: allNames, response: response }, function(data) {
 					    						});
 							    			}
