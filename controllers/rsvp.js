@@ -2,7 +2,7 @@ var Rsvp = require('../models/rsvpmodel'),
 	mongoose = require('mongoose'),
 	nodemailer = require('nodemailer'),
 	helper = require('sendgrid').mail,
-	sg = require('sendgrid')('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');
+	sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
 
 module.exports = {
 
@@ -282,7 +282,7 @@ module.exports = {
 	},
 
 	sendEmail: function (req, res) {
-		console.log('req: ' + req.body);
+		console.log('req: ' + JSON.stringify(req.body, null, 4));
 		var from_email = new helper.Email('oriolmirosa@gmail.com');
 		var to_email = new helper.Email('oriolmirosa@gmail.com, skaron@gmail.com');
 		var subject = 'Wedding RSVP!';
