@@ -287,7 +287,7 @@ module.exports = {
 		var to_email = new helper.Email('oriolmirosa@gmail.com, skaron@gmail.com');
 		var subject = 'Wedding RSVP!';
 		var emailBody = "<p>We just received an RSVP from <strong>" + req.body.allNames + "</strong>:</p><br/>" + req.body.response;
-		var content = new helper.Content('text/html', emailBody);
+		var content = new helper.Content('text/plain', emailBody);
 		var mail = new helper.Mail(from_email, subject, to_email, content);
 
 		var request = sg.emptyRequest({
