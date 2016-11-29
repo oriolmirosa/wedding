@@ -313,6 +313,9 @@ module.exports = {
 		          {
 		            email: 'oriolmirosa@gmail.com',
 		          },
+							{
+		            email: 'skaron@gmail.com',
+		          }
 		        ],
 		        subject: subject,
 		      },
@@ -343,14 +346,14 @@ module.exports = {
 		  });
 
 		//With callback
-		sg.API(request, function(error, response) {
-		  if (error) {
-		    console.log('Error response received');
-		  }
-		  console.log(response.statusCode);
-		  console.log(response.body);
-		  console.log(response.headers);
-		});
+		// sg.API(request, function(error, response) {
+		//   if (error) {
+		//     console.log('Error response received');
+		//   }
+		//   console.log(response.statusCode);
+		//   console.log(response.body);
+		//   console.log(response.headers);
+		// });
 
 		// var transporter = nodemailer.createTransport({
 	  //   host: 'smtp.gmail.com',
