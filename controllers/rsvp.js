@@ -282,7 +282,8 @@ module.exports = {
 	},
 
 	sendEmail: function (req, res) {
-		console.log('req: ' + JSON.stringify(req.body, null, 4));
+		console.log('req.body.allNames: ' + JSON.stringify(req.body.allNames, null, 4));
+		console.log('req.body.response: ' + JSON.stringify(req.body.response, null, 4));
 		var from_email = new helper.Email('oriolmirosa@gmail.com');
 		var to_email = new helper.Email('oriolmirosa@gmail.com, skaron@gmail.com');
 		var subject = 'Wedding RSVP!';
