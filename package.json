@@ -31,6 +31,7 @@
     "nodemon": "^1.10.0",
     "normalize": "^0.3.1",
     "normalize.css": "^4.2.0",
+    "sendgrid": "^4.7.1",
     "yui": "^3.18.1"
   }
 }
