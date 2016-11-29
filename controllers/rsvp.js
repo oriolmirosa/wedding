@@ -281,7 +281,7 @@ module.exports = {
 
 	sendEmail: function (req, res) {
 		var transporter = nodemailer.createTransport({
-	    host: 'mirosa.org',
+	    host: 'server.mirosa.org',
 	    port: 465,
 	    secure: true, // use SSL
 	    auth: {
