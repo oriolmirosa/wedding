@@ -22,12 +22,12 @@
 					</select>
 				</div>
 			</div> -->
-			<!-- <div class="form-group col-md-12"> -->
+			<div class="form-group col-md-12">
 				<table class="table table-form" style="width: 100%; table-layout: fixed;">
 					<tr valign="middle">
 						<td><input name="id" hidden></td>
 						<td style="text-align: center; font-weight: 700;">Assistirà al casament</td>
-						<!-- <td style="text-align: center; font-weight: 700;">Assistirà al sopar d'assaig</td> -->
+						<td style="text-align: center; font-weight: 700;">Assistirà al sopar d'assaig</td>
 					</tr>
 					<tr>
 						<td class="fullName1" style="vertical-align: middle;"></td>
@@ -35,10 +35,10 @@
 							<label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attWed1" value="Yes">Sí</label>
 							<label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attWed1" value="No">No</label>
 						</td>
-						<!-- <td style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+						<td style="text-align: center; vertical-align: middle; line-height: 1.7em;">
 							<label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attReh1" value="Yes">Sí</label>
 							<label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attReh1" value="No">No</label>
-						</td> -->
+						</td>
 					</tr>
 					<tr class="guestBring">
 						<td class="fullName2" style="vertical-align: middle;">Portaràs un convidat?<br/><button type="submit" class="btn btn-default" name="bringGuestYes" style="padding-bottom: 2px; width: 44px;" value="Yes">Sí</button><button type="submit" class="btn btn-default" name="bringGuestNo" style="padding-bottom: 2px;" value="No">No</button></td>
@@ -56,7 +56,7 @@
             					});
         					</script>
 						</td>
-						<!-- <td style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+						<td style="text-align: center; vertical-align: middle; line-height: 1.7em;">
 							<input id="demo3" type="text" value="" name="childReh" min="0" max="3">
         					<script>
             					$("input[name='childReh']").TouchSpin({
@@ -64,7 +64,7 @@
             						max: 3
             					});
         					</script>
-						</td> -->
+						</td>
 					</tr>
 					<tr class="hidden-xs">
             <td style="vertical-align: middle;">

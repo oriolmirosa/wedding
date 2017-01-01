@@ -4,8 +4,8 @@
 		<label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attWed2" value="Yes">Yes</label>
 		<label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attWed2" value="No">No</label>
 	</td>
-	<!-- <td style="text-align: center; vertical-align: middle; line-height: 1.7em;">
+	<td style="text-align: center; vertical-align: middle; line-height: 1.7em;">
 		<label class="radio-inline" style="margin-right: 10px;"><input type="radio" name="attReh2" value="Yes">Yes</label>
 		<label class="radio-inline" style="margin-left: 0px; margin-right: 10px;"><input type="radio" name="attReh2" value="No">No</label>
-	</td> -->
+	</td>
 </tr>
