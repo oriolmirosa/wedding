@@ -13,8 +13,10 @@
 				<div style="vertical-align: middle; padding: 40px 0px 40px 0px">
 					<h2 class="text-align-center" style="margin-top: 0px">{{{__ 'Thank you for thinking of us!'}}}</h2><br/>
 					<div>
-						<p class="text-align-center">{{{__ 'Our first conversation was about our shared love of travel, and we can\'t think of a better way to begin our married life than exploring a new place together.'}}}</p>
-						<p class="text-align-center">{{{__ 'With that in mind, we\'ve put together a honeymoon registry.<br/>Prefer to give a tangible gift? Check out our registry at Heath Ceramics.'}}}</p>
+						<p class="text-align-center">{{{__ 'We\'re thrilled to celebrate our wedding with you! Our friends and family live all over the country (and in Oriol\'s case, the world), and we feel incredibly fortunate that so many of you can join us for our celebration. Spending time together is the greatest gift you could give us.'}}}</p>
+            <p class="text-align-center">{{{__ 'If you\'d like to honor us with an additional gift, we\'ve put together two registries. We\'re beyond excited to spend our honeymoon on Italy\'s <strong>Amalfi Coast</strong> &mdash; a place we\'ve wanted to visit for years. We\'ll explore terraced lemon groves, hike the winding Paths of the Gods trails that float 1,600 feet above the water, and eat Caprese salad on the island of Capri. It\'s a fantasy trip, and any contribution you make will help us create memories that we\'ll treasure for a lifetime.'}}}</p>
+            <p class="text-align-center">{{{__ 'For those who prefer giving tangible gifts, we\'ve created a registry at <strong>Heath Ceramics</strong>, a California manufacturer of timeless, beautiful pottery and home goods. Heath products are handmade, and their ceramics embody creativity, craftsmanship, and modern simplicity. We would cherish any of the items on this registry for years to come.'}}}</p>
+            <p class="text-align-center">{{{__ 'Thank you so much for thinking of us. We can\'t wait to see you in Santa Fe!'}}}</p>
 					</div>
 				</div>
 			</div>
@@ -25,7 +27,7 @@
 			<div class="col-md-3">
 			</div>
 			<div class="col-md-3">
-				<button class="btn btn-primary center-block" data-toggle="modal" data-target="#myModal" style="width: 160px; background-color: #fff; border-color: #1c1c1c; border-radius: 0px; font-family: Josefin Sans; margin-bottom: 20px; color: #1c1c1c; outline: none;">{{{__ 'Honeymoon Fund'}}}</button>
+				<button class="btn btn-primary center-block" id="registryModalBtn" data-toggle="modal" data-target="#myModal" style="width: 160px; background-color: #fff; border-color: #1c1c1c; border-radius: 0px; font-family: Josefin Sans; margin-bottom: 20px; color: #1c1c1c; outline: none;">{{{__ 'Honeymoon Fund'}}}</button>
 			</div>
 			<!-- <div class="col-md-2">
 			</div> -->
@@ -41,18 +43,19 @@
 	  	<div class="modal-dialog">
 	    	<div class="modal-content">
 	      		<div class="modal-header">
-	        		<h3 class="modal-title" style="text-align: center;"><strong>{{{__ 'Honeymoon Fund'}}}</strong></h3>
-	        		<p class="pull-left totalcart"><br/>Total: <span>$0</span></p>
-	      			<button type="button" class="btn btn-default pull-right" data-dismiss="modal" style="margin-top: 20px;">{{{__ 'Done Selecting Gifts'}}}</button>
+              <h3 class="modal-title" style="text-align: center;"><strong>{{{__ 'Honeymoon Fund'}}}</strong></h3>
+              <button type="button" class="btn btn-default" id="btn-registry-exit" data-dismiss="modal" style="float: right;">{{{__ 'Exit without saving'}}}</button>
 	      		</div>
 	      		<div class="modal-body">
 					<div class="list-group">
-						<div class="text-align-center">{{{__ 'We are still finalizing our honeymoon plans. Please check back soon!'}}}</div>
-						<!-- {{#each items}}
+
+						<!-- <div class="text-align-center">{{{__ 'We are still finalizing our honeymoon plans. Please check back soon!'}}}</div> -->
+
+						{{#each items}}
 						<div class="list-group-item container-fluid">
 							<div class="row">
 								<div class="col-sm-2 col-xs-4" style="padding-left: 0px; padding-right: 0px;">
-									<div style="position: relative; height: 80px; width: 80px; margin-left: 10px; 	margin-right: 0px;">
+									<div style="position: relative; height: 80px; width: 80px; margin-left: 10px; margin-right: 0px;">
 	  									<img class="img-thumbnail img-responsive center-block" src="/img/{{filename}}" alt="">
 	  									<div class="hiddenblur"></div>
 	  									<p class="hiddenblur">$<span>10</span></p>
@@ -86,11 +89,13 @@
 	    						</div>
 	    					</div>
 						</div>
-						{{/each}} -->
+						{{/each}}
+
 					</div>
 				</div>
 	     	   	<div class="modal-footer">
-	        		<button type="button" class="btn btn-default" id="btn-registry-close" data-dismiss="modal">{{{__ 'Close'}}}</button>
+	        		<p class="pull-left totalcart"><br/>Total: <span>$0</span></p>
+	      			<button type="button" class="btn btn-default pull-right" id="btn-registry-checkout" style="margin-top: 20px;">{{{__ 'Ready to checkout'}}}</button>
 	      		</div>
 	    	</div>
 	    </div>
