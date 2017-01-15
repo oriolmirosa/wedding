@@ -22,11 +22,11 @@ ItemSchema.plugin(mongooseI18n, {
 // 	} )
 // };
 
-var ItemTransactionSessionSchema = new Schema({
-	itemId: { type: String, required: true },
-	totalSelected: { type: Number, required: true, min: 0 },
-	remaining: { type: Number, required: true, min: 0 },
-});
+// var ItemTransactionSessionSchema = new Schema({
+// 	itemId: { type: String, required: true },
+// 	totalSelected: { type: Number, required: true, min: 0 },
+// 	remaining: { type: Number, required: true, min: 0 },
+// });
 
 
 var ItemTransactionSchema = new Schema({
@@ -39,17 +39,15 @@ ItemTransactionSchema.virtual('totalTransaction')
 		return this.item.price * this.quantity;
 	});
 
-
-
-var GiveSchema = new Schema({
+var TransactionSchema = new Schema({
 	name: { type: String, required: true},
-	email: { type: String, required: true, min: 13 },
-	address: { type: String, required: true, min: 13 },
+	email: { type: String, required: true},
+	address: { type: String, required: true},
 	itemsGiven: [ItemTransactionSchema],
 	date: { type: Date, default: Date.now() }
 });
 
-GiveSchema.virtual('totalGiven')
+TransactionSchema.virtual('totalGiven')
 	.get(function () {
 		var totalGiven;
 		for (var i = 0; i < itemsGiven.length; i++) {
@@ -61,6 +59,5 @@ GiveSchema.virtual('totalGiven')
 module.exports = {
 	Item: mongoose.model('Item', ItemSchema),
 	ItemTransaction: mongoose.model('ItemTransaction', ItemTransactionSchema),
-	ItemTransactionSession: mongoose.model('ItemTransactionSession', ItemTransactionSessionSchema),
-	Give: mongoose.model('Give', GiveSchema)
+	Transaction: mongoose.model('Transaction', TransactionSchema)
 };

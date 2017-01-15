@@ -1,0 +1,73 @@
+<main>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        <div style="vertical-align: middle; padding: 40px 0px 40px 0px">
+          <div>
+            <h3 style="text-align: center;"><strong>{{{__ 'YOUR CART'}}}</strong></h3><br/>
+            <div>
+              <form role="form">
+                <input type="text" name="name" id="name" placeholder="{{{__ 'Your name'}}}" style="display: inline-block; width: 39%; font-size: .9em;" class="form-control">&nbsp;&nbsp;
+                <input type="email" name="email" id="email" placeholder="{{{__ 'Your email address'}}}" style="display: inline-block; width: 57%; font-size: .9em; float: right;" class="form-control">
+                <textarea name="message" id="message" rows="2" placeholder="{{{__ 'If you like, send us a message'}}}" style="display: inline-block; width: 100%; font-size: .9em; margin-top: 10px;" class="form-control" resize="none"></textarea>
+              </form>
+            </div><br/>
+            <table style="width: 100%;" id="itemsPurchased">
+            {{#each items}}
+            <tr>
+            <td style="padding: 0px 0px 0px 0px; border-top: solid 1px #000; border-bottom: solid 1px #000;">
+              <h3>{{item}}</h3>
+              <div>
+                <p style="float: left;">{{selected}}&nbsp;&nbsp;&nbsp;x&nbsp;&nbsp;&nbsp;${{price}}</p>
+                <p style="float: right;">${{total}}</p>
+                <div class="id" hidden>{{_id}}</div><div class="remaining" hidden>{{remaining}}</div>
+              </div>
+            </td>
+            </tr>
+            {{/each}}
+            </table>
+            <div>
+              <h3 style="text-align: center; margin-top: 35px;"><strong>TOTAL: ${{total}}</strong></h3>
+            </div>
+            <div>
+              <button class="btn btn-primary center-block" id="btn-paypal" style="width: 160px; background-color: #fff; border-color: #1c1c1c; border-radius: 0px; font-family: Josefin Sans; margin-top: 20px; margin-bottom: 20px; color: #1c1c1c; outline: none; padding-bottom: 3px;">{{{__ 'Purchase via PayPal'}}}</button>
+            </div>
+            <div style="text-align: center; font-size: 0.8em;">{{{__ '(Don\'t have a PayPal account? You\'ll have the option to create one when you click the "purchase" button above. Signing up for an account is easy and free.)'}}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+  $('#btn-paypal').click(function(e) {
+    e.preventDefault();
+    if (!$('#name').val() || !$('#email').val()) {
+      swal('{{{__ "Please enter your name and email address."}}}');
+    } else {
+      window.open('https://www.paypal.me/TheKarosas/{{total}}', '_blank');
+      var name = $('#name').val();
+      var email = $('#email').val();
+      var message = $('#message').val();
+      var itemsPurchased = $('#itemsPurchased').html();
+      var total = {{total}};
+      var transItems = [];
+      $(".id").each(function( index ) {
+        transItems.push({id: $( this ).text(), remaining: $( this).next().text()});
+      });
+
+      console.log(`transItems: ${JSON.stringify(transItems, null, 4)}`);
+
+      $.post( '/processtransaction', { name: name, email: email, message: message, itemsPurchased: itemsPurchased, total: total, transItems: transItems })
+        .done(function( data ) {
+          if (typeof data.redirect == 'string') {
+            window.location = data.redirect;
+          }
+      });
+    }
+  });
+</script>
