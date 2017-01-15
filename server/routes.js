@@ -3,6 +3,7 @@ var express = require('express'),
 	router = express.Router(),
 	scripts = require('../controllers/scripts'),
 	registry = require('../controllers/registry'),
+  giftsummary = require('../controllers/giftsummary'),
 	i18n = require('i18n'),
 	rsvp = require('../controllers/rsvp');
 
@@ -50,6 +51,13 @@ module.exports = function(app) {
 	router.get('/events', auth, function(req, res) {
 		res.render('events');
 	});
+  router.get('/giftsummary', auth, function(req, res) {
+    res.render('giftsummary');
+  });
+
+  router.get('/thankyounote', auth, function(req, res) {
+    res.render('thankyounote');
+  });
 
 	router.get('/language', function (req, res) {
 		i18n.setLocale(req, req.query.lang);
@@ -66,7 +74,10 @@ module.exports = function(app) {
 	router.post('/createitem', registry.createItem);
 	router.post('/updateitem', registry.updateItem);
 	router.post('/deleteitem', registry.deleteItem);
-	router.post('/givesession', registry.giveSession);
+	// router.post('/givesession', registry.giveSession);
+  router.get('/newtransaction', registry.newTransaction);
+  router.post('/giftsummary', auth, giftsummary.index);
+  router.post('/processtransaction', auth, giftsummary.processTransaction);
 	router.get('/rsvp/guests', auth, rsvp.guests);
 	router.get('/rsvp/summary', auth, rsvp.summary);
 	router.post('/newguest', rsvp.newGuests);
