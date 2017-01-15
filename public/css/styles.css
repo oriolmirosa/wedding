@@ -360,7 +360,11 @@ p.hiddenblur {
   margin-top: 3px;
 }
 
-#btn-registry-close {
+#btn-registry-exit {
+  padding-bottom: 3px;
+}
+
+#btn-registry-checkout {
   padding-bottom: 3px;
 }
 

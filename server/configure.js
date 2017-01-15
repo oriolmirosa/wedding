@@ -28,28 +28,28 @@ module.exports = function(app) {
 		partialsDir: [app.get('views') + '/partials'],
 		helpers: {
 			times: function(n, block) {
-    			var accum = '';
-    			for(var i = 0; i <= n; ++i)
-        			accum += block.fn(i);
-    			return accum;
-    		},
-    		select: function(value, options) {
-  				return options.fn(this)
-    				.split('\n')
-    				.map(function(v) {
-      					var t = 'value="' + value + '"';
-      					return ! RegExp(t).test(v) ? v : v.replace(t, t + ' selected="selected"');
-    				})
-    				.join('\n')
-				},
-				__: function() { return i18n.__.apply(this, arguments); },
-    		__n: function() { return i18n.__n.apply(this, arguments); },
-				inc: function(number, options) {
-					if (typeof(number) === 'undefined' || number === null)
-        		return null;
-    			return number + (options.hash.inc || 1);
-				}
-    	}
+  			var accum = '';
+  			for(var i = 0; i <= n; ++i)
+      			accum += block.fn(i);
+  			return accum;
+  		},
+  		select: function(value, options) {
+				return options.fn(this)
+  				.split('\n')
+  				.map(function(v) {
+    					var t = 'value="' + value + '"';
+    					return ! RegExp(t).test(v) ? v : v.replace(t, t + ' selected="selected"');
+  				})
+  				.join('\n')
+			},
+			__: function() { return i18n.__.apply(this, arguments); },
+  		__n: function() { return i18n.__n.apply(this, arguments); },
+			inc: function(number, options) {
+				if (typeof(number) === 'undefined' || number === null)
+      		return null;
+  			return number + (options.hash.inc || 1);
+			}
+  	}
 	}).engine);
 	app.set('view engine', 'handlebars');
 	app.use(session({
