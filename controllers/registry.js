@@ -16,7 +16,7 @@ module.exports = {
 			var localizedResources = Item.schema.methods.toObjectLocalized(items, langCookie);
 			viewModel.items = localizedResources;
 			res.render('registry', viewModel);
-		});
+		}); 
 	},
 
 	create: function(req, res) {
