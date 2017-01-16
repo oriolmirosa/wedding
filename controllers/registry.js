@@ -16,7 +16,7 @@ module.exports = {
 			var localizedResources = Item.schema.methods.toObjectLocalized(items, langCookie);
 			viewModel.items = localizedResources;
 			res.render('registry', viewModel);
-		}); 
+		});
 	},
 
 	create: function(req, res) {
@@ -47,18 +47,32 @@ module.exports = {
 
 	updateItem: function(req, res) {
 		// Item.update({ _id: req.body.id }, { $set: { item: req.body.item, description: req.body.description, price: parseInt(req.body.price), remaining: parseInt(req.body.remaining) }});
-		Item.findOne({ _id: req.body.id }, function(err, item) {
-			item.item.en = req.body.itemEn;
-			item.item.ca = req.body.itemCa;
-			item.description.en = req.body.descriptionEn;
-			item.description.ca = req.body.descriptionCa;
-			item.price = parseInt(req.body.price);
-			item.remaining = parseInt(req.body.remaining);
-      item.filename = req.file.originalname;
-			item.save(function(err) {
-				res.redirect('/registry/create');
-			});
-		});
+    if (req.file) {
+  		Item.findOne({ _id: req.body.id }, function(err, item) {
+  			item.item.en = req.body.itemEn;
+  			item.item.ca = req.body.itemCa;
+  			item.description.en = req.body.descriptionEn;
+  			item.description.ca = req.body.descriptionCa;
+  			item.price = parseInt(req.body.price);
+  			item.remaining = parseInt(req.body.remaining);
+        item.filename = req.file.originalname;
+  			item.save(function(err) {
+  				res.redirect('/registry/create');
+  			});
+  		});
+    } else {
+      Item.findOne({ _id: req.body.id }, function(err, item) {
+  			item.item.en = req.body.itemEn;
+  			item.item.ca = req.body.itemCa;
+  			item.description.en = req.body.descriptionEn;
+  			item.description.ca = req.body.descriptionCa;
+  			item.price = parseInt(req.body.price);
+  			item.remaining = parseInt(req.body.remaining);
+  			item.save(function(err) {
+  				res.redirect('/registry/create');
+  			});
+  		});
+    }
 	},
 
 	deleteItem: function(req, res) {
