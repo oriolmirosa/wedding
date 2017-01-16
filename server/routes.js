@@ -71,9 +71,9 @@ module.exports = function(app) {
 	router.get('/registry', auth, registry.index);
 	router.post('/passwordsite', scripts.password);
 	router.get('/registry/create', auth, registry.create);
-	router.post('/createitem', registry.createItem);
-	router.post('/updateitem', registry.updateItem);
-	router.post('/deleteitem', registry.deleteItem);
+	router.post('/createitem', auth, registry.createItem);
+	router.post('/updateitem', auth, registry.updateItem);
+	router.post('/deleteitem', auth, registry.deleteItem);
 	// router.post('/givesession', registry.giveSession);
   router.get('/newtransaction', registry.newTransaction);
   router.post('/giftsummary', auth, giftsummary.index);
