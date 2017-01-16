@@ -9,6 +9,13 @@ var express = require('express'),
 
 module.exports = function(app) {
 
+  const letsEncryptResponse = process.env.CERTBOT_RESPONSE;
+
+  // Return the Let's Encrypt certbot response:
+  router.get('/.well-known/acme-challenge/:content', function(req, res) {
+    res.send(letsEncryptResponse);
+  });
+
   if (process.env.NODE_ENV === 'PRODUCTION') {
   	router.get('*',function(req, res, next){
   	  if (req.headers['x-forwarded-proto'] != 'https')
@@ -26,13 +33,6 @@ module.exports = function(app) {
 	    	return res.redirect('/login');
 	   	}
 	};
-
-	const letsEncryptResponse = process.env.CERTBOT_RESPONSE;
-
-	// Return the Let's Encrypt certbot response:
-	router.get('/.well-known/acme-challenge/:content', function(req, res) {
-	  res.send(letsEncryptResponse);
-	});
 
 	router.get('/login', function (req, res) {
 		console.log(res.__('Hello i18n'));
