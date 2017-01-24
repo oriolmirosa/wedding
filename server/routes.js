@@ -19,7 +19,7 @@ module.exports = function(app) {
   if (process.env.NODE_ENV === 'PRODUCTION') {
   	router.get('*',function(req, res, next){
   	  if (req.headers['x-forwarded-proto'] != 'https')
-  	    res.redirect('https://TheKarosas.com' + req.url)
+  	    res.redirect('https://www.TheKarosas.com' + req.url)
   	  else
   	    next()
   	})
