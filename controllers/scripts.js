@@ -5,7 +5,7 @@ module.exports = {
 	password: function(req, res) {
 		var password = req.body.password;
 		password = password.toLowerCase();
-    const correctPW = process.env.PWD
+    const correctPW = process.env.CORR_PWD;
 		var user = "visitor";
   	if (!password || password !== correctPW) {
   		console.log('wrong password');
