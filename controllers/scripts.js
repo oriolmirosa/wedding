@@ -5,11 +5,12 @@ module.exports = {
 	password: function(req, res) {
 		var password = req.body.password;
 		password = password.toLowerCase();
+    var correctPW = process.env.PWD
 		var user = "visitor";
-	  	if (!password || password !== 'partytime') {
+	  	if (!password || password !== correctPW) {
 	  		console.log('wrong password');
 	    	res.send('401');
-	  	} else if (password === 'partytime') {
+	  	} else if (password === correctPW) {
 	    	req.session.user = 'visitor';
 	    	req.session.admin = true;
 	    	res.send( { redirect: '/' } );
