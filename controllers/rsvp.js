@@ -313,7 +313,6 @@ module.exports = {
 		  },
 		});
 
-		//With promise
 		sg.API(request)
 		  .then(response => {
 		    console.log(response.statusCode);
@@ -321,8 +320,6 @@ module.exports = {
 		    console.log(response.headers);
 		  })
 		  .catch(error => {
-		    //error is an instance of SendGridError
-		    //The full response is attached to error.response
 		    console.log(error.response.statusCode);
 		  });
 	}
