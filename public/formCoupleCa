@@ -94,7 +94,7 @@
               </select>
             </td>
             <td colspan="2" rowspan="2" class="messagenew" style="vertical-align: middle;">Missatge
-              <textarea name="message" class="form-control message" placeholder="Digueu-nos quant ens estimeu, si teniu al·lèrgies a algun aliment, etc."></textarea>
+              <textarea name="message" class="form-control message" placeholder="Missatge"></textarea>
             </td>
           </tr>
           <tr class="hidden-xs">
