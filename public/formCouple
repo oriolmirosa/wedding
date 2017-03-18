@@ -203,7 +203,7 @@
           </tr>
           <tr style="width: 100%;">
             <td style="vertical-align: middle;">Message:</td>
-            <td class="messagenew" style="width: 100%;"><textarea name="message" class="form-control message" style="min-width: 225%;" placeholder="Tell us how much you love us, any food allergies, etc."></textarea></td>
+            <td class="messagenew" style="width: 100%;"><textarea name="message" class="form-control message" style="min-width: 225%;" placeholder="Message"></textarea></td>
           </tr>
         </table>
         <div class="super-wrapper">

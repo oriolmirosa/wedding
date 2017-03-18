@@ -116,7 +116,7 @@
           </tr>
           <tr>
             <td style="vertical-align: middle;">Message:</td>
-            <td colspan="2" class="messagenew"><textarea name="message" class="form-control message" placeholder="Tell us how much you love us, any food allergies, etc."></textarea></td>
+            <td colspan="2" class="messagenew"><textarea name="message" class="form-control message" placeholder="Message"></textarea></td>
           </tr>
         </table>
 				<div class="super-wrapper">
