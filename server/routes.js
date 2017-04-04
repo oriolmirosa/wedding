@@ -11,10 +11,10 @@ module.exports = function(app) {
 
   const letsEncryptResponse = process.env.CERTBOT_RESPONSE;
 
-  // Return the Let's Encrypt certbot response:
-  // router.get('/.well-known/acme-challenge/:content', function(req, res) {
-  //   res.send(letsEncryptResponse);
-  // });
+  Return the Let's Encrypt certbot response:
+  router.get('/.well-known/acme-challenge/:content', function(req, res) {
+    res.send(letsEncryptResponse);
+  });
 
   if (process.env.NODE_ENV === 'PRODUCTION') {
   	router.get('*',function(req, res, next){
