@@ -38,24 +38,24 @@ module.exports = function(app) {
 		console.log(res.__('Hello i18n'));
 		res.render('login', {layout: 'empty.handlebars'});
 	});
-	router.get('/', auth, function(req, res) {
+	router.get('/', function(req, res) {
 		console.log("Cookies :  ", req.cookies);
 		res.render('index');
 	});
-	router.get('/faq', auth, function(req, res) {
+	router.get('/faq', function(req, res) {
 		res.render('faq');
 	});
-	router.get('/travel', auth, function(req, res) {
+	router.get('/travel', function(req, res) {
 		res.render('travel');
 	});
-	router.get('/events', auth, function(req, res) {
+	router.get('/events', function(req, res) {
 		res.render('events');
 	});
-  router.get('/giftsummary', auth, function(req, res) {
+  router.get('/giftsummary', function(req, res) {
     res.render('giftsummary');
   });
 
-  router.get('/thankyounote', auth, function(req, res) {
+  router.get('/thankyounote', function(req, res) {
     res.render('thankyounote');
   });
 
@@ -67,19 +67,19 @@ module.exports = function(app) {
   		res.send(req.query.lang);
 	});
 
-	router.get('/rsvp', auth, rsvp.index);
-	router.get('/registry', auth, registry.index);
+	router.get('/rsvp', rsvp.index);
+	router.get('/registry', registry.index);
 	router.post('/passwordsite', scripts.password);
-	router.get('/registry/create', auth, registry.create);
-	router.post('/createitem', auth, registry.createItem);
-	router.post('/updateitem', auth, registry.updateItem);
-	router.post('/deleteitem', auth, registry.deleteItem);
+	router.get('/registry/create', registry.create);
+	router.post('/createitem', registry.createItem);
+	router.post('/updateitem', registry.updateItem);
+	router.post('/deleteitem', registry.deleteItem);
 	// router.post('/givesession', registry.giveSession);
   router.get('/newtransaction', registry.newTransaction);
-  router.post('/giftsummary', auth, giftsummary.index);
-  router.post('/processtransaction', auth, giftsummary.processTransaction);
-	router.get('/rsvp/guests', auth, rsvp.guests);
-	router.get('/rsvp/summary', auth, rsvp.summary);
+  router.post('/giftsummary', giftsummary.index);
+  router.post('/processtransaction', giftsummary.processTransaction);
+	router.get('/rsvp/guests', rsvp.guests);
+	router.get('/rsvp/summary', rsvp.summary);
 	router.post('/newguest', rsvp.newGuests);
 	router.post('/updateguests', rsvp.updateGuests);
 	router.post('/deleteguests', rsvp.deleteGuests);
